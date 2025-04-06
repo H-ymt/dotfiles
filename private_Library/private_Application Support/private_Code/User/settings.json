@@ -171,7 +171,7 @@
   "polacode.transparentBackground": true,
   "prettier.documentSelectors": ["**/*.astro"],
   "prettier.printWidth": 95,
-  "prettier.semi": false,
+  "prettier.semi": true,
   "prettier.vueIndentScriptAndStyle": true,
   "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.enabled": false,

@@ -10,6 +10,8 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export PATH="/Users/hymt/.volta/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -143,3 +145,8 @@ alias ls="eza --icons"
 alias ll="eza -l --icons"
 # Shopify Hydrogen alias to local projects
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+export PATH="/Users/hymt/.volta/bin:$PATH"
+
+# zoxied
+eval "$(zoxide init zsh)"
