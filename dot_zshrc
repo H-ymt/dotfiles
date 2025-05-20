@@ -119,7 +119,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# 導入したプラグインを追記
+# プラグインを記載
 plugins=(git zsh-syntax-highlighting)
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
@@ -136,9 +136,6 @@ export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"export PATH=$HOME/.nodebrew/cu
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
-# Added by Windsurf
-export PATH="/Users/hymt/.codeium/windsurf/bin:$PATH"
 
 # eza
 alias ls="eza --icons"
