@@ -1,12 +1,13 @@
 [user]
 	email = y.handai1272@gmail.com
-	name = 半代大和
+	name = H-ymt
 [push]
 	default = current
 [init]
 	defaultBranch = main
 [alias]
 	g = git
+        st = status
         checkout = co
 [filter "lfs"]
 	required = true
