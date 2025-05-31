@@ -2,7 +2,7 @@
 
 config-file = themes/rosepine
 background = #000000
-background-opacity = 0.75
+background-opacity = 0.70
 background-blur-radius = 20
 
 font-family = JetBrainsMonoNL Nerd Font
@@ -22,8 +22,8 @@ window-padding-y = 20
 window-padding-balance = true
 window-height = 30
 window-width = 100
-window-initial-position-x = center
-window-initial-position-y = center
+shell-integration = zsh
+window-save-state = always
 
 auto-update = check
 auto-update-channel = stable
@@ -44,7 +44,7 @@ keybind = super+b>r=reload_config
 keybind = super+b>x=close_surface
 # this only works if you have `macos-titlebar-style = tabs or native or transparent`
 # else it behaves like new window
-keybind = super+b>c=new_tab 
+keybind = super+b>c=new_tab
 keybind = super+b>n=new_window
 
 # tab nav
