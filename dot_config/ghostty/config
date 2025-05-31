@@ -1,4 +1,4 @@
-# By default Reload config with shft + cmd + , 
+# By default Reload config with shft + cmd + ,
 
 config-file = themes/rosepine
 background = #000000
@@ -22,6 +22,8 @@ window-padding-y = 20
 window-padding-balance = true
 window-height = 30
 window-width = 100
+window-initial-position-x = center
+window-initial-position-y = center
 
 auto-update = check
 auto-update-channel = stable
