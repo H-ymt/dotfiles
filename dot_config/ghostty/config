@@ -1,6 +1,6 @@
 # By default Reload config with shft + cmd + ,
 
-config-file = themes/rosepine
+config-file = themes/rosepine-customize
 background = #000000
 background-opacity = 0.70
 background-blur-radius = 20
