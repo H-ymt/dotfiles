@@ -1,5 +1,25 @@
 # Mac 開発環境設定まとめ
 
+## Initialize Setup
+
+```sh
+brew install chezmoi
+```
+
+```sh
+chezmoi init <Repository URL>
+```
+
+```sh
+chezmoi init git@github.com:<User>/<Repository>.git
+```
+
+```sh
+chezmoi apply
+```
+
+## Feature
+
 ## 1. シェル環境（zsh）
 
 - `~/.zshrc` で zsh の設定を管理
