@@ -7,8 +7,8 @@
 	defaultBranch = main
 [alias]
 	g = git
-        st = status
-        checkout = co
+  st = status
+  checkout = co
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
@@ -24,3 +24,7 @@
 	trustExitCode = true
 [commit]
 	template = /Users/hymt/.stCommitMsg
+[includeIf "gitdir:~/developer/sai/"]
+	path = ~/.gitconfig_sai
+[includeIf "gitdir:~/Local Sites/kyudenko/"]
+	path = ~/.gitconfig_sai
