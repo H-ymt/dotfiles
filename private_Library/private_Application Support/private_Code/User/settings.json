@@ -25,7 +25,7 @@
   "editor.cursorWidth": 1,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "JetBrains Mono NL, JetBrainsMono Nerd Font, Hack Nerd Font, Plemol JP",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.fontWeight": "400",
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -187,7 +187,7 @@
     "FIG_NEW_SESSION": "1",
     "Q_NEW_SESSION": "1"
   },
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 15,
   "terminal.integrated.gpuAcceleration": "off",
   "terminal.integrated.ignoreProcessNames": [
     "starship",
@@ -253,5 +253,8 @@
   "zenMode.centerLayout": false,
   "zenMode.fullScreen": false,
   "zenMode.hideLineNumbers": false,
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  }
 }
