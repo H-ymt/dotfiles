@@ -2,8 +2,8 @@
 
 config-file = themes/rosepine-customize
 background = #000000
-background-opacity = 0.70
-background-blur-radius = 20
+background-opacity = 0.6
+background-blur-radius = 12
 
 font-family = JetBrainsMonoNL Nerd Font
 font-size = 16
@@ -20,8 +20,8 @@ window-decoration = true
 window-padding-x = 20
 window-padding-y = 20
 window-padding-balance = true
-window-height = 34
-window-width = 140
+window-height = 38
+window-width = 120
 shell-integration = zsh
 window-save-state = always
 
