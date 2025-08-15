@@ -157,8 +157,11 @@ function ya() {
 	rm -f -- "$tmp"
 }
 
-
+# Kiro
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
+# Console Ninja
 PATH=~/.console-ninja/.bin:$PATH
 
+# Lazygit
+alias lg='lazygit'
