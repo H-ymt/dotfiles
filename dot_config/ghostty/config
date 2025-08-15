@@ -1,6 +1,7 @@
 # By default Reload config with shft + cmd + ,
+# Reference: https://github.com/Sin-cy/dotfiles/blob/main/ghostty/.config/ghostty/config
 
-config-file = themes/rosepine-customize
+config-file = themes/rosepine
 background = #000000
 background-opacity = 0.6
 background-blur-radius = 12
