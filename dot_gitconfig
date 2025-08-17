@@ -6,9 +6,11 @@
 [init]
 	defaultBranch = main
 [alias]
-	g = git
+  g = git
   st = status
   checkout = co
+  clean-branches = "!f () { git checkout $1; git branch --merged | egrep -v '\\*|main|develop' | xargs git branch -d; git fetch --prune; }; f"
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
