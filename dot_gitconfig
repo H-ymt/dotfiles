@@ -9,7 +9,21 @@
   g = git
   st = status
   checkout = co
-  clean-branches = "!f () { git checkout $1; git branch --merged | egrep -v '\\*|main|develop' | xargs git branch -d; git fetch --prune; }; f"
+  # 今いるブランチからswitchして、main, developブランチ以外のマージ済みブランチを削除
+  clean-branch = "!f() { \
+  git fetch --prune; \
+  target=${1:-main}; \
+  git checkout \"$target\"; \
+  git pull origin \"$target\"; \
+  current=$(git rev-parse --abbrev-ref HEAD); \
+  merged=$(git branch --merged \"$target\" | egrep -v \"\\*|main|develop\"); \
+  echo \"$merged\" | xargs -n1 git branch -d; \
+  if [ \"$current\" != \"main\" ] && [ \"$current\" != \"develop\" ] && [ \"$current\" != \"$target\" ]; then \
+    if git branch --merged \"$target\" | grep -q \" $current\"; then \
+      git branch -d \"$current\"; \
+    fi; \
+  fi; \
+}; f"
 
 [filter "lfs"]
 	required = true
@@ -18,15 +32,3 @@
 	process = git-lfs filter-process
 [core]
 	excludesfile = /Users/hymt/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/hymt/.stCommitMsg
-[includeIf "gitdir:~/developer/sai/"]
-	path = ~/.gitconfig_sai
-[includeIf "gitdir:~/Local Sites/kyudenko/"]
-	path = ~/.gitconfig_sai
