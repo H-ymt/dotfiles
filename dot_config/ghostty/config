@@ -7,7 +7,7 @@ background-opacity = 0.85
 background-blur-radius = 14
 
 font-family = JetBrainsMonoNL Nerd Font
-font-size = 16
+font-size = 15
 cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = true
@@ -21,8 +21,8 @@ window-decoration = true
 window-padding-x = 20
 window-padding-y = 20
 window-padding-balance = true
-window-height = 38
-window-width = 120
+window-height = 40
+window-width = 130
 shell-integration = zsh
 window-save-state = always
 
