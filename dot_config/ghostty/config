@@ -6,8 +6,8 @@ background = #000000
 background-opacity = 0.85
 background-blur-radius = 14
 
-font-family = JetBrainsMonoNL Nerd Font
-font-size = 15
+font-family = "PlemolJPConsole Nerd Font"
+font-size = 14
 cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = true
