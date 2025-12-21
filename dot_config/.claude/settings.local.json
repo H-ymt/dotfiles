@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(system_profiler:*)",
+      "Bash(ghostty:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
