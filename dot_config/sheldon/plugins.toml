@@ -1,0 +1,47 @@
+# sheldon configuration
+# https://sheldon.cli.rs/
+
+shell = "zsh"
+
+[plugins]
+
+# ========================================
+# Completions (must be loaded first)
+# ========================================
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+# ========================================
+# oh-my-zsh library and plugins
+# ========================================
+[plugins.ohmyzsh-lib]
+github = "ohmyzsh/ohmyzsh"
+dir = "lib"
+use = [
+  "completion.zsh",
+  "directories.zsh",
+  "git.zsh",
+  "history.zsh",
+  "key-bindings.zsh",
+]
+
+[plugins.ohmyzsh-git]
+github = "ohmyzsh/ohmyzsh"
+dir = "plugins/git"
+
+# ========================================
+# Syntax highlighting and autosuggestions
+# ========================================
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+use = ["{{ name }}.zsh"]
+
+# syntax-highlighting must be loaded last
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+# ========================================
+# Deferred loading for faster startup
+# ========================================
+[templates]
+defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
