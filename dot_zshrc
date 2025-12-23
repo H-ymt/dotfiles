@@ -1,5 +1,9 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+# Homebrew (優先度を上げて Bash 5 などを使用)
+export PATH="/opt/homebrew/bin:$PATH"
+
 # Initialize completions (must be before sheldon for compdef)
 autoload -Uz compinit && compinit
 
@@ -54,6 +58,7 @@ export PATH="$HOME/.volta/bin:$PATH"
 
 # mise
 eval "$(mise activate zsh)"
+corepack disable pnpm 2>/dev/null
 
 # zoxied
 eval "$(zoxide init zsh)"

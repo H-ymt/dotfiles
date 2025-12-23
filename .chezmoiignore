@@ -2,4 +2,4 @@
 
 .oh-my-zsh/.git/FETCH_HEAD
 .oh-my-zsh/.git/index.lock
-.oh-my-zsh/.git/COMMIT_EDITMSG
+.oh-my-zsh/.git/COMMIT_EDITMSG.DS_Store
