@@ -13,6 +13,9 @@ eval "$(sheldon source 2>/dev/null)"
 
 # User configuration
 
+# Disable history expansion with '!' (allows using '!' in commands without escaping)
+setopt NO_BANG_HIST
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
