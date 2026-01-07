@@ -74,3 +74,5 @@ keybind = super+b>l=goto_split:right
 # custom-shader = shaders/bettercrt.glsl
 # custom-shader = shaders/retro-terminal.glsl
 
+# shift+enterを改行扱いする
+keybind = shift+enter=text:\x0d

@@ -107,3 +107,6 @@ export PATH="/Users/yamato_handai/.codeium/windsurf/bin:$PATH"
 
 # Claude Code
 export ANTHROPIC_MODEL=opus
+
+# Added by Antigravity
+export PATH="/Users/yamato_handai/.antigravity/antigravity/bin:$PATH"
