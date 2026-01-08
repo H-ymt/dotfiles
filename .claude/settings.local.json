@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(chezmoi apply:*)"
+      "Bash(chezmoi apply:*)",
+      "mcp__plugin_serena_serena__list_dir"
     ]
   }
 }

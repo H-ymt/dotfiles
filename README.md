@@ -1,61 +1,71 @@
-# Mac 開発環境設定まとめ
+# dotfiles
 
-## Initialize Setup
+> Mac 開発環境の設定ファイルを [chezmoi](https://www.chezmoi.io/) で管理
+
+## 📦 セットアップ
+
+### 前提条件
+
+- macOS
+- [Homebrew](https://brew.sh/)
+
+### インストール
 
 ```sh
+# chezmoi のインストール
 brew install chezmoi
-```
 
-```sh
-chezmoi init <Repository URL>
-```
-
-```sh
+# リポジトリの初期化と適用
 chezmoi init git@github.com:<User>/<Repository>.git
-```
-
-```sh
 chezmoi apply
 ```
 
-## Feature
+> [!TIP]  
+> 変更を確認してから適用したい場合は `chezmoi diff` で差分を確認できます。  
+> `chezmoi apply` は既存の設定ファイルを上書きします。必要に応じてバックアップを取ってください。
 
-## 1. シェル環境（zsh）
+## 🛠 管理している設定
 
-- `~/.zshrc` で zsh の設定を管理
-- `~/.zshrc.pre-oh-my-zsh` で Oh My Zsh 導入前の設定もバックアップ
+| カテゴリ           | ツール                                                     | 設定ファイル           |
+| ------------------ | ---------------------------------------------------------- | ---------------------- |
+| シェル             | zsh                                                        | `~/.zshrc`             |
+| プラグイン管理     | [sheldon](https://github.com/rossmacarthur/sheldon)        | `~/.config/sheldon/`   |
+| バージョン管理     | [mise](https://mise.jdx.dev/)                              | `~/.config/mise/`      |
+| Git                | Git                                                        | `~/.gitconfig`         |
+| ターミナル         | [Ghostty](https://ghostty.org/)                            | `~/.config/ghostty/`   |
+| ターミナル         | [WezTerm](https://wezfurlong.org/wezterm/)                 | `~/.config/wezterm/`   |
+| マルチプレクサ     | [tmux](https://github.com/tmux/tmux)                       | `~/.config/tmux/`      |
+| マルチプレクサ     | [Zellij](https://zellij.dev/)                              | `~/.config/zellij/`    |
+| エディタ           | [Neovim](https://neovim.io/)                               | `~/.config/nvim/`      |
+| ファイラ           | [Yazi](https://yazi-rs.github.io/)                         | `~/.config/yazi/`      |
+| キーバインディング | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) | `~/.config/karabiner/` |
 
-## 2. Git 設定
+## 🔧 主な設定内容
 
-- `~/.gitconfig` でユーザー名やエイリアスなど Git の基本設定を管理
+### シェル環境
 
-## 3. ターミナルテーマ（Ghostty）
+- **zsh** + **sheldon** でプラグイン管理
+- starship などのプロンプトカスタマイズ
 
-- `~/.config/ghostty/` にターミナルエミュレータ Ghostty の設定ファイルとテーマを配置
+### ターミナル
 
-## 4. ファイラ（Yazi）
+- **Ghostty** / **WezTerm** のテーマ・フォント設定
+- **tmux** / **Zellij** でターミナルマルチプレクサ
 
-- `~/.config/yazi/` に Yazi の設定
-  - `init.lua` でステータスバーのカスタマイズ
-  - `theme.toml` でテーマ設定
-  - `flavors/catppuccin-mocha.yazi/` に Catppuccin Mocha テーマを導入
-    - `flavor.toml` でテーマ詳細
-    - `LICENSE` などライセンスファイルも同梱
+### エディタ
 
-## 5. キーバインド（Karabiner-Elements）
+- **Neovim** の設定（プラグイン、キーマップなど）
 
-- `~/.config/karabiner/karabiner.json` でキーボードのリマップ設定
+### ファイラ
 
-## 6. VS Code 設定
+- **Yazi** のテーマ設定（Catppuccin Mocha）
 
-- `~/Library/Application Support/Code/User/settings.json` でエディタの細かい設定
-- `keybindings.json` でショートカットカスタマイズ
+### キーボード
 
----
+- **Karabiner-Elements** でキーリマップ
 
-### 参考
+## 📚 参考リンク
 
-- Yazi テーマの詳細: [Yazi flavor documentation](https://yazi-rs.github.io/docs/flavors/overview)
-- Catppuccin Mocha テーマ: [README.md](dot_config/yazi/flavors/catppuccin-mocha.yazi/README.md)
-
----
+- [chezmoi - Manage your dotfiles](https://www.chezmoi.io/)
+- [Yazi - Blazing fast terminal file manager](https://yazi-rs.github.io/)
+- [Catppuccin - Soothing pastel theme](https://github.com/catppuccin/catppuccin)
