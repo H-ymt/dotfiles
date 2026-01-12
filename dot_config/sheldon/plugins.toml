@@ -11,6 +11,9 @@ shell = "zsh"
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
+[plugins.zsh-autocomplete]
+github = "marlonrichert/zsh-autocomplete"
+
 # ========================================
 # oh-my-zsh library and plugins
 # ========================================
