@@ -1,7 +1,7 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
-# Homebrew (優先度を上げて Bash 5 などを使用)
+# Homebrew (優先度を上げて Bash 5 を使用)
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Initialize completions (must be before sheldon for compdef)
@@ -110,3 +110,6 @@ export ANTHROPIC_MODEL=opus
 
 # Added by Antigravity
 export PATH="/Users/yamato_handai/.antigravity/antigravity/bin:$PATH"
+
+# Turso
+export PATH="$PATH:/Users/yamato_handai/.turso"
