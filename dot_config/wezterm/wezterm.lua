@@ -3,10 +3,16 @@ local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
 config.font_size = 14.0
-config.font = wezterm.font("JetBrains Mono", { italic = false })
+config.font = wezterm.font("IBM Plex Mono", { italic = false })
 config.use_ime = true
-config.window_background_opacity = 0.80
-config.macos_window_background_blur = 20
+config.window_background_opacity = 0.90
+config.macos_window_background_blur = 24
+config.window_padding = {
+	left = 20,
+	right = 20,
+	top = 20,
+	bottom = 20,
+}
 config.initial_cols = 125
 config.initial_rows = 40
 
@@ -79,8 +85,15 @@ end)
 -- keybinds
 ----------------------------------------------------
 config.disable_default_key_bindings = true
-config.keys = require("keybinds").keys
+config.keys = require("keybinds").keys or {}
 config.key_tables = require("keybinds").key_tables
 config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
+
+-- Shift+Enterで改行を送信（Claude Code用）
+table.insert(config.keys, {
+	key = "Enter",
+	mods = "SHIFT",
+	action = wezterm.action.SendString("\n"),
+})
 
 return config
