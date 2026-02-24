@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(chezmoi apply:*)",
-      "mcp__plugin_serena_serena__list_dir"
+      "mcp__plugin_serena_serena__list_dir",
+      "WebSearch",
+      "WebFetch(domain:ghostty.org)"
     ]
   }
 }
