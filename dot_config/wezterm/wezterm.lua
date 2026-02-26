@@ -2,16 +2,21 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
-config.font_size = 14.0
-config.font = wezterm.font("IBM Plex Mono", { italic = false })
+config.font_size = 14.5
+config.font = wezterm.font_with_fallback({
+	{ family = "IBM Plex Mono", italic = false },
+	{ family = "IBM Plex Sans JP" },
+})
+config.freetype_load_flags = "NO_HINTING"
+config.front_end = "WebGpu"
 config.use_ime = true
 config.window_background_opacity = 0.90
 config.macos_window_background_blur = 24
 config.window_padding = {
 	left = 20,
 	right = 20,
-	top = 20,
-	bottom = 20,
+	top = 16,
+	bottom = 16,
 }
 config.initial_cols = 125
 config.initial_rows = 40
@@ -87,7 +92,7 @@ end)
 config.disable_default_key_bindings = true
 config.keys = require("keybinds").keys or {}
 config.key_tables = require("keybinds").key_tables
-config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = "b", mods = "SUPER", timeout_milliseconds = 2000 }
 
 -- Shift+Enterで改行を送信（Claude Code用）
 table.insert(config.keys, {

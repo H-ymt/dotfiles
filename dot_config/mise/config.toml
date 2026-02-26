@@ -1,4 +1,4 @@
 [tools]
 node = "24.12"
-pnpm = "latest"
+pnpm = "10.30.2"
 yarn = "latest"

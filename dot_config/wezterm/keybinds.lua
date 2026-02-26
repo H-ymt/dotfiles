@@ -57,6 +57,9 @@ return {
     { key = "{",     mods = "LEADER",     action = act({ MoveTabRelative = -1 }) },
     -- Tab新規作成
     { key = "t",     mods = "SUPER",      action = act({ SpawnTab = "CurrentPaneDomain" }) },
+    { key = "c",     mods = "LEADER",     action = act({ SpawnTab = "CurrentPaneDomain" }) },
+    -- 新規ウィンドウ
+    { key = "n",     mods = "LEADER",     action = act.SpawnWindow },
     -- Tabを閉じる
     { key = "w",     mods = "SUPER",      action = act({ CloseCurrentTab = { confirm = true } }) },
     { key = "}",     mods = "LEADER",     action = act({ MoveTabRelative = 1 }) },
@@ -73,8 +76,8 @@ return {
     { key = "v",     mods = "SUPER",      action = act.PasteFrom("Clipboard") },
 
     -- Pane作成 leader + r or d
-    { key = "d",     mods = "LEADER",     action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-    { key = "r",     mods = "LEADER",     action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "-",     mods = "LEADER",     action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    { key = "\\",    mods = "LEADER",     action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
     -- Paneを閉じる leader + x
     { key = "x",     mods = "LEADER",     action = act({ CloseCurrentPane = { confirm = true } }) },
     -- Pane移動 leader + hlkj
@@ -103,7 +106,19 @@ return {
     { key = "7",     mods = "SUPER",      action = act.ActivateTab(6) },
     { key = "8",     mods = "SUPER",      action = act.ActivateTab(7) },
     { key = "9",     mods = "SUPER",      action = act.ActivateTab(-1) },
+    -- タブ切替 Leader + 数字 (Ghostty風)
+    { key = "1",     mods = "LEADER",     action = act.ActivateTab(0) },
+    { key = "2",     mods = "LEADER",     action = act.ActivateTab(1) },
+    { key = "3",     mods = "LEADER",     action = act.ActivateTab(2) },
+    { key = "4",     mods = "LEADER",     action = act.ActivateTab(3) },
+    { key = "5",     mods = "LEADER",     action = act.ActivateTab(4) },
+    { key = "6",     mods = "LEADER",     action = act.ActivateTab(5) },
+    { key = "7",     mods = "LEADER",     action = act.ActivateTab(6) },
+    { key = "8",     mods = "LEADER",     action = act.ActivateTab(7) },
+    { key = "9",     mods = "LEADER",     action = act.ActivateTab(-1) },
 
+    -- 行クリア (Ghostty風 Cmd+Escape)
+    { key = "Escape", mods = "SUPER",     action = act.SendString("\x05\x15") },
     -- コマンドパレット
     { key = "p",     mods = "SHIFT|CTRL", action = act.ActivateCommandPalette },
     -- 設定再読み込み
