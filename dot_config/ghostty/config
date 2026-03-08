@@ -3,7 +3,7 @@
 
 config-file = themes/rosepine
 background = #000000
-background-opacity = 0.85
+background-opacity = 0.9
 background-blur-radius = 14
 
 font-family = "IBM Plex Mono", "IBM Plex Sans JP"

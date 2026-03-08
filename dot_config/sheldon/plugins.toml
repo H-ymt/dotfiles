@@ -28,9 +28,11 @@ use = [
   "key-bindings.zsh",
 ]
 
-[plugins.ohmyzsh-git]
-github = "ohmyzsh/ohmyzsh"
-dir = "plugins/git"
+# ========================================
+# zsh-abbr (abbreviations)
+# ========================================
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
 
 # ========================================
 # Syntax highlighting and autosuggestions
