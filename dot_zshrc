@@ -7,6 +7,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Initialize completions (must be before sheldon for compdef)
 autoload -Uz compinit && compinit
 
+# zsh-abbr: enable cursor placement in expansions
+export ABBR_SET_EXPANSION_CURSOR=1
+
 # sheldon - zsh plugin manager
 eval "$(sheldon source 2>/dev/null)"
 

@@ -29,12 +29,6 @@ use = [
 ]
 
 # ========================================
-# zsh-abbr (abbreviations)
-# ========================================
-[plugins.zsh-abbr]
-github = "olets/zsh-abbr"
-
-# ========================================
 # Syntax highlighting and autosuggestions
 # ========================================
 [plugins.zsh-autosuggestions]
@@ -44,6 +38,12 @@ use = ["{{ name }}.zsh"]
 # syntax-highlighting must be loaded last
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
+
+# ========================================
+# zsh-abbr (abbreviations - must be after zsh-autocomplete)
+# ========================================
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
 
 # ========================================
 # Deferred loading for faster startup
