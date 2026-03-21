@@ -40,14 +40,16 @@ description: フロントエンド全体を1回で網羅レビューする統合
 
 1. まず `references/markup.md` を読み、構造・A11Y・SEOの重大項目を確認する。
 2. 次に `references/css.md` を読み、設計・責務・再利用性を確認する。
-3. 最後に `references/javascript.md` を読み、実行時リスクと性能を確認する。
-4. 各指摘に `確度`（確定 / 推定 / 判定保留）を付ける。
-5. 出力は「重大 / 中 / 軽微」で要点のみ返す。
+3. プロジェクトが Tailwind CSS を使用している場合は `references/tailwind.md` を読み、Tailwind固有の詳細チェック（クラス順序・トークン・バリアント管理・レスポンシブ設計・アンチパターン）を適用する。
+4. 最後に `references/javascript.md` を読み、実行時リスクと性能を確認する。
+5. 各指摘に `確度`（確定 / 推定 / 判定保留）を付ける。
+6. 出力は「重大 / 中 / 軽微」で要点のみ返す。
 
 ### 各領域の最低レビュー件数（目安）
 
 - Markup: 最低3観点（見出し構造、操作性、メタ情報）
 - CSS: 最低3観点（責務分離、重複、スケール管理）
+- Tailwind（該当時）: 最低3観点（トークン使用、バリアント管理、レスポンシブ設計）
 - JavaScript: 最低3観点（例外処理、高頻度イベント、依存/責務）
 
 ※ 問題が見つからない場合も「確認済み観点」を簡潔に明示する。
@@ -119,5 +121,6 @@ description: フロントエンド全体を1回で網羅レビューする統合
 ## 参照
 
 - HTML/A11Y/SEO: `references/markup.md`
-- CSS設計/Tailwind: `references/css.md`
+- CSS設計: `references/css.md`
+- Tailwind CSS詳細チェック: `references/tailwind.md`（Tailwind利用プロジェクトの場合）
 - JavaScript設計/性能: `references/javascript.md`
