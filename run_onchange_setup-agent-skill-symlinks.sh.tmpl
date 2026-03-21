@@ -1,5 +1,6 @@
 #!/bin/bash
 # ~/.agents/skills/* への symlink を各 AI エージェントの skills ディレクトリに貼る
+# hash: {{ joinPath .chezmoi.homeDir ".agents/skills" | glob | join "\n" | sha256sum }}
 set -euo pipefail
 
 AGENTS_SKILLS="$HOME/.agents/skills"
