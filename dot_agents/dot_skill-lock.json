@@ -1,0 +1,191 @@
+{
+  "version": 3,
+  "skills": {
+    "email-best-practices": {
+      "source": "resend/email-best-practices",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/resend/email-best-practices.git",
+      "skillPath": "SKILL.md",
+      "skillFolderHash": "",
+      "installedAt": "2026-01-24T05:15:44.847Z",
+      "updatedAt": "2026-01-24T05:15:44.847Z"
+    },
+    "supabase-postgres-best-practices": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/supabase/agent-skills.git",
+      "skillPath": "skills/postgres-best-practices/SKILL.md",
+      "skillFolderHash": "e549f070fca7ca2284e06f17e8a27260443aaf0d",
+      "installedAt": "2026-01-24T05:17:10.489Z",
+      "updatedAt": "2026-01-24T05:17:10.489Z"
+    },
+    "skill-creator": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/supabase/agent-skills.git",
+      "skillPath": ".agents/skills/skill-creator/SKILL.md",
+      "skillFolderHash": "7bd8fc459f09f0e14dcc2adbb4a5a58e60ea755c",
+      "installedAt": "2026-01-24T05:17:10.522Z",
+      "updatedAt": "2026-01-24T05:17:10.522Z"
+    },
+    "baseline-ui": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/baseline-ui/SKILL.md",
+      "skillFolderHash": "439eef5dc9a7910f57826166364f39b3e61cfd87",
+      "installedAt": "2026-02-23T03:24:40.199Z",
+      "updatedAt": "2026-02-23T03:24:40.199Z"
+    },
+    "fixing-accessibility": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/fixing-accessibility/SKILL.md",
+      "skillFolderHash": "e825388bce62e4456ed3b2b899c9bc58f5873c5b",
+      "installedAt": "2026-02-23T03:24:40.229Z",
+      "updatedAt": "2026-02-23T03:24:40.229Z"
+    },
+    "fixing-metadata": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/fixing-metadata/SKILL.md",
+      "skillFolderHash": "2906fa056416dff36892d1ff17c37de3090625b6",
+      "installedAt": "2026-02-23T03:24:40.261Z",
+      "updatedAt": "2026-02-23T03:24:40.261Z"
+    },
+    "fixing-motion-performance": {
+      "source": "ibelick/ui-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/ibelick/ui-skills.git",
+      "skillPath": "skills/fixing-motion-performance/SKILL.md",
+      "skillFolderHash": "76e5757bd2eb8ff38ff667eca9b665cbd707a386",
+      "installedAt": "2026-02-23T03:24:40.303Z",
+      "updatedAt": "2026-02-23T03:24:40.303Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-02-23T03:24:45.762Z",
+      "updatedAt": "2026-02-23T03:24:45.762Z"
+    },
+    "task-estimation": {
+      "source": "supercent-io/skills-template",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/supercent-io/skills-template.git",
+      "skillPath": ".agent-skills/task-estimation/SKILL.md",
+      "skillFolderHash": "11fd078960d8d0343e4fe672165036dc997d4325",
+      "installedAt": "2026-02-28T07:11:58.858Z",
+      "updatedAt": "2026-02-28T07:11:58.858Z"
+    },
+    "github-project-management": {
+      "source": "proffesor-for-testing/agentic-qe",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/proffesor-for-testing/agentic-qe.git",
+      "skillPath": ".claude/skills/github-project-management/SKILL.md",
+      "skillFolderHash": "c4c7836c43f0082eed8cd239d4506b80b4ee70a8",
+      "installedAt": "2026-02-28T07:16:18.726Z",
+      "updatedAt": "2026-02-28T07:16:18.726Z"
+    },
+    "gsap-core": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-core/SKILL.md",
+      "skillFolderHash": "135754edd728103e329a8df8b471b197375b370e",
+      "installedAt": "2026-03-21T04:10:00.265Z",
+      "updatedAt": "2026-03-21T04:10:00.265Z"
+    },
+    "gsap-frameworks": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-frameworks/SKILL.md",
+      "skillFolderHash": "a564591793469fac7288b00c804131990de1f308",
+      "installedAt": "2026-03-21T04:10:01.026Z",
+      "updatedAt": "2026-03-21T04:10:01.026Z"
+    },
+    "gsap-performance": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-performance/SKILL.md",
+      "skillFolderHash": "34dec2f051872f8d02df06de97450e448bac9c5e",
+      "installedAt": "2026-03-21T04:10:01.423Z",
+      "updatedAt": "2026-03-21T04:10:01.423Z"
+    },
+    "gsap-plugins": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-plugins/SKILL.md",
+      "skillFolderHash": "132525c883e470613f03752aa97cbf90940b0f1d",
+      "installedAt": "2026-03-21T04:10:01.814Z",
+      "updatedAt": "2026-03-21T04:10:01.814Z"
+    },
+    "gsap-react": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-react/SKILL.md",
+      "skillFolderHash": "ac01a338b96fddbc6cf65a89858d2e6068887b39",
+      "installedAt": "2026-03-21T04:10:02.235Z",
+      "updatedAt": "2026-03-21T04:10:02.235Z"
+    },
+    "gsap-scrolltrigger": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-scrolltrigger/SKILL.md",
+      "skillFolderHash": "7838f515e05bfab0a79dd63368a409ddc7d76ee6",
+      "installedAt": "2026-03-21T04:10:02.970Z",
+      "updatedAt": "2026-03-21T04:10:02.970Z"
+    },
+    "gsap-timeline": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-timeline/SKILL.md",
+      "skillFolderHash": "37eb5d623c3e14367864d57160acb64f13950994",
+      "installedAt": "2026-03-21T04:10:03.468Z",
+      "updatedAt": "2026-03-21T04:10:03.468Z"
+    },
+    "gsap-utils": {
+      "source": "greensock/gsap-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/greensock/gsap-skills.git",
+      "skillPath": "skills/gsap-utils/SKILL.md",
+      "skillFolderHash": "3f7aa617dd2dc7ebf21f30349b9c7b6d8640d789",
+      "installedAt": "2026-03-21T04:10:03.871Z",
+      "updatedAt": "2026-03-21T04:10:03.871Z"
+    },
+    "browser-use": {
+      "source": "browser-use/browser-use",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/browser-use/browser-use.git",
+      "skillPath": "skills/browser-use/SKILL.md",
+      "skillFolderHash": "9e127714fb8d78638ab42b5b121c8584b59f68bf",
+      "installedAt": "2026-03-21T05:32:39.401Z",
+      "updatedAt": "2026-03-21T05:33:37.761Z"
+    }
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp",
+    "claude-code"
+  ],
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}

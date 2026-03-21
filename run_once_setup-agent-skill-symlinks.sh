@@ -1,0 +1,39 @@
+#!/bin/bash
+# ~/.agents/skills/* への symlink を各 AI エージェントの skills ディレクトリに貼る
+set -euo pipefail
+
+AGENTS_SKILLS="$HOME/.agents/skills"
+
+# 対象ディレクトリとそれぞれの相対パス
+declare -A TARGETS=(
+  ["$HOME/.claude/skills"]="../../.agents/skills"
+  ["$HOME/.codex/skills"]="../../.agents/skills"
+  ["$HOME/.gemini/skills"]="../../.agents/skills"
+  ["$HOME/.github/skills"]="../../.agents/skills"
+  ["$HOME/.config/opencode/skills"]="../../../.agents/skills"
+)
+
+for target_dir in "${!TARGETS[@]}"; do
+  rel_prefix="${TARGETS[$target_dir]}"
+  mkdir -p "$target_dir"
+
+  for skill_dir in "$AGENTS_SKILLS"/*/; do
+    [ ! -d "$skill_dir" ] && continue
+    name=$(basename "$skill_dir")
+    link="$target_dir/$name"
+
+    # 既に正しい symlink なら何もしない
+    if [ -L "$link" ]; then
+      continue
+    fi
+
+    # 実体ディレクトリがあれば削除して symlink に置き換え
+    if [ -d "$link" ]; then
+      rm -rf "$link"
+    fi
+
+    ln -s "$rel_prefix/$name" "$link"
+  done
+done
+
+echo "Agent skill symlinks created."
