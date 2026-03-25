@@ -1,21 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ~/.agents/skills/* への symlink を各 AI エージェントの skills ディレクトリに貼る
-# hash: {{ joinPath .chezmoi.homeDir ".agents/skills" | glob | join "\n" | sha256sum }}
+# hash: {{ joinPath .chezmoi.homeDir ".agents/skills/*" | glob | join "\n" | sha256sum }}
 set -euo pipefail
 
 AGENTS_SKILLS="$HOME/.agents/skills"
 
-# 対象ディレクトリとそれぞれの相対パス
-declare -A TARGETS=(
-  ["$HOME/.claude/skills"]="../../.agents/skills"
-  ["$HOME/.codex/skills"]="../../.agents/skills"
-  ["$HOME/.gemini/skills"]="../../.agents/skills"
-  ["$HOME/.github/skills"]="../../.agents/skills"
-  ["$HOME/.config/opencode/skills"]="../../../.agents/skills"
-)
+# target_dir|relative_prefix のペア
+TARGETS="
+$HOME/.claude/skills|../../.agents/skills
+$HOME/.codex/skills|../../.agents/skills
+$HOME/.gemini/skills|../../.agents/skills
+$HOME/.github/skills|../../.agents/skills
+$HOME/.config/opencode/skills|../../../.agents/skills
+"
 
-for target_dir in "${!TARGETS[@]}"; do
-  rel_prefix="${TARGETS[$target_dir]}"
+for entry in $TARGETS; do
+  [ -z "$entry" ] && continue
+  target_dir="${entry%%|*}"
+  rel_prefix="${entry##*|}"
   mkdir -p "$target_dir"
 
   for skill_dir in "$AGENTS_SKILLS"/*/; do
