@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chezmoi source-path:*)",
+      "Bash(git status:*)",
+      "Bash(gh repo:*)"
+    ]
+  }
+}
