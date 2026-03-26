@@ -35,7 +35,8 @@ alias ll "eza -l --icons"
 
 # Shopify Hydrogen
 function h2
-    (npm prefix -s)/node_modules/.bin/shopify hydrogen $argv
+    set -l prefix (npm prefix -s)
+    $prefix/node_modules/.bin/shopify hydrogen $argv
 end
 
 # ========================================
