@@ -14,7 +14,8 @@ chezmoi apply
 
 | カテゴリ | ツール | 設定パス |
 |---|---|---|
-| シェル | zsh + [sheldon](https://github.com/rossmacarthur/sheldon) | `~/.zshrc`, `~/.config/sheldon/` |
+| シェル | [Fish](https://fishshell.com/) + [Starship](https://starship.rs/) | `~/.config/fish/`, `~/.config/starship.toml` |
+| シェル (fallback) | zsh + [sheldon](https://github.com/rossmacarthur/sheldon) | `~/.zshrc`, `~/.config/sheldon/` |
 | バージョン管理 | [mise](https://mise.jdx.dev/) | `~/.config/mise/` |
 | Git | Git | `~/.gitconfig` |
 | ターミナル | [Ghostty](https://ghostty.org/) | `~/.config/ghostty/` |
