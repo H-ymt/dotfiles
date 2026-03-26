@@ -30,8 +30,8 @@ fish_add_path "$HOME/.turso"
 set -gx ANTHROPIC_MODEL opus
 
 # eza
-alias ls "eza --icons"
-alias ll "eza -l --icons"
+abbr -a ls 'eza --icons'
+abbr -a ll 'eza -l --icons'
 
 # Shopify Hydrogen
 function h2
