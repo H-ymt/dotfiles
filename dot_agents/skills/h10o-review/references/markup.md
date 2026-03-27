@@ -24,7 +24,7 @@
 - `<br>` が視覚的レイアウト目的で使われていないか（余白・段落分け・リスト表現に `<br>` を使わない）
 - ネイティブHTMLで意味が伝わる箇所に冗長な `aria-*` を付けていないか（例: `<button aria-role="button">`, `<nav aria-label="navigation">` など）
 - リンク/ボタンの使い分け
-- `target="_blank"` 利用時の `rel="noopener"`
+- `target="_blank"`: 主要ブラウザ（2021年〜）は暗黙的に `noopener` を適用するため `rel="noopener"` の明示は不要。`noreferrer` はサイト外リンクでは推奨だが、サイト内リンクに付けるとリファラー情報が欠損しアクセス解析に影響するため使い分けが必要
 - メディア最適化（`picture`, `srcset`, `loading`）
 - コントラスト（WCAG AA 目安）
 
