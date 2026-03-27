@@ -15,7 +15,7 @@ config.macos_window_background_blur = 24
 config.window_padding = {
 	left = 20,
 	right = 20,
-	top = 10,
+	top = 20,
 	bottom = 14,
 }
 config.initial_cols = 125
