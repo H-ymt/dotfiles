@@ -26,6 +26,7 @@
 - リンク/ボタンの使い分け
 - `target="_blank"`: 主要ブラウザ（2021年〜）は暗黙的に `noopener` を適用するため `rel="noopener"` の明示は不要。`noreferrer` はサイト外リンクでは推奨だが、サイト内リンクに付けるとリファラー情報が欠損しアクセス解析に影響するため使い分けが必要
 - メディア最適化（`picture`, `srcset`, `loading`）
+- `decoding` 属性: `decoding="async"` はキャッシュ済み画像でデコード完了前に描画されちらつきが発生する。`decoding="auto"`（属性省略）がブラウザに最適化を委ねられ安全。明示的な `decoding="async"` 指定は避ける（参考: https://zenn.dev/ixkaito/articles/deep-dive-into-decoding）
 - コントラスト（WCAG AA 目安）
 
 ### A11Y詳細観点
