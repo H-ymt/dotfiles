@@ -128,7 +128,7 @@ return {
     {
       key = "a",
       mods = "LEADER",
-      action = act.ActivateKeyTable({ name = "activate_pane", timeout_milliseconds = 1000 }),
+      action = act.ActivateKeyTable({ name = "activate_pane", one_shot = false, timeout_milliseconds = 1000 }),
     },
   },
   -- キーテーブル
