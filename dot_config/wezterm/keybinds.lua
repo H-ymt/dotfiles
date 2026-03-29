@@ -68,7 +68,7 @@ return {
     { key = "Enter", mods = "ALT",        action = act.ToggleFullScreen },
 
     -- コピーモード
-    -- { key = 'X', mods = 'LEADER', action = act.ActivateKeyTable{ name = 'copy_mode', one_shot =false }, },
+    { key = "X",     mods = "SHIFT|CTRL", action = act.ActivateCopyMode },
     { key = "[",     mods = "LEADER",     action = act.ActivateCopyMode },
     -- コピー
     { key = "c",     mods = "SUPER",      action = act.CopyTo("Clipboard") },

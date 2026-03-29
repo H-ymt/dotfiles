@@ -96,7 +96,7 @@ end)
 config.disable_default_key_bindings = true
 config.keys = require("keybinds").keys or {}
 config.key_tables = require("keybinds").key_tables
-config.leader = { key = "b", mods = "SUPER", timeout_milliseconds = 2000 }
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 
 -- Shift+Enterで改行を送信（Claude Code用）
 table.insert(config.keys, {
