@@ -1,7 +1,7 @@
 [tools]
 node = "24.14.1"
 "npm:lighthouse" = "latest"
-pnpm = "10.30.2"
+pnpm = "10.33.0"
 yarn = "latest"
 "npm:@googleworkspace/cli" = "latest"
 "npm:diffity" = "latest"
