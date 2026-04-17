@@ -1,0 +1,70 @@
+name: chezmoi
+version: 1.0.0
+description: yamato_handai dotfiles — agent skills managed by APM
+author: H-ymt
+
+dependencies:
+  apm:
+    # --- 自作スキル (.apm/skills/ ローカルパス) ---
+    - ./.apm/skills/architecture-diagram
+    - ./.apm/skills/chrome-devtools
+    - ./.apm/skills/cloudflare-deploy
+    - ./.apm/skills/figma
+    - ./.apm/skills/figma-design-tokens
+    - ./.apm/skills/figma-implement-design
+    - ./.apm/skills/figma-rule
+    - ./.apm/skills/figma-use
+    - ./.apm/skills/gh-address-comments
+    - ./.apm/skills/gh-fix-ci
+    - ./.apm/skills/github-pr-review-operation
+    - ./.apm/skills/h10o-review
+    - ./.apm/skills/lighthouse-perf-report
+    - ./.apm/skills/motion-design
+    - ./.apm/skills/ops-doc-generator
+    - ./.apm/skills/remotion-best-practices
+    - ./.apm/skills/sitemap-generator
+    - ./.apm/skills/tailwind-styling-review
+    - ./.apm/skills/wireframe
+    - ./.apm/skills/wordpress-router
+    - ./.apm/skills/wp-abilities-api
+    - ./.apm/skills/wp-block-development
+    - ./.apm/skills/wp-block-themes
+    - ./.apm/skills/wp-interactivity-api
+    - ./.apm/skills/wp-performance
+    - ./.apm/skills/wp-phpstan
+    - ./.apm/skills/wp-playground
+    - ./.apm/skills/wp-plugin-development
+    - ./.apm/skills/wp-project-triage
+    - ./.apm/skills/wp-rest-api
+    - ./.apm/skills/wp-wpcli-and-ops
+    - ./.apm/skills/wpds
+
+    # --- 外部スキル (GitHub) ---
+    # GSAP
+    - greensock/gsap-skills/skills/gsap-core
+    - greensock/gsap-skills/skills/gsap-frameworks
+    - greensock/gsap-skills/skills/gsap-performance
+    - greensock/gsap-skills/skills/gsap-plugins
+    - greensock/gsap-skills/skills/gsap-react
+    - greensock/gsap-skills/skills/gsap-scrolltrigger
+    - greensock/gsap-skills/skills/gsap-timeline
+    - greensock/gsap-skills/skills/gsap-utils
+    # Diffity
+    - kamranahmedse/diffity/skills/diffity-diff
+    - kamranahmedse/diffity/skills/diffity-resolve
+    - kamranahmedse/diffity/skills/diffity-review
+    # UI Skills
+    - ibelick/ui-skills/skills/baseline-ui
+    - ibelick/ui-skills/skills/fixing-accessibility
+    - ibelick/ui-skills/skills/fixing-metadata
+    - ibelick/ui-skills/skills/fixing-motion-performance
+    # Others
+    - browser-use/browser-use/skills/browser-use
+    - resend/email-best-practices
+    - supabase/agent-skills/skills/supabase-postgres-best-practices
+    - vercel-labs/skills/skills/find-skills
+    - proffesor-for-testing/agentic-qe/.claude/skills/github-project-management
+
+  mcp: []
+
+scripts: {}
