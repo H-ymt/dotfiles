@@ -8,6 +8,10 @@
 brew install chezmoi
 chezmoi init git@github.com:<User>/<Repository>.git
 chezmoi apply
+
+# Agent Skills の配置
+cd ~/.local/share/chezmoi
+apm install --target all
 ```
 
 ## 管理ツール
@@ -25,3 +29,4 @@ chezmoi apply
 | エディタ | [Neovim](https://neovim.io/) | `~/.config/nvim/` |
 | ファイラ | [Yazi](https://yazi-rs.github.io/) | `~/.config/yazi/` |
 | キーリマップ | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) | `~/.config/karabiner/` |
+| AI Agent Skills | [APM](https://github.com/microsoft/apm) | `apm.yml`, `.apm/skills/` |

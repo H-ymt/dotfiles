@@ -1,13 +1,13 @@
 # Agent Skills — APM 管理ガイド
 
-APM (Agent Package Manager) で自作スキル・外部スキルを一���管理。
+APM (Agent Package Manager) で自作スキル・外部スキルを一括管理。
 
 ## ディレクトリ構造
 
 ```
 ~/.local/share/chezmoi/          ← chezmoi ソース = APM プロジェクト
 ├── apm.yml                      ← マニフェスト（全スキル宣言）
-├─��� apm.lock.yaml                ← ロックファイル（バージョン固定）
+├── apm.lock.yaml                ← ロックファイル（バージョン固定）
 ├── .apm/
 │   └── skills/                  ← 自作スキル実体
 │       ├── h10o-review/
