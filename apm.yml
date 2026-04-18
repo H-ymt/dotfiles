@@ -5,41 +5,45 @@ author: H-ymt
 
 dependencies:
   apm:
-    # --- 自作スキル (.apm/skills/ ローカルパス) ---
-    - ./.apm/skills/architecture-diagram
-    - ./.apm/skills/chrome-devtools
-    - ./.apm/skills/cloudflare-deploy
-    - ./.apm/skills/figma
-    - ./.apm/skills/figma-design-tokens
-    - ./.apm/skills/figma-implement-design
-    - ./.apm/skills/figma-rule
-    - ./.apm/skills/figma-use
-    - ./.apm/skills/gh-address-comments
-    - ./.apm/skills/gh-fix-ci
-    - ./.apm/skills/github-pr-review-operation
-    - ./.apm/skills/h10o-review
-    - ./.apm/skills/lighthouse-perf-report
-    - ./.apm/skills/motion-design
-    - ./.apm/skills/ops-doc-generator
-    - ./.apm/skills/remotion-best-practices
-    - ./.apm/skills/sitemap-generator
-    - ./.apm/skills/tailwind-styling-review
-    - ./.apm/skills/wireframe
-    - ./.apm/skills/wordpress-router
-    - ./.apm/skills/wp-abilities-api
-    - ./.apm/skills/wp-block-development
-    - ./.apm/skills/wp-block-themes
-    - ./.apm/skills/wp-interactivity-api
-    - ./.apm/skills/wp-performance
-    - ./.apm/skills/wp-phpstan
-    - ./.apm/skills/wp-playground
-    - ./.apm/skills/wp-plugin-development
-    - ./.apm/skills/wp-project-triage
-    - ./.apm/skills/wp-rest-api
-    - ./.apm/skills/wp-wpcli-and-ops
-    - ./.apm/skills/wpds
+    # --- 自作スキル (H-ymt/skills) ---
+    - H-ymt/skills/skills/figma-design-tokens
+    - H-ymt/skills/skills/figma-rule
+    - H-ymt/skills/skills/github-pr-review-operation
+    - H-ymt/skills/skills/h10o-review
+    - H-ymt/skills/skills/lighthouse-perf-report
+
+    - H-ymt/skills/skills/sitemap-generator
+
 
     # --- 外部スキル (GitHub) ---
+    # OpenAI curated
+    - openai/skills/skills/.curated/cloudflare-deploy
+    - openai/skills/skills/.curated/figma
+    - openai/skills/skills/.curated/figma-implement-design
+    - openai/skills/skills/.curated/gh-address-comments
+    - openai/skills/skills/.curated/gh-fix-ci
+    # Figma
+    - figma/mcp-server-guide/skills/figma-use
+    # Others
+    - Cocoon-AI/architecture-diagram-generator/architecture-diagram
+    - johnlindquist/claude-workshop-skills/skills/chrome-devtools
+    - LottieFiles/motion-design-skill/skills/motion-design
+    - remotion-dev/skills/skills/remotion
+    - yhassy/wireframe-skill
+    # WordPress
+    - WordPress/agent-skills/skills/wordpress-router
+    - WordPress/agent-skills/skills/wp-abilities-api
+    - WordPress/agent-skills/skills/wp-block-development
+    - WordPress/agent-skills/skills/wp-block-themes
+    - WordPress/agent-skills/skills/wp-interactivity-api
+    - WordPress/agent-skills/skills/wp-performance
+    - WordPress/agent-skills/skills/wp-phpstan
+    - WordPress/agent-skills/skills/wp-playground
+    - WordPress/agent-skills/skills/wp-plugin-development
+    - WordPress/agent-skills/skills/wp-project-triage
+    - WordPress/agent-skills/skills/wp-rest-api
+    - WordPress/agent-skills/skills/wp-wpcli-and-ops
+    - WordPress/agent-skills/skills/wpds
     # GSAP
     - greensock/gsap-skills/skills/gsap-core
     - greensock/gsap-skills/skills/gsap-frameworks
