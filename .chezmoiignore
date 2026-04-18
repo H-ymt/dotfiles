@@ -1,8 +1,17 @@
 # ~/.local/share/chezmoi/.chezmoiignore
 
 **/.DS_Store
+.DS_Store
 
+# APM — chezmoi apply でホームに展開しない
+apm.yml
+apm.lock.yaml
+apm_modules
+AGENTS.md
+CLAUDE.md
+README.md
+
+# oh-my-zsh
 .oh-my-zsh/.git/FETCH_HEAD
 .oh-my-zsh/.git/index.lock
 .oh-my-zsh/.git/COMMIT_EDITMSG
-.DS_Store

@@ -1,8 +1,12 @@
 lockfile_version: '1'
-generated_at: '2026-04-17T07:02:46.843984+00:00'
+generated_at: '2026-04-18T12:06:33.707076+00:00'
 apm_version: 0.8.11
 dependencies:
-- repo_url: _local/architecture-diagram
+- repo_url: Cocoon-AI/architecture-diagram-generator
+  host: github.com
+  resolved_commit: aff12bcf0f861995362e90273060acd0b68a1702
+  virtual_path: architecture-diagram
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/architecture-diagram
@@ -10,39 +14,12 @@ dependencies:
   - .cursor/skills/architecture-diagram
   - .github/skills/architecture-diagram
   - .opencode/skills/architecture-diagram
-  source: local
-  local_path: ./.apm/skills/architecture-diagram
-- repo_url: _local/chrome-devtools
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/chrome-devtools
-  - .claude/skills/chrome-devtools
-  - .cursor/skills/chrome-devtools
-  - .github/skills/chrome-devtools
-  - .opencode/skills/chrome-devtools
-  source: local
-  local_path: ./.apm/skills/chrome-devtools
-- repo_url: _local/cloudflare-deploy
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/cloudflare-deploy
-  - .claude/skills/cloudflare-deploy
-  - .cursor/skills/cloudflare-deploy
-  - .github/skills/cloudflare-deploy
-  - .opencode/skills/cloudflare-deploy
-  source: local
-  local_path: ./.apm/skills/cloudflare-deploy
-- repo_url: _local/figma
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/figma
-  - .claude/skills/figma
-  - .cursor/skills/figma
-  - .github/skills/figma
-  - .opencode/skills/figma
-  source: local
-  local_path: ./.apm/skills/figma
-- repo_url: _local/figma-design-tokens
+  content_hash: sha256:daba7c8db117230b136deba88f7faffe52e2372ae2007f647d2768c3b28ec8fa
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
+  virtual_path: skills/figma-design-tokens
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/figma-design-tokens
@@ -50,19 +27,12 @@ dependencies:
   - .cursor/skills/figma-design-tokens
   - .github/skills/figma-design-tokens
   - .opencode/skills/figma-design-tokens
-  source: local
-  local_path: ./.apm/skills/figma-design-tokens
-- repo_url: _local/figma-implement-design
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/figma-implement-design
-  - .claude/skills/figma-implement-design
-  - .cursor/skills/figma-implement-design
-  - .github/skills/figma-implement-design
-  - .opencode/skills/figma-implement-design
-  source: local
-  local_path: ./.apm/skills/figma-implement-design
-- repo_url: _local/figma-rule
+  content_hash: sha256:3c1e6b1bea59afb00e161a2ba9afbc27fb22a111907eac59099fd856f5efedd3
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
+  virtual_path: skills/figma-rule
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/figma-rule
@@ -70,39 +40,12 @@ dependencies:
   - .cursor/skills/figma-rule
   - .github/skills/figma-rule
   - .opencode/skills/figma-rule
-  source: local
-  local_path: ./.apm/skills/figma-rule
-- repo_url: _local/figma-use
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/figma-use
-  - .claude/skills/figma-use
-  - .cursor/skills/figma-use
-  - .github/skills/figma-use
-  - .opencode/skills/figma-use
-  source: local
-  local_path: ./.apm/skills/figma-use
-- repo_url: _local/gh-address-comments
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/gh-address-comments
-  - .claude/skills/gh-address-comments
-  - .cursor/skills/gh-address-comments
-  - .github/skills/gh-address-comments
-  - .opencode/skills/gh-address-comments
-  source: local
-  local_path: ./.apm/skills/gh-address-comments
-- repo_url: _local/gh-fix-ci
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/gh-fix-ci
-  - .claude/skills/gh-fix-ci
-  - .cursor/skills/gh-fix-ci
-  - .github/skills/gh-fix-ci
-  - .opencode/skills/gh-fix-ci
-  source: local
-  local_path: ./.apm/skills/gh-fix-ci
-- repo_url: _local/github-pr-review-operation
+  content_hash: sha256:6a668ae94b95e7fec46b0bc7ba8aa9f66738c88c002c75e04f2d8132ecf25c59
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
+  virtual_path: skills/github-pr-review-operation
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/github-pr-review-operation
@@ -110,9 +53,12 @@ dependencies:
   - .cursor/skills/github-pr-review-operation
   - .github/skills/github-pr-review-operation
   - .opencode/skills/github-pr-review-operation
-  source: local
-  local_path: ./.apm/skills/github-pr-review-operation
-- repo_url: _local/h10o-review
+  content_hash: sha256:30f51a05c4ea0f75b88625a816504c9a8ac604d368a1710308b9f9b1ad17e4d7
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
+  virtual_path: skills/h10o-review
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/h10o-review
@@ -120,9 +66,12 @@ dependencies:
   - .cursor/skills/h10o-review
   - .github/skills/h10o-review
   - .opencode/skills/h10o-review
-  source: local
-  local_path: ./.apm/skills/h10o-review
-- repo_url: _local/lighthouse-perf-report
+  content_hash: sha256:6f7a40c6c2404b776ff51389093e86712899ef0bde71e8e67a4e11e16dad1e3c
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
+  virtual_path: skills/lighthouse-perf-report
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/lighthouse-perf-report
@@ -130,39 +79,12 @@ dependencies:
   - .cursor/skills/lighthouse-perf-report
   - .github/skills/lighthouse-perf-report
   - .opencode/skills/lighthouse-perf-report
-  source: local
-  local_path: ./.apm/skills/lighthouse-perf-report
-- repo_url: _local/motion-design
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/motion-design
-  - .claude/skills/motion-design
-  - .cursor/skills/motion-design
-  - .github/skills/motion-design
-  - .opencode/skills/motion-design
-  source: local
-  local_path: ./.apm/skills/motion-design
-- repo_url: _local/ops-doc-generator
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/ops-doc-generator
-  - .claude/skills/ops-doc-generator
-  - .cursor/skills/ops-doc-generator
-  - .github/skills/ops-doc-generator
-  - .opencode/skills/ops-doc-generator
-  source: local
-  local_path: ./.apm/skills/ops-doc-generator
-- repo_url: _local/remotion-best-practices
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/remotion-best-practices
-  - .claude/skills/remotion-best-practices
-  - .cursor/skills/remotion-best-practices
-  - .github/skills/remotion-best-practices
-  - .opencode/skills/remotion-best-practices
-  source: local
-  local_path: ./.apm/skills/remotion-best-practices
-- repo_url: _local/sitemap-generator
+  content_hash: sha256:b2b576363074fb234a4afd25e72842b29c244a8d43e3ec778abca4a9a5090f78
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
+  virtual_path: skills/sitemap-generator
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/sitemap-generator
@@ -170,29 +92,25 @@ dependencies:
   - .cursor/skills/sitemap-generator
   - .github/skills/sitemap-generator
   - .opencode/skills/sitemap-generator
-  source: local
-  local_path: ./.apm/skills/sitemap-generator
-- repo_url: _local/tailwind-styling-review
+  content_hash: sha256:151fb951fdacb87c073164a94d6d3a0fc9db832cddc5d22a3205b5d1fe4a038d
+- repo_url: LottieFiles/motion-design-skill
+  host: github.com
+  resolved_commit: b6606e101601ef027f01729a7289e97c329ad0cd
+  virtual_path: skills/motion-design
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/tailwind-styling-review
-  - .claude/skills/tailwind-styling-review
-  - .cursor/skills/tailwind-styling-review
-  - .github/skills/tailwind-styling-review
-  - .opencode/skills/tailwind-styling-review
-  source: local
-  local_path: ./.apm/skills/tailwind-styling-review
-- repo_url: _local/wireframe
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/wireframe
-  - .claude/skills/wireframe
-  - .cursor/skills/wireframe
-  - .github/skills/wireframe
-  - .opencode/skills/wireframe
-  source: local
-  local_path: ./.apm/skills/wireframe
-- repo_url: _local/wordpress-router
+  - .agents/skills/motion-design
+  - .claude/skills/motion-design
+  - .cursor/skills/motion-design
+  - .github/skills/motion-design
+  - .opencode/skills/motion-design
+  content_hash: sha256:6ba0c33805580b781c3f0fa03132af2c93c480f689524440dc271a9656d81f03
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wordpress-router
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wordpress-router
@@ -200,9 +118,12 @@ dependencies:
   - .cursor/skills/wordpress-router
   - .github/skills/wordpress-router
   - .opencode/skills/wordpress-router
-  source: local
-  local_path: ./.apm/skills/wordpress-router
-- repo_url: _local/wp-abilities-api
+  content_hash: sha256:c2535c1291a9b527b5261ff4ab49552729088348a6687b8d9232d720a843ee57
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-abilities-api
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-abilities-api
@@ -210,9 +131,12 @@ dependencies:
   - .cursor/skills/wp-abilities-api
   - .github/skills/wp-abilities-api
   - .opencode/skills/wp-abilities-api
-  source: local
-  local_path: ./.apm/skills/wp-abilities-api
-- repo_url: _local/wp-block-development
+  content_hash: sha256:7c1e379e6e96ac9b167b4f5c87745d36a89a1ba23a08e6c9f347981dba312b8a
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-block-development
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-block-development
@@ -220,9 +144,12 @@ dependencies:
   - .cursor/skills/wp-block-development
   - .github/skills/wp-block-development
   - .opencode/skills/wp-block-development
-  source: local
-  local_path: ./.apm/skills/wp-block-development
-- repo_url: _local/wp-block-themes
+  content_hash: sha256:0fd90154241e8bc1620a1e3048bca2d018b624b0df0c76345986840f47a5a8b1
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-block-themes
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-block-themes
@@ -230,9 +157,12 @@ dependencies:
   - .cursor/skills/wp-block-themes
   - .github/skills/wp-block-themes
   - .opencode/skills/wp-block-themes
-  source: local
-  local_path: ./.apm/skills/wp-block-themes
-- repo_url: _local/wp-interactivity-api
+  content_hash: sha256:3896ee6ccf113852c45d428a46c5b4e659d64835ca25f3633d816254b9dd1454
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-interactivity-api
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-interactivity-api
@@ -240,9 +170,12 @@ dependencies:
   - .cursor/skills/wp-interactivity-api
   - .github/skills/wp-interactivity-api
   - .opencode/skills/wp-interactivity-api
-  source: local
-  local_path: ./.apm/skills/wp-interactivity-api
-- repo_url: _local/wp-performance
+  content_hash: sha256:fbe4385bdeeaa48fd4a80b362c55f91e60483caa05b88d5379a8031c23769992
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-performance
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-performance
@@ -250,9 +183,12 @@ dependencies:
   - .cursor/skills/wp-performance
   - .github/skills/wp-performance
   - .opencode/skills/wp-performance
-  source: local
-  local_path: ./.apm/skills/wp-performance
-- repo_url: _local/wp-phpstan
+  content_hash: sha256:1fb79b679b8f799d1285f8f254d4bc12056cff3dac82ab1a8c67da67e7fb0dde
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-phpstan
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-phpstan
@@ -260,9 +196,12 @@ dependencies:
   - .cursor/skills/wp-phpstan
   - .github/skills/wp-phpstan
   - .opencode/skills/wp-phpstan
-  source: local
-  local_path: ./.apm/skills/wp-phpstan
-- repo_url: _local/wp-playground
+  content_hash: sha256:9f00543fbf856319d1d490c31a7cd8558cae6630a7b27f8ced2dddfcacb97ca3
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-playground
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-playground
@@ -270,9 +209,12 @@ dependencies:
   - .cursor/skills/wp-playground
   - .github/skills/wp-playground
   - .opencode/skills/wp-playground
-  source: local
-  local_path: ./.apm/skills/wp-playground
-- repo_url: _local/wp-plugin-development
+  content_hash: sha256:9a330cfdcb11919572ce01a26826f43889b51af493f10355d080d15ac061c952
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-plugin-development
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-plugin-development
@@ -280,9 +222,12 @@ dependencies:
   - .cursor/skills/wp-plugin-development
   - .github/skills/wp-plugin-development
   - .opencode/skills/wp-plugin-development
-  source: local
-  local_path: ./.apm/skills/wp-plugin-development
-- repo_url: _local/wp-project-triage
+  content_hash: sha256:c15d14c02eb0a2fd0618068cc941631716280dc74150feef60cb9346e55cff37
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-project-triage
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-project-triage
@@ -290,9 +235,12 @@ dependencies:
   - .cursor/skills/wp-project-triage
   - .github/skills/wp-project-triage
   - .opencode/skills/wp-project-triage
-  source: local
-  local_path: ./.apm/skills/wp-project-triage
-- repo_url: _local/wp-rest-api
+  content_hash: sha256:3c480661aa791ae3f8090ed521f50a9123b1d5e4311e216286008bd9f981cd44
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-rest-api
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-rest-api
@@ -300,9 +248,12 @@ dependencies:
   - .cursor/skills/wp-rest-api
   - .github/skills/wp-rest-api
   - .opencode/skills/wp-rest-api
-  source: local
-  local_path: ./.apm/skills/wp-rest-api
-- repo_url: _local/wp-wpcli-and-ops
+  content_hash: sha256:2876f8a37d71de346e7a92a4e60530ba536c8ad82fdf89dc200c3ae34fa6c4ec
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wp-wpcli-and-ops
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wp-wpcli-and-ops
@@ -310,9 +261,12 @@ dependencies:
   - .cursor/skills/wp-wpcli-and-ops
   - .github/skills/wp-wpcli-and-ops
   - .opencode/skills/wp-wpcli-and-ops
-  source: local
-  local_path: ./.apm/skills/wp-wpcli-and-ops
-- repo_url: _local/wpds
+  content_hash: sha256:2554ec9c62e5221c2e232543ebe6699e9f9c28f5270304aad0ad1843fe3f38d6
+- repo_url: WordPress/agent-skills
+  host: github.com
+  resolved_commit: c5c0697b120ec00e8fcf6a265f161c61dbc2581c
+  virtual_path: skills/wpds
+  is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .agents/skills/wpds
@@ -320,8 +274,7 @@ dependencies:
   - .cursor/skills/wpds
   - .github/skills/wpds
   - .opencode/skills/wpds
-  source: local
-  local_path: ./.apm/skills/wpds
+  content_hash: sha256:1a05f741c9a43026507c8c9641b2dbde4b4928a14038f97322c36ee8b1e88470
 - repo_url: browser-use/browser-use
   host: github.com
   resolved_commit: 702b7352c3dc1d39ab8daef2f076dfe7adcfa1c3
@@ -335,6 +288,19 @@ dependencies:
   - .github/skills/browser-use
   - .opencode/skills/browser-use
   content_hash: sha256:ea66f285ef69fb4fa4e750cde997e5425157bc9c3175c2ae68f7f52cd1b01e44
+- repo_url: figma/mcp-server-guide
+  host: github.com
+  resolved_commit: 9680714bad40503ef37a9f815fd1d2cd15150af4
+  virtual_path: skills/figma-use
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/figma-use
+  - .claude/skills/figma-use
+  - .cursor/skills/figma-use
+  - .github/skills/figma-use
+  - .opencode/skills/figma-use
+  content_hash: sha256:6eb1445856a2529422ee8a4e0fdb96d2c021d8673bd6b3d1c86c36e08856151e
 - repo_url: greensock/gsap-skills
   host: github.com
   resolved_commit: 03d9f0c3dbf91e0b60582b64ed040c8911ca0174
@@ -491,6 +457,19 @@ dependencies:
   - .github/skills/fixing-motion-performance
   - .opencode/skills/fixing-motion-performance
   content_hash: sha256:426dcf33f23419643f2aab71e2253e1a5b5684a808fabb8a4ad135e489ed7a0f
+- repo_url: johnlindquist/claude-workshop-skills
+  host: github.com
+  resolved_commit: bc9f16a437b338f1e425864a5dff57bd51ed02b0
+  virtual_path: skills/chrome-devtools
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/chrome-devtools
+  - .claude/skills/chrome-devtools
+  - .cursor/skills/chrome-devtools
+  - .github/skills/chrome-devtools
+  - .opencode/skills/chrome-devtools
+  content_hash: sha256:eccf354cf5391d05dd572a38229ccd7aae255529796e5b294e87fa68266c3605
 - repo_url: kamranahmedse/diffity
   host: github.com
   resolved_commit: 15f1e3c591f81474e167c4f62f076f6e7e573c5f
@@ -530,6 +509,71 @@ dependencies:
   - .github/skills/diffity-review
   - .opencode/skills/diffity-review
   content_hash: sha256:04fde217ea47203212b2dc525cec668f5341415d00eb5eca622a5397b62573eb
+- repo_url: openai/skills
+  host: github.com
+  resolved_commit: e940b8a86138adf03972802b990a1dfc57fcbf09
+  virtual_path: skills/.curated/cloudflare-deploy
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/cloudflare-deploy
+  - .claude/skills/cloudflare-deploy
+  - .cursor/skills/cloudflare-deploy
+  - .github/skills/cloudflare-deploy
+  - .opencode/skills/cloudflare-deploy
+  content_hash: sha256:b30a33d0045753a1116ccc47e55585018e949ba788e9f80ef0c3c6a6c9199e87
+- repo_url: openai/skills
+  host: github.com
+  resolved_commit: e940b8a86138adf03972802b990a1dfc57fcbf09
+  virtual_path: skills/.curated/figma
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/figma
+  - .claude/skills/figma
+  - .cursor/skills/figma
+  - .github/skills/figma
+  - .opencode/skills/figma
+  content_hash: sha256:14b556ff4b7af51749e47a1a4b95be7f2961d6be4f883553ff40caece4e354da
+- repo_url: openai/skills
+  host: github.com
+  resolved_commit: e940b8a86138adf03972802b990a1dfc57fcbf09
+  virtual_path: skills/.curated/figma-implement-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/figma-implement-design
+  - .claude/skills/figma-implement-design
+  - .cursor/skills/figma-implement-design
+  - .github/skills/figma-implement-design
+  - .opencode/skills/figma-implement-design
+  content_hash: sha256:f6f37d1dfb6031016f4f5c2d30d464bd6b2424e5eccad1ba83ca4a003bbb9f62
+- repo_url: openai/skills
+  host: github.com
+  resolved_commit: e940b8a86138adf03972802b990a1dfc57fcbf09
+  virtual_path: skills/.curated/gh-address-comments
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/gh-address-comments
+  - .claude/skills/gh-address-comments
+  - .cursor/skills/gh-address-comments
+  - .github/skills/gh-address-comments
+  - .opencode/skills/gh-address-comments
+  content_hash: sha256:068d34fb59cb97a39aea3de1708877b6a01210d02fa7eda5e74fc8277ed52916
+- repo_url: openai/skills
+  host: github.com
+  resolved_commit: e940b8a86138adf03972802b990a1dfc57fcbf09
+  virtual_path: skills/.curated/gh-fix-ci
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/gh-fix-ci
+  - .claude/skills/gh-fix-ci
+  - .cursor/skills/gh-fix-ci
+  - .github/skills/gh-fix-ci
+  - .opencode/skills/gh-fix-ci
+  content_hash: sha256:02b4d97e4bd91e342e3ec3efa06b7871097d6a64e8398f4ed5b69c64d8d902fb
 - repo_url: proffesor-for-testing/agentic-qe
   host: github.com
   resolved_commit: c9cf4bb194a0ae2fb76925f888baefa45738b71e
@@ -543,6 +587,19 @@ dependencies:
   - .github/skills/github-project-management
   - .opencode/skills/github-project-management
   content_hash: sha256:76ef2d620f83d0b759882bbafd3ecbf5769e31eb8d045eae19a68cee4336838b
+- repo_url: remotion-dev/skills
+  host: github.com
+  resolved_commit: 41a3b0685bc648c5f66b3c81d67c61589875eefb
+  virtual_path: skills/remotion
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/remotion
+  - .claude/skills/remotion
+  - .cursor/skills/remotion
+  - .github/skills/remotion
+  - .opencode/skills/remotion
+  content_hash: sha256:479381770be427ae3e807b790af6774925413cf185c2da91f6d7a75974212204
 - repo_url: resend/email-best-practices
   host: github.com
   resolved_commit: 08550bd9a6d82621676b4ca3733bfbf631bf2800
@@ -580,3 +637,14 @@ dependencies:
   - .github/skills/find-skills
   - .opencode/skills/find-skills
   content_hash: sha256:d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461
+- repo_url: yhassy/wireframe-skill
+  host: github.com
+  resolved_commit: 948d4331343b18d913d5bc502da72ed0c5f19101
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/wireframe-skill
+  - .claude/skills/wireframe-skill
+  - .cursor/skills/wireframe-skill
+  - .github/skills/wireframe-skill
+  - .opencode/skills/wireframe-skill
+  content_hash: sha256:3898324327332359e800cae46b04848a8fa9041b1f9464314c6a5a7118bf25bc

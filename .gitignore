@@ -1,11 +1,11 @@
 **/.DS_Store
 **/dot_DS_Store
-.claude/settings.local.json
 
-# APM — generated output
+# APM — generated output (apm install で生成)
 apm_modules/
 .agents/
 .claude/skills/
+.claude/settings.local.json
 .cursor/
 .github/skills/
 .opencode/
