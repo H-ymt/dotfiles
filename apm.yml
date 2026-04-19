@@ -13,6 +13,7 @@ dependencies:
     - H-ymt/skills/skills/lighthouse-perf-report
 
     - H-ymt/skills/skills/sitemap-generator
+    - H-ymt/skills/skills/empirical-prompt-tuning
 
 
     # --- 外部スキル (GitHub) ---
