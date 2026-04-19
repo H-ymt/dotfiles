@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-04-18T12:06:33.707076+00:00'
+generated_at: '2026-04-19T08:09:15.785180+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -15,6 +15,19 @@ dependencies:
   - .github/skills/architecture-diagram
   - .opencode/skills/architecture-diagram
   content_hash: sha256:daba7c8db117230b136deba88f7faffe52e2372ae2007f647d2768c3b28ec8fa
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 863dca1710c62a7c7cb5687e9b352efe11fb7045
+  virtual_path: skills/empirical-prompt-tuning
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/empirical-prompt-tuning
+  - .claude/skills/empirical-prompt-tuning
+  - .cursor/skills/empirical-prompt-tuning
+  - .github/skills/empirical-prompt-tuning
+  - .opencode/skills/empirical-prompt-tuning
+  content_hash: sha256:92d054be3c36e62f693ff3d00bef23aa53d9ea867ae0485ad41cdc0250238dd5
 - repo_url: H-ymt/skills
   host: github.com
   resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
