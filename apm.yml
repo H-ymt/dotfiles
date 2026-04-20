@@ -2,74 +2,57 @@ name: chezmoi
 version: 1.0.0
 description: yamato_handai dotfiles — agent skills managed by APM
 author: H-ymt
-
 dependencies:
   apm:
-    # --- 自作スキル (H-ymt/skills) ---
-    - H-ymt/skills/skills/figma-design-tokens
-    - H-ymt/skills/skills/figma-rule
-    - H-ymt/skills/skills/github-pr-review-operation
-    - H-ymt/skills/skills/h10o-review
-    - H-ymt/skills/skills/lighthouse-perf-report
-
-    - H-ymt/skills/skills/sitemap-generator
-    - H-ymt/skills/skills/empirical-prompt-tuning
-
-
-    # --- 外部スキル (GitHub) ---
-    # OpenAI curated
-    - openai/skills/skills/.curated/cloudflare-deploy
-    - openai/skills/skills/.curated/figma
-    - openai/skills/skills/.curated/figma-implement-design
-    - openai/skills/skills/.curated/gh-address-comments
-    - openai/skills/skills/.curated/gh-fix-ci
-    # Figma
-    - figma/mcp-server-guide/skills/figma-use
-    # Others
-    - Cocoon-AI/architecture-diagram-generator/architecture-diagram
-    - johnlindquist/claude-workshop-skills/skills/chrome-devtools
-    - LottieFiles/motion-design-skill/skills/motion-design
-    - remotion-dev/skills/skills/remotion
-    - yhassy/wireframe-skill
-    # WordPress
-    - WordPress/agent-skills/skills/wordpress-router
-    - WordPress/agent-skills/skills/wp-abilities-api
-    - WordPress/agent-skills/skills/wp-block-development
-    - WordPress/agent-skills/skills/wp-block-themes
-    - WordPress/agent-skills/skills/wp-interactivity-api
-    - WordPress/agent-skills/skills/wp-performance
-    - WordPress/agent-skills/skills/wp-phpstan
-    - WordPress/agent-skills/skills/wp-playground
-    - WordPress/agent-skills/skills/wp-plugin-development
-    - WordPress/agent-skills/skills/wp-project-triage
-    - WordPress/agent-skills/skills/wp-rest-api
-    - WordPress/agent-skills/skills/wp-wpcli-and-ops
-    - WordPress/agent-skills/skills/wpds
-    # GSAP
-    - greensock/gsap-skills/skills/gsap-core
-    - greensock/gsap-skills/skills/gsap-frameworks
-    - greensock/gsap-skills/skills/gsap-performance
-    - greensock/gsap-skills/skills/gsap-plugins
-    - greensock/gsap-skills/skills/gsap-react
-    - greensock/gsap-skills/skills/gsap-scrolltrigger
-    - greensock/gsap-skills/skills/gsap-timeline
-    - greensock/gsap-skills/skills/gsap-utils
-    # Diffity
-    - kamranahmedse/diffity/skills/diffity-diff
-    - kamranahmedse/diffity/skills/diffity-resolve
-    - kamranahmedse/diffity/skills/diffity-review
-    # UI Skills
-    - ibelick/ui-skills/skills/baseline-ui
-    - ibelick/ui-skills/skills/fixing-accessibility
-    - ibelick/ui-skills/skills/fixing-metadata
-    - ibelick/ui-skills/skills/fixing-motion-performance
-    # Others
-    - browser-use/browser-use/skills/browser-use
-    - resend/email-best-practices
-    - supabase/agent-skills/skills/supabase-postgres-best-practices
-    - vercel-labs/skills/skills/find-skills
-    - proffesor-for-testing/agentic-qe/.claude/skills/github-project-management
-
+  - H-ymt/skills/skills/figma-design-tokens
+  - H-ymt/skills/skills/figma-rule
+  - H-ymt/skills/skills/github-pr-review-operation
+  - H-ymt/skills/skills/h10o-review
+  - H-ymt/skills/skills/lighthouse-perf-report
+  - H-ymt/skills/skills/empirical-prompt-tuning
+  - openai/skills/skills/.curated/cloudflare-deploy
+  - openai/skills/skills/.curated/figma
+  - openai/skills/skills/.curated/figma-implement-design
+  - openai/skills/skills/.curated/gh-address-comments
+  - openai/skills/skills/.curated/gh-fix-ci
+  - figma/mcp-server-guide/skills/figma-use
+  - Cocoon-AI/architecture-diagram-generator/architecture-diagram
+  - johnlindquist/claude-workshop-skills/skills/chrome-devtools
+  - LottieFiles/motion-design-skill/skills/motion-design
+  - remotion-dev/skills/skills/remotion
+  - yhassy/wireframe-skill
+  - WordPress/agent-skills/skills/wordpress-router
+  - WordPress/agent-skills/skills/wp-abilities-api
+  - WordPress/agent-skills/skills/wp-block-development
+  - WordPress/agent-skills/skills/wp-block-themes
+  - WordPress/agent-skills/skills/wp-interactivity-api
+  - WordPress/agent-skills/skills/wp-performance
+  - WordPress/agent-skills/skills/wp-phpstan
+  - WordPress/agent-skills/skills/wp-playground
+  - WordPress/agent-skills/skills/wp-plugin-development
+  - WordPress/agent-skills/skills/wp-project-triage
+  - WordPress/agent-skills/skills/wp-rest-api
+  - WordPress/agent-skills/skills/wp-wpcli-and-ops
+  - WordPress/agent-skills/skills/wpds
+  - greensock/gsap-skills/skills/gsap-core
+  - greensock/gsap-skills/skills/gsap-frameworks
+  - greensock/gsap-skills/skills/gsap-performance
+  - greensock/gsap-skills/skills/gsap-plugins
+  - greensock/gsap-skills/skills/gsap-react
+  - greensock/gsap-skills/skills/gsap-scrolltrigger
+  - greensock/gsap-skills/skills/gsap-timeline
+  - greensock/gsap-skills/skills/gsap-utils
+  - kamranahmedse/diffity/skills/diffity-diff
+  - kamranahmedse/diffity/skills/diffity-resolve
+  - kamranahmedse/diffity/skills/diffity-review
+  - ibelick/ui-skills/skills/baseline-ui
+  - ibelick/ui-skills/skills/fixing-accessibility
+  - ibelick/ui-skills/skills/fixing-metadata
+  - ibelick/ui-skills/skills/fixing-motion-performance
+  - browser-use/browser-use/skills/browser-use
+  - resend/email-best-practices
+  - supabase/agent-skills/skills/supabase-postgres-best-practices
+  - vercel-labs/skills/skills/find-skills
+  - proffesor-for-testing/agentic-qe/.claude/skills/github-project-management
   mcp: []
-
 scripts: {}

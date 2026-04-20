@@ -93,19 +93,6 @@ dependencies:
   - .github/skills/lighthouse-perf-report
   - .opencode/skills/lighthouse-perf-report
   content_hash: sha256:b2b576363074fb234a4afd25e72842b29c244a8d43e3ec778abca4a9a5090f78
-- repo_url: H-ymt/skills
-  host: github.com
-  resolved_commit: 853df6def19b7c649ea462800e650947759d87c1
-  virtual_path: skills/sitemap-generator
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/sitemap-generator
-  - .claude/skills/sitemap-generator
-  - .cursor/skills/sitemap-generator
-  - .github/skills/sitemap-generator
-  - .opencode/skills/sitemap-generator
-  content_hash: sha256:151fb951fdacb87c073164a94d6d3a0fc9db832cddc5d22a3205b5d1fe4a038d
 - repo_url: LottieFiles/motion-design-skill
   host: github.com
   resolved_commit: b6606e101601ef027f01729a7289e97c329ad0cd
