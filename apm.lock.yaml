@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-04-19T08:09:15.785180+00:00'
+generated_at: '2026-04-20T09:35:01.272082+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -288,6 +288,110 @@ dependencies:
   - .github/skills/browser-use
   - .opencode/skills/browser-use
   content_hash: sha256:ea66f285ef69fb4fa4e750cde997e5425157bc9c3175c2ae68f7f52cd1b01e44
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/agents-sdk
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/agents-sdk
+  - .claude/skills/agents-sdk
+  - .cursor/skills/agents-sdk
+  - .github/skills/agents-sdk
+  - .opencode/skills/agents-sdk
+  content_hash: sha256:394a348f5b5bb38ee976b3da026449db8d0807e09010512f5c57596501b084ff
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/cloudflare
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/cloudflare
+  - .claude/skills/cloudflare
+  - .cursor/skills/cloudflare
+  - .github/skills/cloudflare
+  - .opencode/skills/cloudflare
+  content_hash: sha256:8043d552906016fc356596af82ecc5c3af8ded8bcd13575b4408973226fcf627
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/cloudflare-email-service
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/cloudflare-email-service
+  - .claude/skills/cloudflare-email-service
+  - .cursor/skills/cloudflare-email-service
+  - .github/skills/cloudflare-email-service
+  - .opencode/skills/cloudflare-email-service
+  content_hash: sha256:3d0910288b7322914456e3ece0b05a8a15a916f00d3139a7680c4a4c53eae0d5
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/durable-objects
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/durable-objects
+  - .claude/skills/durable-objects
+  - .cursor/skills/durable-objects
+  - .github/skills/durable-objects
+  - .opencode/skills/durable-objects
+  content_hash: sha256:3ccddccdde29da749c4d87c13e445473a2394890e016a60c960efa781a4b9e29
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/sandbox-sdk
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/sandbox-sdk
+  - .claude/skills/sandbox-sdk
+  - .cursor/skills/sandbox-sdk
+  - .github/skills/sandbox-sdk
+  - .opencode/skills/sandbox-sdk
+  content_hash: sha256:681292bec775052a2d4ceb2b202cdf9195a070bf13ba6949e564c5cc2a004fa0
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/web-perf
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/web-perf
+  - .claude/skills/web-perf
+  - .cursor/skills/web-perf
+  - .github/skills/web-perf
+  - .opencode/skills/web-perf
+  content_hash: sha256:7ae53856c320574f7440f50aef7892f96837eec9fd49d329d049d432fb4b299a
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/workers-best-practices
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/workers-best-practices
+  - .claude/skills/workers-best-practices
+  - .cursor/skills/workers-best-practices
+  - .github/skills/workers-best-practices
+  - .opencode/skills/workers-best-practices
+  content_hash: sha256:ebd71bed0ade41e2d4839b0d280ec6d93dced0d19f568d27b92da00e4aa9943c
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 0397d7d88fa6ac7517a88389622eb0799e86ded2
+  virtual_path: skills/wrangler
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/wrangler
+  - .claude/skills/wrangler
+  - .cursor/skills/wrangler
+  - .github/skills/wrangler
+  - .opencode/skills/wrangler
+  content_hash: sha256:a27fded44ce73b7ef69b1b52fcdf0cdde9c2b17f345b761bf11ca32d37da2220
 - repo_url: figma/mcp-server-guide
   host: github.com
   resolved_commit: 9680714bad40503ef37a9f815fd1d2cd15150af4

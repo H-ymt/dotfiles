@@ -51,6 +51,14 @@ dependencies:
   - ibelick/ui-skills/skills/fixing-motion-performance
   - browser-use/browser-use/skills/browser-use
   - resend/email-best-practices
+  - cloudflare/skills/skills/agents-sdk
+  - cloudflare/skills/skills/cloudflare-email-service
+  - cloudflare/skills/skills/cloudflare
+  - cloudflare/skills/skills/durable-objects
+  - cloudflare/skills/skills/sandbox-sdk
+  - cloudflare/skills/skills/web-perf
+  - cloudflare/skills/skills/workers-best-practices
+  - cloudflare/skills/skills/wrangler
   - supabase/agent-skills/skills/supabase-postgres-best-practices
   - vercel-labs/skills/skills/find-skills
   - proffesor-for-testing/agentic-qe/.claude/skills/github-project-management
