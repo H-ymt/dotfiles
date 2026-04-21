@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-04-20T09:35:01.272082+00:00'
+generated_at: '2026-04-21T03:43:29.012266+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -613,6 +613,58 @@ dependencies:
   - .github/skills/diffity-review
   - .opencode/skills/diffity-review
   content_hash: sha256:04fde217ea47203212b2dc525cec668f5341415d00eb5eca622a5397b62573eb
+- repo_url: masuP9/a11y-specialist-skills
+  host: github.com
+  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  virtual_path: skills/auditing-wcag
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/auditing-wcag
+  - .claude/skills/auditing-wcag
+  - .cursor/skills/auditing-wcag
+  - .github/skills/auditing-wcag
+  - .opencode/skills/auditing-wcag
+  content_hash: sha256:8fe17a17d94be34b278d018319b5fe1cd8537dda3ff76644bb43971142adae44
+- repo_url: masuP9/a11y-specialist-skills
+  host: github.com
+  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  virtual_path: skills/planning-a11y-improvement
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/planning-a11y-improvement
+  - .claude/skills/planning-a11y-improvement
+  - .cursor/skills/planning-a11y-improvement
+  - .github/skills/planning-a11y-improvement
+  - .opencode/skills/planning-a11y-improvement
+  content_hash: sha256:39f748c1a04c064cff54731aedb2461e78da59c9e05f595896c7b1d98fae4da9
+- repo_url: masuP9/a11y-specialist-skills
+  host: github.com
+  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  virtual_path: skills/planning-wcag-audit
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/planning-wcag-audit
+  - .claude/skills/planning-wcag-audit
+  - .cursor/skills/planning-wcag-audit
+  - .github/skills/planning-wcag-audit
+  - .opencode/skills/planning-wcag-audit
+  content_hash: sha256:4144bd9b519f91a4152c2472c2e52329c31db72d509da6fd4c518985fdcbca75
+- repo_url: masuP9/a11y-specialist-skills
+  host: github.com
+  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  virtual_path: skills/reviewing-a11y
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/reviewing-a11y
+  - .claude/skills/reviewing-a11y
+  - .cursor/skills/reviewing-a11y
+  - .github/skills/reviewing-a11y
+  - .opencode/skills/reviewing-a11y
+  content_hash: sha256:aafff2442343ca8d1ba109c4a2c658b8c424447d23eb227d5febed90186b8be2
 - repo_url: openai/skills
   host: github.com
   resolved_commit: e940b8a86138adf03972802b990a1dfc57fcbf09
