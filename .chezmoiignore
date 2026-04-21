@@ -11,6 +11,9 @@ AGENTS.md
 CLAUDE.md
 README.md
 
+# Brewfile — chezmoi ソース専用
+Brewfile
+
 # oh-my-zsh
 .oh-my-zsh/.git/FETCH_HEAD
 .oh-my-zsh/.git/index.lock
