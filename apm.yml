@@ -42,9 +42,6 @@ dependencies:
   - greensock/gsap-skills/skills/gsap-scrolltrigger
   - greensock/gsap-skills/skills/gsap-timeline
   - greensock/gsap-skills/skills/gsap-utils
-  - kamranahmedse/diffity/skills/diffity-diff
-  - kamranahmedse/diffity/skills/diffity-resolve
-  - kamranahmedse/diffity/skills/diffity-review
   - ibelick/ui-skills/skills/baseline-ui
   - ibelick/ui-skills/skills/fixing-accessibility
   - ibelick/ui-skills/skills/fixing-metadata
