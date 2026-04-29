@@ -16,4 +16,4 @@ if [ ! -f "$BREWFILE" ]; then
 fi
 
 echo "[brew] Installing packages from Brewfile..."
-brew bundle --file="$BREWFILE" --no-lock
+brew bundle --file="$BREWFILE"

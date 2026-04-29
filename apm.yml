@@ -63,5 +63,12 @@ dependencies:
   - masuP9/a11y-specialist-skills/skills/planning-a11y-improvement
   - masuP9/a11y-specialist-skills/skills/planning-wcag-audit
   - masuP9/a11y-specialist-skills/skills/reviewing-a11y
+  - yoshiko-pg/difit/skills/difit
+  - yoshiko-pg/difit/skills/difit-review
+  - kepano/obsidian-skills/skills/defuddle
+  - kepano/obsidian-skills/skills/json-canvas
+  - kepano/obsidian-skills/skills/obsidian-bases
+  - kepano/obsidian-skills/skills/obsidian-cli
+  - kepano/obsidian-skills/skills/obsidian-markdown
   mcp: []
 scripts: {}

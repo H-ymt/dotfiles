@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-04-21T03:43:29.012266+00:00'
+generated_at: '2026-04-29T08:44:23.934069+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -574,6 +574,71 @@ dependencies:
   - .github/skills/chrome-devtools
   - .opencode/skills/chrome-devtools
   content_hash: sha256:eccf354cf5391d05dd572a38229ccd7aae255529796e5b294e87fa68266c3605
+- repo_url: kepano/obsidian-skills
+  host: github.com
+  resolved_commit: fa1e131a014576ff8f8919f191a7ca8d8fded39b
+  virtual_path: skills/defuddle
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/defuddle
+  - .claude/skills/defuddle
+  - .cursor/skills/defuddle
+  - .github/skills/defuddle
+  - .opencode/skills/defuddle
+  content_hash: sha256:0ed68bc3e818ba0e6b8d192357ea3daaf552a3893f8854e7fd43c06831f91323
+- repo_url: kepano/obsidian-skills
+  host: github.com
+  resolved_commit: fa1e131a014576ff8f8919f191a7ca8d8fded39b
+  virtual_path: skills/json-canvas
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/json-canvas
+  - .claude/skills/json-canvas
+  - .cursor/skills/json-canvas
+  - .github/skills/json-canvas
+  - .opencode/skills/json-canvas
+  content_hash: sha256:b2296db7a2c7582b96ccdb14815873985250803ed9f626dbc1180821e9bd7691
+- repo_url: kepano/obsidian-skills
+  host: github.com
+  resolved_commit: fa1e131a014576ff8f8919f191a7ca8d8fded39b
+  virtual_path: skills/obsidian-bases
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/obsidian-bases
+  - .claude/skills/obsidian-bases
+  - .cursor/skills/obsidian-bases
+  - .github/skills/obsidian-bases
+  - .opencode/skills/obsidian-bases
+  content_hash: sha256:850405f6e6b3c9b8472d2a829f8a74d4ae240dd027502950c6e8748817637126
+- repo_url: kepano/obsidian-skills
+  host: github.com
+  resolved_commit: fa1e131a014576ff8f8919f191a7ca8d8fded39b
+  virtual_path: skills/obsidian-cli
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/obsidian-cli
+  - .claude/skills/obsidian-cli
+  - .cursor/skills/obsidian-cli
+  - .github/skills/obsidian-cli
+  - .opencode/skills/obsidian-cli
+  content_hash: sha256:f46ae626875f7e47c410c2ee93896c4526024ebe127719e8fb430261b5677edc
+- repo_url: kepano/obsidian-skills
+  host: github.com
+  resolved_commit: fa1e131a014576ff8f8919f191a7ca8d8fded39b
+  virtual_path: skills/obsidian-markdown
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/obsidian-markdown
+  - .claude/skills/obsidian-markdown
+  - .cursor/skills/obsidian-markdown
+  - .github/skills/obsidian-markdown
+  - .opencode/skills/obsidian-markdown
+  content_hash: sha256:610283f884f8af83ca1c4fc0864da4d37db453456c98ef0dd5adcb91603488ce
 - repo_url: masuP9/a11y-specialist-skills
   host: github.com
   resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
@@ -765,3 +830,29 @@ dependencies:
   - .github/skills/wireframe-skill
   - .opencode/skills/wireframe-skill
   content_hash: sha256:3898324327332359e800cae46b04848a8fa9041b1f9464314c6a5a7118bf25bc
+- repo_url: yoshiko-pg/difit
+  host: github.com
+  resolved_commit: 12989f2cc6ebbb2fe7885f5c785ad06d17b24e98
+  virtual_path: skills/difit
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/difit
+  - .claude/skills/difit
+  - .cursor/skills/difit
+  - .github/skills/difit
+  - .opencode/skills/difit
+  content_hash: sha256:d7183ec34bc1b776e8e54cf34efd1bf8be8b04bdb424e5efcfbb3faa5f095db7
+- repo_url: yoshiko-pg/difit
+  host: github.com
+  resolved_commit: 12989f2cc6ebbb2fe7885f5c785ad06d17b24e98
+  virtual_path: skills/difit-review
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/difit-review
+  - .claude/skills/difit-review
+  - .cursor/skills/difit-review
+  - .github/skills/difit-review
+  - .opencode/skills/difit-review
+  content_hash: sha256:4f95a432d8a359a2c3a8d320b98c871dda13d03b8583fe202528890e767e8c30
