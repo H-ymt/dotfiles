@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-04-29T14:33:18.986061+00:00'
+generated_at: '2026-04-30T06:15:20.854150+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -691,6 +691,19 @@ dependencies:
   - .github/skills/reviewing-a11y
   - .opencode/skills/reviewing-a11y
   content_hash: sha256:aafff2442343ca8d1ba109c4a2c658b8c424447d23eb227d5febed90186b8be2
+- repo_url: nulab/bee
+  host: github.com
+  resolved_commit: 276f55c7a1e90d5cb6b7b82bb4ced06d8da51f34
+  virtual_path: skills/backlog-notation
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/backlog-notation
+  - .claude/skills/backlog-notation
+  - .cursor/skills/backlog-notation
+  - .github/skills/backlog-notation
+  - .opencode/skills/backlog-notation
+  content_hash: sha256:9585f0a9646290b4e8c5f67a616fb2b4ddbe976c060f9c3e9e75354f8586100e
 - repo_url: nulab/bee
   host: github.com
   resolved_commit: 276f55c7a1e90d5cb6b7b82bb4ced06d8da51f34
