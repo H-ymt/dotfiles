@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-04-30T06:15:20.854150+00:00'
+generated_at: '2026-04-30T09:00:04.847022+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -691,6 +691,19 @@ dependencies:
   - .github/skills/reviewing-a11y
   - .opencode/skills/reviewing-a11y
   content_hash: sha256:aafff2442343ca8d1ba109c4a2c658b8c424447d23eb227d5febed90186b8be2
+- repo_url: mattpocock/skills
+  host: github.com
+  resolved_commit: f71bb975bfae2dc0d31c529c7dd4a8479ecc3748
+  virtual_path: skills/productivity/grill-me
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/grill-me
+  - .claude/skills/grill-me
+  - .cursor/skills/grill-me
+  - .github/skills/grill-me
+  - .opencode/skills/grill-me
+  content_hash: sha256:784f0dbb7403b0f00324bce9a112f715342777a0daee7bbb7385f9c6f0a170ea
 - repo_url: nulab/bee
   host: github.com
   resolved_commit: 276f55c7a1e90d5cb6b7b82bb4ced06d8da51f34

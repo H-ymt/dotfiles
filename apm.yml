@@ -72,5 +72,6 @@ dependencies:
   - kepano/obsidian-skills/skills/obsidian-markdown
   - nulab/bee/skills/using-bee
   - nulab/bee/skills/backlog-notation
+  - mattpocock/skills/skills/productivity/grill-me
   mcp: []
 scripts: {}
