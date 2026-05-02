@@ -30,7 +30,7 @@ auto-update = check
 auto-update-channel = stable
 
 # extras
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-terminfo,ssh-env
 copy-on-select = clipboard
 
 # Custom Keybinds & Config (super represents cmd key on mac)
