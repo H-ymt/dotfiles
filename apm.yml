@@ -10,6 +10,7 @@ dependencies:
   - H-ymt/skills/skills/h10o-review
   - H-ymt/skills/skills/lighthouse-perf-report
   - H-ymt/skills/skills/empirical-prompt-tuning
+  - anthropics/skills/skills/frontend-design
   - openai/skills/skills/.curated/cloudflare-deploy
   - openai/skills/skills/.curated/figma
   - openai/skills/skills/.curated/figma-implement-design
