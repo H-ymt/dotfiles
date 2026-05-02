@@ -97,6 +97,22 @@ corepack disable pnpm 2>/dev/null
 # zoxied
 eval "$(zoxide init zsh)"
 
+# fzf (Ctrl+R history, Ctrl+T files, Alt+C cd)
+source <(fzf --zsh)
+
+# ghq + fzf でリポジトリにジャンプ (Ctrl+G)
+function ghq-fzf-repo() {
+  local selected
+  selected=$(ghq list | fzf --preview "eza -T --level=2 --color=always $(ghq root)/{}")
+  if [ -n "$selected" ]; then
+    BUFFER="cd $(ghq root)/$selected"
+    zle accept-line
+  fi
+  zle reset-prompt
+}
+zle -N ghq-fzf-repo
+bindkey '^G' ghq-fzf-repo
+
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
