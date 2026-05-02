@@ -52,6 +52,16 @@ apm uninstall owner/repo/path/to/skill
 chezmoi init <user>   # dotfiles clone + apply（run_after で apm install も自動実行）
 ```
 
+## npm グローバルツールの追加
+
+npm パッケージは `mise` で管理する。Brewfile には追加しない。
+
+1. `dot_config/mise/config.toml` に追加:
+   ```toml
+   "npm:<package-name>" = "latest"
+   ```
+2. `mise install npm:<package-name>` で即時インストール
+
 ## 注意事項
 
 - **スキル一覧はセッション開始時に読み込まれる。** 追加後は `/clear` または再起動が必要
