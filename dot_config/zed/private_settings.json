@@ -23,11 +23,11 @@
       "toolbar.background": "#151515",
       "terminal.background": "#151515",
 
-      "border": "#151515",
+      "border": "#1a1a1a",
       "border.variant": "#151515",
-      "border.focused": "#151515",
-      "panel.focused_border": "#151515",
-      "pane.focused_border": "#151515",
+      "border.focused": "#1a1a1a",
+      "panel.focused_border": "#1a1a1a",
+      "pane.focused_border": "#1a1a1a",
 
       "editor.document_highlight.read_background": "#00000000",
       "editor.document_highlight.write_background": "#00000000",
@@ -58,6 +58,11 @@
   },
   "agent_servers": {
     "claude-acp": {
+      "favorite_config_option_values": {
+        "model": [
+          "sonnet[1m]"
+        ]
+      },
       "type": "registry",
     },
     "opencode": {
@@ -99,7 +104,7 @@
   "format_on_save": "on",
   "terminal": {
     "button": true,
-    "font_family": "IBM Plex Sans",
+    "font_family": "Hack Nerd Font Propo",
     "font_size": 14.0,
     "env": {
       "Q_NEW_SESSION": "1",
