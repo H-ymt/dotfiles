@@ -8,8 +8,21 @@ if ! command -v apm >/dev/null 2>&1; then
   exit 0
 fi
 
-# CHEZMOI_SOURCE_DIR は chezmoi が自動でセットする環境変数
 cd "${CHEZMOI_SOURCE_DIR:-${HOME}/.local/share/chezmoi}"
 
+LOG_FILE="$(mktemp /tmp/apm-install-XXXXXX.log)"
+trap 'rm -f "$LOG_FILE"' EXIT
+
 echo "[apm] Installing agent skills..."
-apm install --target all 2>&1 | tail -5
+
+if apm install --target all 2>&1 | tee "$LOG_FILE"; then
+  echo "[apm] Done."
+  if grep -qi 'error\|failed\|fatal' "$LOG_FILE"; then
+    echo "[apm] WARNING: Errors detected:"
+    grep -i 'error\|failed\|fatal' "$LOG_FILE"
+  fi
+else
+  echo "[apm] FAILED. Full log:"
+  cat "$LOG_FILE"
+  exit 1
+fi

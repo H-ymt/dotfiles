@@ -6,7 +6,7 @@
 
 ```sh
 brew install chezmoi
-chezmoi init git@github.com:<User>/<Repository>.git
+chezmoi init git@github.com:H-ymt/dotfiles.git
 chezmoi apply
 
 # Agent Skills の配置

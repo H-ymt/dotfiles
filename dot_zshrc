@@ -1,7 +1,10 @@
+# Fish が主シェル。このファイルは SSH 接続時など Fish が使えない環境向けのフォールバック。
+# Fish: ~/.config/fish/config.fish
+
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
-# Homebrew (優先度を上げて Bash 5 を使用)
+# Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Initialize completions (must be before sheldon for compdef)
@@ -13,35 +16,7 @@ export ABBR_SET_EXPANSION_CURSOR=1
 # sheldon - zsh plugin manager
 eval "$(sheldon source 2>/dev/null)"
 
-
-# User configuration
-
-# Disable history expansion with '!' (allows using '!' in commands without escaping)
 setopt NO_BANG_HIST
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -49,55 +24,15 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-
-export PATH="/opt/homebrew/opt/php@8.2/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.2/sbin:$PATH"export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# eza
-alias ls="eza --icons"
-alias ll="eza -l --icons"
-# Shopify Hydrogen alias to local projects
-alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
-
-# ========================================
-# Git aliases (dynamic variable - cannot use abbr)
-# These use $(git_current_branch), $(git_main_branch), $(git_develop_branch)
-# which must be evaluated at runtime
-# ========================================
-alias gcm='git checkout $(git_main_branch)'
-alias gcd='git checkout $(git_develop_branch)'
-alias gswm='git switch $(git_main_branch)'
-alias gswd='git switch $(git_develop_branch)'
-alias gmom='git merge origin/$(git_main_branch)'
-alias gmum='git merge upstream/$(git_main_branch)'
-alias grbd='git rebase $(git_develop_branch)'
-alias grbm='git rebase $(git_main_branch)'
-alias grbom='git rebase origin/$(git_main_branch)'
-alias grbum='git rebase upstream/$(git_main_branch)'
-alias gprom='git pull --rebase origin $(git_main_branch)'
-alias gpromi='git pull --rebase=interactive origin $(git_main_branch)'
-alias gprum='git pull --rebase upstream $(git_main_branch)'
-alias gprumi='git pull --rebase=interactive upstream $(git_main_branch)'
-alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
-alias gpsupf='git push --set-upstream origin $(git_current_branch) --force-with-lease --force-if-includes'
-alias ggpull='git pull origin "$(git_current_branch)"'
-alias ggpush='git push origin "$(git_current_branch)"'
-alias gluc='git pull upstream $(git_current_branch)'
-alias glum='git pull upstream $(git_main_branch)'
-alias groh='git reset origin/$(git_current_branch) --hard'
-
-export PATH="$HOME/.volta/bin:$PATH"
 
 # mise
 eval "$(mise activate zsh)"
 corepack disable pnpm 2>/dev/null
 
-# zoxied
+# zoxide
 eval "$(zoxide init zsh)"
 
-# fzf (Ctrl+R history, Ctrl+T files, Alt+C cd)
+# fzf
 source <(fzf --zsh)
 
 # ghq + fzf でリポジトリにジャンプ (Ctrl+G)
@@ -113,51 +48,21 @@ function ghq-fzf-repo() {
 zle -N ghq-fzf-repo
 bindkey '^G' ghq-fzf-repo
 
+# Yazi
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
 
 # Starship
 eval "$(starship init zsh)"
 
-# Yazi
-function ya() {
-	tmp="$(mktemp -t "yazi-cwd.XXXXX")"
-	yazi --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
 # Kiro
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
-# Console Ninja
-
-
-
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
-
-. "$HOME/.local/bin/env"
-
-# Added by Windsurf
-export PATH="/Users/yamato_handai/.codeium/windsurf/bin:$PATH"
-
-# Claude Code
-export ANTHROPIC_MODEL=opus
-
-# Added by Antigravity
-export PATH="/Users/yamato_handai/.antigravity/antigravity/bin:$PATH"
-
-# Turso
-export PATH="$PATH:/Users/yamato_handai/.turso"
-
-# Vite+ bin (https://viteplus.dev)
-. "$HOME/.vite-plus/env"

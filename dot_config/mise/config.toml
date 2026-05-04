@@ -1,15 +1,20 @@
 [tools]
+# --- ランタイム (固定) ---
 node = "24.14.1"
-"npm:lighthouse" = "latest"
 pnpm = "10.33.0"
-yarn = "latest"
-"npm:@googleworkspace/cli" = "latest"
-"npm:@playwright/mcp" = "latest"
-"npm:oxfmt" = "latest"
-"npm:resend-cli" = "latest"
-"npm:wp-studio" = "latest"
-"npm:agent-browser" = "latest"
-"npm:playwright" = "latest"
+yarn = "4.12.0"
+
+# --- テスト/計測 (固定: スクリプトとの一致が必要) ---
+"npm:playwright" = "1.59.1"
+"npm:@playwright/mcp" = "0.0.68"
+"npm:lighthouse" = "13.0.3"
+
+# --- CLI ユーティリティ (latest: API 安定・バグ修正追従) ---
 "npm:difit" = "latest"
-"npm:@nulab/bee" = "latest"
+"npm:resend-cli" = "latest"
 "npm:portless" = "latest"
+"npm:oxfmt" = "latest"
+"npm:wp-studio" = "latest"
+"npm:@nulab/bee" = "latest"
+"npm:@googleworkspace/cli" = "latest"
+"npm:agent-browser" = "latest"
