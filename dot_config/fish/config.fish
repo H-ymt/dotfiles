@@ -54,6 +54,12 @@ zoxide init fish | source
 # Starship
 starship init fish | source
 
+# atuin (shell history)
+atuin init fish | source
+
+# bat (theme is configured in ~/.config/bat/config)
+abbr -a cat 'bat --paging=never'
+
 # Yazi shell wrapper
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")

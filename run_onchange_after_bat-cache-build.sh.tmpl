@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# bat cache rebuild — re-runs whenever any theme under ~/.config/bat/themes changes.
+# The hash below makes chezmoi detect changes to the themes directory.
+#
+# themes hash: {{ output "sh" "-c" "find dot_config/bat/themes -type f -exec sha256sum {} + | sort | sha256sum" }}
+
+set -euo pipefail
+
+if ! command -v bat >/dev/null 2>&1; then
+  echo "bat not found, skipping cache build"
+  exit 0
+fi
+
+echo "Rebuilding bat cache..."
+bat cache --build

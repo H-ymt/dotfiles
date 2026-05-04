@@ -17,3 +17,14 @@
 	process = git-lfs filter-process
 [core]
 	excludesfile = /Users/hymt/.gitignore_global
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+[merge]
+	conflictstyle = zdiff3
+[diff]
+	colorMoved = default
