@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-05-02T02:45:33.434341+00:00'
+generated_at: '2026-05-05T03:43:00.496316+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -93,6 +93,19 @@ dependencies:
   - .github/skills/lighthouse-perf-report
   - .opencode/skills/lighthouse-perf-report
   content_hash: sha256:b2b576363074fb234a4afd25e72842b29c244a8d43e3ec778abca4a9a5090f78
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 7127723f7da28342425aa1ed16dc296360324b98
+  virtual_path: skills/linearis
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/linearis
+  - .claude/skills/linearis
+  - .cursor/skills/linearis
+  - .github/skills/linearis
+  - .opencode/skills/linearis
+  content_hash: sha256:f4223a9060095a23c7d45cd681685663e66316a98264aa89a4331900c419c06d
 - repo_url: LottieFiles/motion-design-skill
   host: github.com
   resolved_commit: b6606e101601ef027f01729a7289e97c329ad0cd
