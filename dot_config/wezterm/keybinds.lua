@@ -78,6 +78,9 @@ return {
     -- Pane作成 leader + r or d
     { key = "-",     mods = "LEADER",     action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
     { key = "\\",    mods = "LEADER",     action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    -- Pane作成 Cmd+D (左右分割) / Cmd+Shift+D (上下分割) iTerm2風
+    { key = "d",     mods = "SUPER",      action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    { key = "d",     mods = "SUPER|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
     -- Paneを閉じる leader + x
     { key = "x",     mods = "LEADER",     action = act({ CloseCurrentPane = { confirm = true } }) },
     -- Pane移動 leader + hlkj
