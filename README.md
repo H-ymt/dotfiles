@@ -1,12 +1,16 @@
 # dotfiles
 
-> macOS 開発環境の設定ファイルを [chezmoi](https://www.chezmoi.io/) で管理
+macOS 開発環境の設定ファイルを [chezmoi](https://www.chezmoi.io/) で管理。
 
 ## セットアップ
 
+ソースは [ghq](https://github.com/x-motemen/ghq) 配下 (`~/ghq/github.com/H-ymt/dotfiles`) に置く。`~/.config/chezmoi/chezmoi.toml` で `sourceDir` を指定する。
+
 ```sh
-brew install chezmoi
-chezmoi init git@github.com:H-ymt/dotfiles.git
+brew install chezmoi ghq
+ghq get git@github.com:H-ymt/dotfiles.git
+mkdir -p ~/.config/chezmoi
+printf 'sourceDir = "%s/github.com/H-ymt/dotfiles"\n' "$(ghq root)" > ~/.config/chezmoi/chezmoi.toml
 chezmoi apply
 ```
 
