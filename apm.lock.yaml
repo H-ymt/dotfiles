@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-05-05T03:43:00.496316+00:00'
+generated_at: '2026-05-12T09:40:18.033574+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -15,6 +15,19 @@ dependencies:
   - .github/skills/architecture-diagram
   - .opencode/skills/architecture-diagram
   content_hash: sha256:daba7c8db117230b136deba88f7faffe52e2372ae2007f647d2768c3b28ec8fa
+- repo_url: GLANZ-CREATIVE/skills
+  host: github.com
+  resolved_commit: cfc9a413f02c3113b098d1c8a7a761c2d726d082
+  virtual_path: skills/gh-issue-project
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/gh-issue-project
+  - .claude/skills/gh-issue-project
+  - .cursor/skills/gh-issue-project
+  - .github/skills/gh-issue-project
+  - .opencode/skills/gh-issue-project
+  content_hash: sha256:abf72ffe0c0da2b7234569578d8b678de1a6be1829249041cd05845833258228
 - repo_url: H-ymt/skills
   host: github.com
   resolved_commit: 863dca1710c62a7c7cb5687e9b352efe11fb7045
