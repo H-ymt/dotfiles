@@ -6,10 +6,6 @@
 # Homebrew
 fish_add_path /opt/homebrew/bin
 
-# pnpm
-set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-fish_add_path $PNPM_HOME
-
 # PHP
 fish_add_path /opt/homebrew/opt/php@8.2/bin
 fish_add_path /opt/homebrew/opt/php@8.2/sbin
