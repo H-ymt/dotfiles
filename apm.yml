@@ -5,6 +5,7 @@ author: H-ymt
 dependencies:
   apm:
   - H-ymt/skills/skills/figma-design-tokens
+  - H-ymt/skills/skills/image-optimize
   - H-ymt/skills/skills/figma-rule
   - H-ymt/skills/skills/github-pr-review-operation
   - H-ymt/skills/skills/h10o-review
@@ -76,5 +77,6 @@ dependencies:
   - nulab/bee/skills/using-bee
   - nulab/bee/skills/backlog-notation
   - mattpocock/skills/skills/productivity/grill-me
+  - GoogleChrome/modern-web-guidance
   mcp: []
 scripts: {}
