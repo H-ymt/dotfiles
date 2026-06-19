@@ -12,6 +12,7 @@ dependencies:
   - H-ymt/skills/skills/lighthouse-perf-report
   - H-ymt/skills/skills/empirical-prompt-tuning
   - H-ymt/skills/skills/linearis
+  - H-ymt/skills/skills/japanese-tech-writing
   - GLANZ-CREATIVE/skills/skills/gh-issue-project
   - anthropics/skills/skills/frontend-design
   - openai/skills/skills/.curated/cloudflare-deploy
