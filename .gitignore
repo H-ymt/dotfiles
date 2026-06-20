@@ -4,7 +4,8 @@
 # APM — generated output (apm install で生成)
 apm_modules/
 .agents/
-.claude/skills/
+.claude/skills/*
+!.claude/skills/h10o-review/
 .claude/settings.local.json
 .cursor/
 .github/skills/
