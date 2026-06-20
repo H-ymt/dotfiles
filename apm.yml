@@ -15,9 +15,6 @@ dependencies:
   - H-ymt/skills/skills/japanese-tech-writing
   - GLANZ-CREATIVE/skills/skills/gh-issue-project
   - anthropics/skills/skills/frontend-design
-  - openai/skills/skills/.curated/cloudflare-deploy
-  - openai/skills/skills/.curated/figma
-  - openai/skills/skills/.curated/figma-implement-design
   - openai/skills/skills/.curated/gh-address-comments
   - openai/skills/skills/.curated/gh-fix-ci
   - figma/mcp-server-guide/skills/figma-use
@@ -51,7 +48,6 @@ dependencies:
   - ibelick/ui-skills/skills/fixing-accessibility
   - ibelick/ui-skills/skills/fixing-metadata
   - ibelick/ui-skills/skills/fixing-motion-performance
-  - browser-use/browser-use/skills/browser-use
   - resend/email-best-practices
   - cloudflare/skills/skills/agents-sdk
   - cloudflare/skills/skills/cloudflare-email-service
@@ -63,7 +59,6 @@ dependencies:
   - cloudflare/skills/skills/wrangler
   - supabase/agent-skills/skills/supabase-postgres-best-practices
   - vercel-labs/skills/skills/find-skills
-  - proffesor-for-testing/agentic-qe/.claude/skills/github-project-management
   - masuP9/a11y-specialist-skills/skills/auditing-wcag
   - masuP9/a11y-specialist-skills/skills/planning-a11y-improvement
   - masuP9/a11y-specialist-skills/skills/planning-wcag-audit

@@ -2,6 +2,20 @@
 
 ## 必須チェック（優先）
 
+### クラス順序
+
+- クラスが論理的な順序に従っているか（Layout → Box model → Typography → Visual → Interactive → Misc）
+- 関連ユーティリティがグループ化されているか（flex系、text系 等）
+- 同一プロパティを暗黙に上書きする重複ユーティリティがないか
+
+```
+// Good
+"flex items-center gap-4 p-6 text-lg font-bold text-primary bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors"
+
+// Bad (random order)
+"hover:bg-gray-50 text-lg flex shadow-md p-6 font-bold bg-white rounded-lg items-center gap-4"
+```
+
 ### デザイントークン
 
 - プロジェクト定義のカラートークンを優先しているか（Tailwindデフォルトより）
@@ -86,20 +100,6 @@ const styles = tv({
 - `className` propを文字列結合で合成 → `cn()` を使うべき
 
 ## 推奨チェック
-
-### クラス順序
-
-- クラスが論理的な順序に従っているか（Layout → Box model → Typography → Visual → Interactive → Misc）
-- 関連ユーティリティがグループ化されているか（flex系、text系 等）
-- 同一プロパティを暗黙に上書きする重複ユーティリティがないか（競合は必須チェックの検出シグナルも参照）
-
-```
-// Good
-"flex items-center gap-4 p-6 text-lg font-bold text-primary bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors"
-
-// Bad (random order)
-"hover:bg-gray-50 text-lg flex shadow-md p-6 font-bold bg-white rounded-lg items-center gap-4"
-```
 
 ### アクセシビリティ
 
@@ -196,6 +196,15 @@ const styles = tv({
 
 - クラスの細かな並び順の好み（自動整形で吸収できる範囲）
 - Tailwind設定ファイル自体の構成（本ルールの対象外）
+
+## 出力テンプレ
+
+- 位置: `file:line`（分かる範囲）
+- 重要度: 重大 / 中 / 軽微
+- 確度: 確定 / 推定 / 判定保留
+- 現状:
+- 問題:
+- 修正案:
 
 ## 最小修正ガイド
 
