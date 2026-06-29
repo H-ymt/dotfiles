@@ -22,6 +22,9 @@ fish_add_path "$HOME/.antigravity/antigravity/bin"
 # Turso
 fish_add_path "$HOME/.turso"
 
+# Rust / Cargo
+source "$HOME/.cargo/env.fish"
+
 # Claude Code
 set -gx ANTHROPIC_MODEL opus
 
