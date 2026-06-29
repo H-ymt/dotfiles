@@ -18,6 +18,9 @@ eval "$(sheldon source 2>/dev/null)"
 
 setopt NO_BANG_HIST
 
+# Rust / Cargo
+. "$HOME/.cargo/env"
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
