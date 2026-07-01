@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-06-20T13:52:58.363452+00:00'
+generated_at: '2026-07-01T04:25:47.287160+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -9,32 +9,16 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/architecture-diagram
   - .claude/skills/architecture-diagram
   - .cursor/skills/architecture-diagram
   - .github/skills/architecture-diagram
   - .opencode/skills/architecture-diagram
   content_hash: sha256:a9c43249979c16c366af670e13f34d3a9e9991bf78f4b6fa814a1832168b6430
-- repo_url: GLANZ-CREATIVE/skills
-  host: github.com
-  resolved_commit: 41919433c1ad32b4e3d8eca7dfd6f0b81953e308
-  virtual_path: skills/gh-issue-project
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .agents/skills/gh-issue-project
-  - .claude/skills/gh-issue-project
-  - .cursor/skills/gh-issue-project
-  - .github/skills/gh-issue-project
-  - .opencode/skills/gh-issue-project
-  content_hash: sha256:abf72ffe0c0da2b7234569578d8b678de1a6be1829249041cd05845833258228
 - repo_url: GoogleChrome/modern-web-guidance
   host: github.com
-  resolved_commit: d0f7544492d329e87b4878d96c266799ac5eeeba
+  resolved_commit: 2354c8c5856602e0730d7c65d91f1c29ffc479ee
   package_type: marketplace_plugin
   deployed_files:
-  - .agents/skills/chrome-extensions
-  - .agents/skills/modern-web-guidance
   - .claude/skills/chrome-extensions
   - .claude/skills/modern-web-guidance
   - .cursor/skills/chrome-extensions
@@ -43,15 +27,14 @@ dependencies:
   - .github/skills/modern-web-guidance
   - .opencode/skills/chrome-extensions
   - .opencode/skills/modern-web-guidance
-  content_hash: sha256:b3579022daa0445e6b2fb7b8dfe41b26827f01b35b8b0b3816c55ce45ae863a7
+  content_hash: sha256:1cd06954c61aaf52c5a5c7cfa5e906dfa01e76011a0574f0b934a373ea3c17f1
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/empirical-prompt-tuning
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/empirical-prompt-tuning
   - .claude/skills/empirical-prompt-tuning
   - .cursor/skills/empirical-prompt-tuning
   - .github/skills/empirical-prompt-tuning
@@ -59,12 +42,11 @@ dependencies:
   content_hash: sha256:92d054be3c36e62f693ff3d00bef23aa53d9ea867ae0485ad41cdc0250238dd5
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/figma-design-tokens
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/figma-design-tokens
   - .claude/skills/figma-design-tokens
   - .cursor/skills/figma-design-tokens
   - .github/skills/figma-design-tokens
@@ -72,12 +54,11 @@ dependencies:
   content_hash: sha256:3c1e6b1bea59afb00e161a2ba9afbc27fb22a111907eac59099fd856f5efedd3
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/figma-rule
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/figma-rule
   - .claude/skills/figma-rule
   - .cursor/skills/figma-rule
   - .github/skills/figma-rule
@@ -85,12 +66,11 @@ dependencies:
   content_hash: sha256:6a668ae94b95e7fec46b0bc7ba8aa9f66738c88c002c75e04f2d8132ecf25c59
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/github-pr-review-operation
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/github-pr-review-operation
   - .claude/skills/github-pr-review-operation
   - .cursor/skills/github-pr-review-operation
   - .github/skills/github-pr-review-operation
@@ -98,12 +78,11 @@ dependencies:
   content_hash: sha256:30f51a05c4ea0f75b88625a816504c9a8ac604d368a1710308b9f9b1ad17e4d7
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/h10o-review
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/h10o-review
   - .claude/skills/h10o-review
   - .cursor/skills/h10o-review
   - .github/skills/h10o-review
@@ -111,12 +90,11 @@ dependencies:
   content_hash: sha256:179dc8e94bf16aa07b23f89721858c9c6b9a97011f4371a84f62894131d8b2f6
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/image-optimize
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/image-optimize
   - .claude/skills/image-optimize
   - .cursor/skills/image-optimize
   - .github/skills/image-optimize
@@ -129,7 +107,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/japanese-tech-writing
   - .claude/skills/japanese-tech-writing
   - .cursor/skills/japanese-tech-writing
   - .github/skills/japanese-tech-writing
@@ -137,12 +114,11 @@ dependencies:
   content_hash: sha256:e7e74e6ef15a98e3b2d406105ab1e5abf145f6f5f04110600ccdb038d2d85fa4
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/lighthouse-perf-report
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/lighthouse-perf-report
   - .claude/skills/lighthouse-perf-report
   - .cursor/skills/lighthouse-perf-report
   - .github/skills/lighthouse-perf-report
@@ -150,12 +126,11 @@ dependencies:
   content_hash: sha256:b2b576363074fb234a4afd25e72842b29c244a8d43e3ec778abca4a9a5090f78
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: ed0cb7a79c40d6cca864af94744421fa61a76d09
+  resolved_commit: 3e3ff6b5f4a3eae32bca7644d64ce970d05b605e
   virtual_path: skills/linearis
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/linearis
   - .claude/skills/linearis
   - .cursor/skills/linearis
   - .github/skills/linearis
@@ -168,7 +143,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/motion-design
   - .claude/skills/motion-design
   - .cursor/skills/motion-design
   - .github/skills/motion-design
@@ -176,12 +150,11 @@ dependencies:
   content_hash: sha256:6ba0c33805580b781c3f0fa03132af2c93c480f689524440dc271a9656d81f03
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wordpress-router
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wordpress-router
   - .claude/skills/wordpress-router
   - .cursor/skills/wordpress-router
   - .github/skills/wordpress-router
@@ -189,25 +162,23 @@ dependencies:
   content_hash: sha256:c2535c1291a9b527b5261ff4ab49552729088348a6687b8d9232d720a843ee57
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-abilities-api
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-abilities-api
   - .claude/skills/wp-abilities-api
   - .cursor/skills/wp-abilities-api
   - .github/skills/wp-abilities-api
   - .opencode/skills/wp-abilities-api
-  content_hash: sha256:8df45b5a8baaaffa78e81574ce72fbc37e2e0cf6c588566b690727bfb7630efe
+  content_hash: sha256:45eb412d99954e3f7cb5ec748b086a808b262662e63dea70f43e4862d24c5897
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-block-development
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-block-development
   - .claude/skills/wp-block-development
   - .cursor/skills/wp-block-development
   - .github/skills/wp-block-development
@@ -215,12 +186,11 @@ dependencies:
   content_hash: sha256:0fd90154241e8bc1620a1e3048bca2d018b624b0df0c76345986840f47a5a8b1
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-block-themes
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-block-themes
   - .claude/skills/wp-block-themes
   - .cursor/skills/wp-block-themes
   - .github/skills/wp-block-themes
@@ -228,12 +198,11 @@ dependencies:
   content_hash: sha256:3896ee6ccf113852c45d428a46c5b4e659d64835ca25f3633d816254b9dd1454
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-interactivity-api
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-interactivity-api
   - .claude/skills/wp-interactivity-api
   - .cursor/skills/wp-interactivity-api
   - .github/skills/wp-interactivity-api
@@ -241,12 +210,11 @@ dependencies:
   content_hash: sha256:fbe4385bdeeaa48fd4a80b362c55f91e60483caa05b88d5379a8031c23769992
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-performance
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-performance
   - .claude/skills/wp-performance
   - .cursor/skills/wp-performance
   - .github/skills/wp-performance
@@ -254,12 +222,11 @@ dependencies:
   content_hash: sha256:1fb79b679b8f799d1285f8f254d4bc12056cff3dac82ab1a8c67da67e7fb0dde
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-phpstan
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-phpstan
   - .claude/skills/wp-phpstan
   - .cursor/skills/wp-phpstan
   - .github/skills/wp-phpstan
@@ -267,12 +234,11 @@ dependencies:
   content_hash: sha256:9f00543fbf856319d1d490c31a7cd8558cae6630a7b27f8ced2dddfcacb97ca3
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-playground
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-playground
   - .claude/skills/wp-playground
   - .cursor/skills/wp-playground
   - .github/skills/wp-playground
@@ -280,12 +246,11 @@ dependencies:
   content_hash: sha256:9a330cfdcb11919572ce01a26826f43889b51af493f10355d080d15ac061c952
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-plugin-development
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-plugin-development
   - .claude/skills/wp-plugin-development
   - .cursor/skills/wp-plugin-development
   - .github/skills/wp-plugin-development
@@ -293,12 +258,11 @@ dependencies:
   content_hash: sha256:c15d14c02eb0a2fd0618068cc941631716280dc74150feef60cb9346e55cff37
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-project-triage
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-project-triage
   - .claude/skills/wp-project-triage
   - .cursor/skills/wp-project-triage
   - .github/skills/wp-project-triage
@@ -306,12 +270,11 @@ dependencies:
   content_hash: sha256:3c480661aa791ae3f8090ed521f50a9123b1d5e4311e216286008bd9f981cd44
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-rest-api
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-rest-api
   - .claude/skills/wp-rest-api
   - .cursor/skills/wp-rest-api
   - .github/skills/wp-rest-api
@@ -319,25 +282,23 @@ dependencies:
   content_hash: sha256:2876f8a37d71de346e7a92a4e60530ba536c8ad82fdf89dc200c3ae34fa6c4ec
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wp-wpcli-and-ops
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wp-wpcli-and-ops
   - .claude/skills/wp-wpcli-and-ops
   - .cursor/skills/wp-wpcli-and-ops
   - .github/skills/wp-wpcli-and-ops
   - .opencode/skills/wp-wpcli-and-ops
-  content_hash: sha256:2554ec9c62e5221c2e232543ebe6699e9f9c28f5270304aad0ad1843fe3f38d6
+  content_hash: sha256:00848ac580c0b470c9a240aa41ebc7c5a9e98cc9413ea29fb300e9cf8f46f01f
 - repo_url: WordPress/agent-skills
   host: github.com
-  resolved_commit: 26aa4e894287acecccd9363f6ab15a0e765707e0
+  resolved_commit: 9de2279ae789ee5e5f27f65d714867769283dabf
   virtual_path: skills/wpds
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wpds
   - .claude/skills/wpds
   - .cursor/skills/wpds
   - .github/skills/wpds
@@ -345,25 +306,23 @@ dependencies:
   content_hash: sha256:1a05f741c9a43026507c8c9641b2dbde4b4928a14038f97322c36ee8b1e88470
 - repo_url: anthropics/skills
   host: github.com
-  resolved_commit: 690f15cac7f7b4c055c5ab109c79ed9259934081
+  resolved_commit: 35414756ca55738e050562e272a6bbc6273aa926
   virtual_path: skills/frontend-design
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/frontend-design
   - .claude/skills/frontend-design
   - .cursor/skills/frontend-design
   - .github/skills/frontend-design
   - .opencode/skills/frontend-design
-  content_hash: sha256:063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67
+  content_hash: sha256:4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/agents-sdk
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/agents-sdk
   - .claude/skills/agents-sdk
   - .cursor/skills/agents-sdk
   - .github/skills/agents-sdk
@@ -371,25 +330,23 @@ dependencies:
   content_hash: sha256:394a348f5b5bb38ee976b3da026449db8d0807e09010512f5c57596501b084ff
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/cloudflare
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/cloudflare
   - .claude/skills/cloudflare
   - .cursor/skills/cloudflare
   - .github/skills/cloudflare
   - .opencode/skills/cloudflare
-  content_hash: sha256:129288083dee48a5bafd5e60da971c53f2dfc921f9edb1b1dc630eaf47292125
+  content_hash: sha256:da17f43738f8b929c7afbc8bd0856d8f98e4e29e784c44581189bb10ca39b38a
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/cloudflare-email-service
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/cloudflare-email-service
   - .claude/skills/cloudflare-email-service
   - .cursor/skills/cloudflare-email-service
   - .github/skills/cloudflare-email-service
@@ -397,12 +354,11 @@ dependencies:
   content_hash: sha256:3d0910288b7322914456e3ece0b05a8a15a916f00d3139a7680c4a4c53eae0d5
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/durable-objects
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/durable-objects
   - .claude/skills/durable-objects
   - .cursor/skills/durable-objects
   - .github/skills/durable-objects
@@ -410,12 +366,11 @@ dependencies:
   content_hash: sha256:3ccddccdde29da749c4d87c13e445473a2394890e016a60c960efa781a4b9e29
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/sandbox-sdk
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/sandbox-sdk
   - .claude/skills/sandbox-sdk
   - .cursor/skills/sandbox-sdk
   - .github/skills/sandbox-sdk
@@ -423,12 +378,11 @@ dependencies:
   content_hash: sha256:681292bec775052a2d4ceb2b202cdf9195a070bf13ba6949e564c5cc2a004fa0
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/web-perf
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/web-perf
   - .claude/skills/web-perf
   - .cursor/skills/web-perf
   - .github/skills/web-perf
@@ -436,12 +390,11 @@ dependencies:
   content_hash: sha256:7ae53856c320574f7440f50aef7892f96837eec9fd49d329d049d432fb4b299a
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/workers-best-practices
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/workers-best-practices
   - .claude/skills/workers-best-practices
   - .cursor/skills/workers-best-practices
   - .github/skills/workers-best-practices
@@ -449,12 +402,11 @@ dependencies:
   content_hash: sha256:ebd71bed0ade41e2d4839b0d280ec6d93dced0d19f568d27b92da00e4aa9943c
 - repo_url: cloudflare/skills
   host: github.com
-  resolved_commit: 60147cbb773649eadca89cee92b4e0caf02234b4
+  resolved_commit: 27ce0c0e159225caa7ed30ebefd4107aa6c52497
   virtual_path: skills/wrangler
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wrangler
   - .claude/skills/wrangler
   - .cursor/skills/wrangler
   - .github/skills/wrangler
@@ -462,17 +414,16 @@ dependencies:
   content_hash: sha256:11edeb37eedb91deedde694b2bb1cc4ff4e8b5a8f1836c217a8c871fe39abcb5
 - repo_url: figma/mcp-server-guide
   host: github.com
-  resolved_commit: a742f0a700a7772ff5ed85f7c9fc1dad5afa9fcc
+  resolved_commit: bea8bea5f676ab2bf76fa822b82f50b66653c098
   virtual_path: skills/figma-use
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/figma-use
   - .claude/skills/figma-use
   - .cursor/skills/figma-use
   - .github/skills/figma-use
   - .opencode/skills/figma-use
-  content_hash: sha256:039e159e041ec6cb1d108cfbaf32250e01da59c1d45295d9ae71c89c9c869ebb
+  content_hash: sha256:27b8d90e17a2e9a7db5b08ff7855ae90e441bb0f675d5adc53e9cc3dc3b9c0aa
 - repo_url: greensock/gsap-skills
   host: github.com
   resolved_commit: aed9cfd3277740755f6bfc1155c7aa645403b760
@@ -480,7 +431,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-core
   - .claude/skills/gsap-core
   - .cursor/skills/gsap-core
   - .github/skills/gsap-core
@@ -493,7 +443,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-frameworks
   - .claude/skills/gsap-frameworks
   - .cursor/skills/gsap-frameworks
   - .github/skills/gsap-frameworks
@@ -506,7 +455,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-performance
   - .claude/skills/gsap-performance
   - .cursor/skills/gsap-performance
   - .github/skills/gsap-performance
@@ -519,7 +467,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-plugins
   - .claude/skills/gsap-plugins
   - .cursor/skills/gsap-plugins
   - .github/skills/gsap-plugins
@@ -532,7 +479,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-react
   - .claude/skills/gsap-react
   - .cursor/skills/gsap-react
   - .github/skills/gsap-react
@@ -545,7 +491,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-scrolltrigger
   - .claude/skills/gsap-scrolltrigger
   - .cursor/skills/gsap-scrolltrigger
   - .github/skills/gsap-scrolltrigger
@@ -558,7 +503,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-timeline
   - .claude/skills/gsap-timeline
   - .cursor/skills/gsap-timeline
   - .github/skills/gsap-timeline
@@ -571,7 +515,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gsap-utils
   - .claude/skills/gsap-utils
   - .cursor/skills/gsap-utils
   - .github/skills/gsap-utils
@@ -579,25 +522,23 @@ dependencies:
   content_hash: sha256:1ab2387f6e694718a4f1b5acf2a4ab16e1b884c3428adf5f6b26d830f00826cf
 - repo_url: ibelick/ui-skills
   host: github.com
-  resolved_commit: 4fa3901211bd1a11e858141c1afee22ad77b737b
+  resolved_commit: 132b111af6cb90023fdad4860abbe325b739d664
   virtual_path: skills/baseline-ui
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/baseline-ui
   - .claude/skills/baseline-ui
   - .cursor/skills/baseline-ui
   - .github/skills/baseline-ui
   - .opencode/skills/baseline-ui
-  content_hash: sha256:49817c981208de2f412719f7814d31eba2b2096462edc048a279d93f522cab0f
+  content_hash: sha256:dfcb3e778b57ad1cba92375689bb8265fa5aef78fba523a744f5220b3c619901
 - repo_url: ibelick/ui-skills
   host: github.com
-  resolved_commit: 4fa3901211bd1a11e858141c1afee22ad77b737b
+  resolved_commit: 132b111af6cb90023fdad4860abbe325b739d664
   virtual_path: skills/fixing-accessibility
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/fixing-accessibility
   - .claude/skills/fixing-accessibility
   - .cursor/skills/fixing-accessibility
   - .github/skills/fixing-accessibility
@@ -605,12 +546,11 @@ dependencies:
   content_hash: sha256:4fa8f5a772b4eef3d28a54c136b507d070e54e2c326578f65eaf5e5a0118b38a
 - repo_url: ibelick/ui-skills
   host: github.com
-  resolved_commit: 4fa3901211bd1a11e858141c1afee22ad77b737b
+  resolved_commit: 132b111af6cb90023fdad4860abbe325b739d664
   virtual_path: skills/fixing-metadata
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/fixing-metadata
   - .claude/skills/fixing-metadata
   - .cursor/skills/fixing-metadata
   - .github/skills/fixing-metadata
@@ -618,12 +558,11 @@ dependencies:
   content_hash: sha256:699e13890fb50acffa02dfd2d5b0e719bd916a9e2b7e6035bdc4513fc73d9174
 - repo_url: ibelick/ui-skills
   host: github.com
-  resolved_commit: 4fa3901211bd1a11e858141c1afee22ad77b737b
+  resolved_commit: 132b111af6cb90023fdad4860abbe325b739d664
   virtual_path: skills/fixing-motion-performance
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/fixing-motion-performance
   - .claude/skills/fixing-motion-performance
   - .cursor/skills/fixing-motion-performance
   - .github/skills/fixing-motion-performance
@@ -636,7 +575,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/chrome-devtools
   - .claude/skills/chrome-devtools
   - .cursor/skills/chrome-devtools
   - .github/skills/chrome-devtools
@@ -644,12 +582,11 @@ dependencies:
   content_hash: sha256:eccf354cf5391d05dd572a38229ccd7aae255529796e5b294e87fa68266c3605
 - repo_url: kepano/obsidian-skills
   host: github.com
-  resolved_commit: 553ef99aa3306dd23f268e1ba9af752577684f69
+  resolved_commit: a1dc48e68138490d522c04cbf5822214c6eb1202
   virtual_path: skills/defuddle
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/defuddle
   - .claude/skills/defuddle
   - .cursor/skills/defuddle
   - .github/skills/defuddle
@@ -657,12 +594,11 @@ dependencies:
   content_hash: sha256:0ed68bc3e818ba0e6b8d192357ea3daaf552a3893f8854e7fd43c06831f91323
 - repo_url: kepano/obsidian-skills
   host: github.com
-  resolved_commit: 553ef99aa3306dd23f268e1ba9af752577684f69
+  resolved_commit: a1dc48e68138490d522c04cbf5822214c6eb1202
   virtual_path: skills/json-canvas
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/json-canvas
   - .claude/skills/json-canvas
   - .cursor/skills/json-canvas
   - .github/skills/json-canvas
@@ -670,25 +606,23 @@ dependencies:
   content_hash: sha256:b2296db7a2c7582b96ccdb14815873985250803ed9f626dbc1180821e9bd7691
 - repo_url: kepano/obsidian-skills
   host: github.com
-  resolved_commit: 553ef99aa3306dd23f268e1ba9af752577684f69
+  resolved_commit: a1dc48e68138490d522c04cbf5822214c6eb1202
   virtual_path: skills/obsidian-bases
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/obsidian-bases
   - .claude/skills/obsidian-bases
   - .cursor/skills/obsidian-bases
   - .github/skills/obsidian-bases
   - .opencode/skills/obsidian-bases
-  content_hash: sha256:850405f6e6b3c9b8472d2a829f8a74d4ae240dd027502950c6e8748817637126
+  content_hash: sha256:c5b65df92f3d8a4509efad8814dc0d5c92d037d4c2024778280a4210f175e061
 - repo_url: kepano/obsidian-skills
   host: github.com
-  resolved_commit: 553ef99aa3306dd23f268e1ba9af752577684f69
+  resolved_commit: a1dc48e68138490d522c04cbf5822214c6eb1202
   virtual_path: skills/obsidian-cli
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/obsidian-cli
   - .claude/skills/obsidian-cli
   - .cursor/skills/obsidian-cli
   - .github/skills/obsidian-cli
@@ -696,82 +630,76 @@ dependencies:
   content_hash: sha256:f46ae626875f7e47c410c2ee93896c4526024ebe127719e8fb430261b5677edc
 - repo_url: kepano/obsidian-skills
   host: github.com
-  resolved_commit: 553ef99aa3306dd23f268e1ba9af752577684f69
+  resolved_commit: a1dc48e68138490d522c04cbf5822214c6eb1202
   virtual_path: skills/obsidian-markdown
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/obsidian-markdown
   - .claude/skills/obsidian-markdown
   - .cursor/skills/obsidian-markdown
   - .github/skills/obsidian-markdown
   - .opencode/skills/obsidian-markdown
-  content_hash: sha256:610283f884f8af83ca1c4fc0864da4d37db453456c98ef0dd5adcb91603488ce
+  content_hash: sha256:622c48fb0c4642ef3725e782e96a37e645832d674df67f1a9383f3b592c354fe
 - repo_url: masuP9/a11y-specialist-skills
   host: github.com
-  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  resolved_commit: 702ded64e05b0bf946ea7b11545ba3f1101093b6
   virtual_path: skills/auditing-wcag
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/auditing-wcag
   - .claude/skills/auditing-wcag
   - .cursor/skills/auditing-wcag
   - .github/skills/auditing-wcag
   - .opencode/skills/auditing-wcag
-  content_hash: sha256:8fe17a17d94be34b278d018319b5fe1cd8537dda3ff76644bb43971142adae44
+  content_hash: sha256:d32ce21dd4f3792019c32368120be4484a69e1189b21059e6be6205602c2f420
 - repo_url: masuP9/a11y-specialist-skills
   host: github.com
-  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  resolved_commit: 702ded64e05b0bf946ea7b11545ba3f1101093b6
   virtual_path: skills/planning-a11y-improvement
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/planning-a11y-improvement
   - .claude/skills/planning-a11y-improvement
   - .cursor/skills/planning-a11y-improvement
   - .github/skills/planning-a11y-improvement
   - .opencode/skills/planning-a11y-improvement
-  content_hash: sha256:39f748c1a04c064cff54731aedb2461e78da59c9e05f595896c7b1d98fae4da9
+  content_hash: sha256:79750e231c217b79f883e4279e159040c15243ba90847a6f396aafc1fe9e2c64
 - repo_url: masuP9/a11y-specialist-skills
   host: github.com
-  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  resolved_commit: 702ded64e05b0bf946ea7b11545ba3f1101093b6
   virtual_path: skills/planning-wcag-audit
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/planning-wcag-audit
   - .claude/skills/planning-wcag-audit
   - .cursor/skills/planning-wcag-audit
   - .github/skills/planning-wcag-audit
   - .opencode/skills/planning-wcag-audit
-  content_hash: sha256:4144bd9b519f91a4152c2472c2e52329c31db72d509da6fd4c518985fdcbca75
+  content_hash: sha256:48ce47a210df3c8fb9a1dea1738a492a05b427e4e9c3e6c0245f511a27b4cc86
 - repo_url: masuP9/a11y-specialist-skills
   host: github.com
-  resolved_commit: 8d25d4ece93b18d86249d448fada022614787231
+  resolved_commit: 702ded64e05b0bf946ea7b11545ba3f1101093b6
   virtual_path: skills/reviewing-a11y
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/reviewing-a11y
   - .claude/skills/reviewing-a11y
   - .cursor/skills/reviewing-a11y
   - .github/skills/reviewing-a11y
   - .opencode/skills/reviewing-a11y
-  content_hash: sha256:aafff2442343ca8d1ba109c4a2c658b8c424447d23eb227d5febed90186b8be2
+  content_hash: sha256:5d25c678d2b70acc5c3971ed20c0aedf05c5e25f8f55c07271096051d825c642
 - repo_url: mattpocock/skills
   host: github.com
-  resolved_commit: b8be62ffacb0118fa3eaa29a0923c87c8c11985c
+  resolved_commit: 0877403d1e867fd9d574117e9b34ade404f36d2a
   virtual_path: skills/productivity/grill-me
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/grill-me
   - .claude/skills/grill-me
   - .cursor/skills/grill-me
   - .github/skills/grill-me
   - .opencode/skills/grill-me
-  content_hash: sha256:784f0dbb7403b0f00324bce9a112f715342777a0daee7bbb7385f9c6f0a170ea
+  content_hash: sha256:f321507f77702a54af1db66549ec1685fc625390d06c57d7949cdcda8eb1b5c7
 - repo_url: nulab/bee
   host: github.com
   resolved_commit: 276f55c7a1e90d5cb6b7b82bb4ced06d8da51f34
@@ -779,7 +707,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/backlog-notation
   - .claude/skills/backlog-notation
   - .cursor/skills/backlog-notation
   - .github/skills/backlog-notation
@@ -792,7 +719,6 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/using-bee
   - .claude/skills/using-bee
   - .cursor/skills/using-bee
   - .github/skills/using-bee
@@ -800,12 +726,11 @@ dependencies:
   content_hash: sha256:d63b5876f86bc2c9ee272e0f4b9dc8185a15a6a92836e189564a7cdeb3e691ab
 - repo_url: openai/skills
   host: github.com
-  resolved_commit: b0401f07213a66414d84a65cb50c1d226f99485a
+  resolved_commit: 49f948faa9258a0c61caceaf225e179651397431
   virtual_path: skills/.curated/gh-address-comments
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gh-address-comments
   - .claude/skills/gh-address-comments
   - .cursor/skills/gh-address-comments
   - .github/skills/gh-address-comments
@@ -813,12 +738,11 @@ dependencies:
   content_hash: sha256:068d34fb59cb97a39aea3de1708877b6a01210d02fa7eda5e74fc8277ed52916
 - repo_url: openai/skills
   host: github.com
-  resolved_commit: b0401f07213a66414d84a65cb50c1d226f99485a
+  resolved_commit: 49f948faa9258a0c61caceaf225e179651397431
   virtual_path: skills/.curated/gh-fix-ci
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/gh-fix-ci
   - .claude/skills/gh-fix-ci
   - .cursor/skills/gh-fix-ci
   - .github/skills/gh-fix-ci
@@ -826,60 +750,55 @@ dependencies:
   content_hash: sha256:02b4d97e4bd91e342e3ec3efa06b7871097d6a64e8398f4ed5b69c64d8d902fb
 - repo_url: remotion-dev/skills
   host: github.com
-  resolved_commit: 277510e78245ac0fa275d7cb6520d52e0ac2e212
+  resolved_commit: 8dad6ec5c5c7cedee4d2aa620bb68386f8fe8eb9
   virtual_path: skills/remotion
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/remotion
   - .claude/skills/remotion
   - .cursor/skills/remotion
   - .github/skills/remotion
   - .opencode/skills/remotion
-  content_hash: sha256:3b0c55526e41a80a61d4f9599062ae853299fd947425e6928ab25fa6b08b6f50
+  content_hash: sha256:91da83b65454829d70cf32ff8cce4776a5adee3e429c66ef6ab4a2e019642e4c
 - repo_url: resend/email-best-practices
   host: github.com
-  resolved_commit: 08550bd9a6d82621676b4ca3733bfbf631bf2800
+  resolved_commit: ef764286d84d665634e14040a726d295c962120e
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/email-best-practices
   - .claude/skills/email-best-practices
   - .cursor/skills/email-best-practices
   - .github/skills/email-best-practices
   - .opencode/skills/email-best-practices
-  content_hash: sha256:6dfec71e4a8e2ba707ff6ab3052333344222452e6555da194ad6a50d6338c4ec
+  content_hash: sha256:05ed761aba2127b1158d1f1d2df15a69e89dfae2e5a05e4735cd1e2e0b05a115
 - repo_url: supabase/agent-skills
   host: github.com
-  resolved_commit: 4e69c80e213f315c02c9ebef9c28dd6e43a4707e
+  resolved_commit: 1356046015476711a769601079262b5635929427
   virtual_path: skills/supabase-postgres-best-practices
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/supabase-postgres-best-practices
   - .claude/skills/supabase-postgres-best-practices
   - .cursor/skills/supabase-postgres-best-practices
   - .github/skills/supabase-postgres-best-practices
   - .opencode/skills/supabase-postgres-best-practices
-  content_hash: sha256:4e662692ef9420d14845d3f08eed1e0c1e9d7270997b6db5ab76ef2b16fc5b7a
+  content_hash: sha256:c20a12d0e664c182130e75dfed6af46d81623930d15935f27353a39429724306
 - repo_url: vercel-labs/skills
   host: github.com
-  resolved_commit: e4243fbf7d9398722024f62850ece90fa0d5c693
+  resolved_commit: 2adcfe5a4cce0ce5f4d5547a997b2a161ec5d127
   virtual_path: skills/find-skills
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/find-skills
   - .claude/skills/find-skills
   - .cursor/skills/find-skills
   - .github/skills/find-skills
   - .opencode/skills/find-skills
-  content_hash: sha256:d31e234f0c90694a670222cdd1dafa853e051d7066beda389f1097c22dadd461
+  content_hash: sha256:1c27b1774a4ec17ad4556a72e3c0168beab3af0183b2c1b8aa9e320af3ff41ce
 - repo_url: yhassy/wireframe-skill
   host: github.com
   resolved_commit: 948d4331343b18d913d5bc502da72ed0c5f19101
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/wireframe-skill
   - .claude/skills/wireframe-skill
   - .cursor/skills/wireframe-skill
   - .github/skills/wireframe-skill
@@ -887,12 +806,11 @@ dependencies:
   content_hash: sha256:3898324327332359e800cae46b04848a8fa9041b1f9464314c6a5a7118bf25bc
 - repo_url: yoshiko-pg/difit
   host: github.com
-  resolved_commit: c0bca82d308843d747f3b9a22950f6b98c2c8c7a
+  resolved_commit: 773e6dff60292ba85ab161e851c4ab6a28b6f621
   virtual_path: skills/difit
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/difit
   - .claude/skills/difit
   - .cursor/skills/difit
   - .github/skills/difit
@@ -900,12 +818,11 @@ dependencies:
   content_hash: sha256:d7183ec34bc1b776e8e54cf34efd1bf8be8b04bdb424e5efcfbb3faa5f095db7
 - repo_url: yoshiko-pg/difit
   host: github.com
-  resolved_commit: c0bca82d308843d747f3b9a22950f6b98c2c8c7a
+  resolved_commit: 773e6dff60292ba85ab161e851c4ab6a28b6f621
   virtual_path: skills/difit-review
   is_virtual: true
   package_type: claude_skill
   deployed_files:
-  - .agents/skills/difit-review
   - .claude/skills/difit-review
   - .cursor/skills/difit-review
   - .github/skills/difit-review
