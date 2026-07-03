@@ -7,10 +7,12 @@ yarn = "4.12.0"
 
 # --- テスト/計測 (固定: スクリプトとの一致が必要) ---
 "npm:playwright" = "1.59.1"
+"npm:@playwright/cli" = "latest"
 "npm:@playwright/mcp" = "0.0.68"
 "npm:lighthouse" = "13.0.3"
 
 # --- CLI ユーティリティ (latest: API 安定・バグ修正追従) ---
+"npm:@anthropic-ai/claude-code" = "latest"
 "npm:@antfu/ni" = "latest"
 "npm:difit" = "latest"
 "npm:resend-cli" = "latest"
