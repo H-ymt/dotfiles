@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-07-01T04:25:47.287160+00:00'
+generated_at: '2026-07-04T05:47:23.694194+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -9,6 +9,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/architecture-diagram
   - .claude/skills/architecture-diagram
   - .cursor/skills/architecture-diagram
   - .github/skills/architecture-diagram
@@ -19,6 +20,8 @@ dependencies:
   resolved_commit: 2354c8c5856602e0730d7c65d91f1c29ffc479ee
   package_type: marketplace_plugin
   deployed_files:
+  - .agents/skills/chrome-extensions
+  - .agents/skills/modern-web-guidance
   - .claude/skills/chrome-extensions
   - .claude/skills/modern-web-guidance
   - .cursor/skills/chrome-extensions
@@ -35,6 +38,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/empirical-prompt-tuning
   - .claude/skills/empirical-prompt-tuning
   - .cursor/skills/empirical-prompt-tuning
   - .github/skills/empirical-prompt-tuning
@@ -47,6 +51,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/figma-design-tokens
   - .claude/skills/figma-design-tokens
   - .cursor/skills/figma-design-tokens
   - .github/skills/figma-design-tokens
@@ -59,6 +64,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/figma-rule
   - .claude/skills/figma-rule
   - .cursor/skills/figma-rule
   - .github/skills/figma-rule
@@ -71,6 +77,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/github-pr-review-operation
   - .claude/skills/github-pr-review-operation
   - .cursor/skills/github-pr-review-operation
   - .github/skills/github-pr-review-operation
@@ -83,6 +90,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/h10o-review
   - .claude/skills/h10o-review
   - .cursor/skills/h10o-review
   - .github/skills/h10o-review
@@ -95,6 +103,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/image-optimize
   - .claude/skills/image-optimize
   - .cursor/skills/image-optimize
   - .github/skills/image-optimize
@@ -107,6 +116,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/japanese-tech-writing
   - .claude/skills/japanese-tech-writing
   - .cursor/skills/japanese-tech-writing
   - .github/skills/japanese-tech-writing
@@ -119,6 +129,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/lighthouse-perf-report
   - .claude/skills/lighthouse-perf-report
   - .cursor/skills/lighthouse-perf-report
   - .github/skills/lighthouse-perf-report
@@ -131,6 +142,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/linearis
   - .claude/skills/linearis
   - .cursor/skills/linearis
   - .github/skills/linearis
@@ -143,6 +155,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/motion-design
   - .claude/skills/motion-design
   - .cursor/skills/motion-design
   - .github/skills/motion-design
@@ -155,6 +168,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wordpress-router
   - .claude/skills/wordpress-router
   - .cursor/skills/wordpress-router
   - .github/skills/wordpress-router
@@ -167,6 +181,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-abilities-api
   - .claude/skills/wp-abilities-api
   - .cursor/skills/wp-abilities-api
   - .github/skills/wp-abilities-api
@@ -179,6 +194,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-block-development
   - .claude/skills/wp-block-development
   - .cursor/skills/wp-block-development
   - .github/skills/wp-block-development
@@ -191,6 +207,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-block-themes
   - .claude/skills/wp-block-themes
   - .cursor/skills/wp-block-themes
   - .github/skills/wp-block-themes
@@ -203,6 +220,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-interactivity-api
   - .claude/skills/wp-interactivity-api
   - .cursor/skills/wp-interactivity-api
   - .github/skills/wp-interactivity-api
@@ -215,6 +233,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-performance
   - .claude/skills/wp-performance
   - .cursor/skills/wp-performance
   - .github/skills/wp-performance
@@ -227,6 +246,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-phpstan
   - .claude/skills/wp-phpstan
   - .cursor/skills/wp-phpstan
   - .github/skills/wp-phpstan
@@ -239,6 +259,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-playground
   - .claude/skills/wp-playground
   - .cursor/skills/wp-playground
   - .github/skills/wp-playground
@@ -251,6 +272,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-plugin-development
   - .claude/skills/wp-plugin-development
   - .cursor/skills/wp-plugin-development
   - .github/skills/wp-plugin-development
@@ -263,6 +285,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-project-triage
   - .claude/skills/wp-project-triage
   - .cursor/skills/wp-project-triage
   - .github/skills/wp-project-triage
@@ -275,6 +298,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-rest-api
   - .claude/skills/wp-rest-api
   - .cursor/skills/wp-rest-api
   - .github/skills/wp-rest-api
@@ -287,6 +311,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wp-wpcli-and-ops
   - .claude/skills/wp-wpcli-and-ops
   - .cursor/skills/wp-wpcli-and-ops
   - .github/skills/wp-wpcli-and-ops
@@ -299,6 +324,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wpds
   - .claude/skills/wpds
   - .cursor/skills/wpds
   - .github/skills/wpds
@@ -311,6 +337,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/frontend-design
   - .claude/skills/frontend-design
   - .cursor/skills/frontend-design
   - .github/skills/frontend-design
@@ -323,6 +350,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/agents-sdk
   - .claude/skills/agents-sdk
   - .cursor/skills/agents-sdk
   - .github/skills/agents-sdk
@@ -335,6 +363,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/cloudflare
   - .claude/skills/cloudflare
   - .cursor/skills/cloudflare
   - .github/skills/cloudflare
@@ -347,6 +376,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/cloudflare-email-service
   - .claude/skills/cloudflare-email-service
   - .cursor/skills/cloudflare-email-service
   - .github/skills/cloudflare-email-service
@@ -359,6 +389,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/durable-objects
   - .claude/skills/durable-objects
   - .cursor/skills/durable-objects
   - .github/skills/durable-objects
@@ -371,6 +402,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/sandbox-sdk
   - .claude/skills/sandbox-sdk
   - .cursor/skills/sandbox-sdk
   - .github/skills/sandbox-sdk
@@ -383,6 +415,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/web-perf
   - .claude/skills/web-perf
   - .cursor/skills/web-perf
   - .github/skills/web-perf
@@ -395,6 +428,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/workers-best-practices
   - .claude/skills/workers-best-practices
   - .cursor/skills/workers-best-practices
   - .github/skills/workers-best-practices
@@ -407,6 +441,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wrangler
   - .claude/skills/wrangler
   - .cursor/skills/wrangler
   - .github/skills/wrangler
@@ -419,6 +454,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/figma-use
   - .claude/skills/figma-use
   - .cursor/skills/figma-use
   - .github/skills/figma-use
@@ -431,6 +467,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-core
   - .claude/skills/gsap-core
   - .cursor/skills/gsap-core
   - .github/skills/gsap-core
@@ -443,6 +480,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-frameworks
   - .claude/skills/gsap-frameworks
   - .cursor/skills/gsap-frameworks
   - .github/skills/gsap-frameworks
@@ -455,6 +493,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-performance
   - .claude/skills/gsap-performance
   - .cursor/skills/gsap-performance
   - .github/skills/gsap-performance
@@ -467,6 +506,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-plugins
   - .claude/skills/gsap-plugins
   - .cursor/skills/gsap-plugins
   - .github/skills/gsap-plugins
@@ -479,6 +519,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-react
   - .claude/skills/gsap-react
   - .cursor/skills/gsap-react
   - .github/skills/gsap-react
@@ -491,6 +532,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-scrolltrigger
   - .claude/skills/gsap-scrolltrigger
   - .cursor/skills/gsap-scrolltrigger
   - .github/skills/gsap-scrolltrigger
@@ -503,6 +545,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-timeline
   - .claude/skills/gsap-timeline
   - .cursor/skills/gsap-timeline
   - .github/skills/gsap-timeline
@@ -515,6 +558,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gsap-utils
   - .claude/skills/gsap-utils
   - .cursor/skills/gsap-utils
   - .github/skills/gsap-utils
@@ -527,6 +571,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/baseline-ui
   - .claude/skills/baseline-ui
   - .cursor/skills/baseline-ui
   - .github/skills/baseline-ui
@@ -539,6 +584,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/fixing-accessibility
   - .claude/skills/fixing-accessibility
   - .cursor/skills/fixing-accessibility
   - .github/skills/fixing-accessibility
@@ -551,6 +597,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/fixing-metadata
   - .claude/skills/fixing-metadata
   - .cursor/skills/fixing-metadata
   - .github/skills/fixing-metadata
@@ -563,6 +610,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/fixing-motion-performance
   - .claude/skills/fixing-motion-performance
   - .cursor/skills/fixing-motion-performance
   - .github/skills/fixing-motion-performance
@@ -575,6 +623,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/chrome-devtools
   - .claude/skills/chrome-devtools
   - .cursor/skills/chrome-devtools
   - .github/skills/chrome-devtools
@@ -587,6 +636,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/defuddle
   - .claude/skills/defuddle
   - .cursor/skills/defuddle
   - .github/skills/defuddle
@@ -599,6 +649,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/json-canvas
   - .claude/skills/json-canvas
   - .cursor/skills/json-canvas
   - .github/skills/json-canvas
@@ -611,6 +662,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/obsidian-bases
   - .claude/skills/obsidian-bases
   - .cursor/skills/obsidian-bases
   - .github/skills/obsidian-bases
@@ -623,6 +675,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/obsidian-cli
   - .claude/skills/obsidian-cli
   - .cursor/skills/obsidian-cli
   - .github/skills/obsidian-cli
@@ -635,6 +688,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/obsidian-markdown
   - .claude/skills/obsidian-markdown
   - .cursor/skills/obsidian-markdown
   - .github/skills/obsidian-markdown
@@ -647,6 +701,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/auditing-wcag
   - .claude/skills/auditing-wcag
   - .cursor/skills/auditing-wcag
   - .github/skills/auditing-wcag
@@ -659,6 +714,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/planning-a11y-improvement
   - .claude/skills/planning-a11y-improvement
   - .cursor/skills/planning-a11y-improvement
   - .github/skills/planning-a11y-improvement
@@ -671,6 +727,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/planning-wcag-audit
   - .claude/skills/planning-wcag-audit
   - .cursor/skills/planning-wcag-audit
   - .github/skills/planning-wcag-audit
@@ -683,6 +740,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/reviewing-a11y
   - .claude/skills/reviewing-a11y
   - .cursor/skills/reviewing-a11y
   - .github/skills/reviewing-a11y
@@ -695,6 +753,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/grill-me
   - .claude/skills/grill-me
   - .cursor/skills/grill-me
   - .github/skills/grill-me
@@ -707,6 +766,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/backlog-notation
   - .claude/skills/backlog-notation
   - .cursor/skills/backlog-notation
   - .github/skills/backlog-notation
@@ -719,6 +779,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/using-bee
   - .claude/skills/using-bee
   - .cursor/skills/using-bee
   - .github/skills/using-bee
@@ -731,6 +792,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gh-address-comments
   - .claude/skills/gh-address-comments
   - .cursor/skills/gh-address-comments
   - .github/skills/gh-address-comments
@@ -743,6 +805,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/gh-fix-ci
   - .claude/skills/gh-fix-ci
   - .cursor/skills/gh-fix-ci
   - .github/skills/gh-fix-ci
@@ -755,6 +818,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/remotion
   - .claude/skills/remotion
   - .cursor/skills/remotion
   - .github/skills/remotion
@@ -765,6 +829,7 @@ dependencies:
   resolved_commit: ef764286d84d665634e14040a726d295c962120e
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/email-best-practices
   - .claude/skills/email-best-practices
   - .cursor/skills/email-best-practices
   - .github/skills/email-best-practices
@@ -777,6 +842,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/supabase-postgres-best-practices
   - .claude/skills/supabase-postgres-best-practices
   - .cursor/skills/supabase-postgres-best-practices
   - .github/skills/supabase-postgres-best-practices
@@ -789,6 +855,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/find-skills
   - .claude/skills/find-skills
   - .cursor/skills/find-skills
   - .github/skills/find-skills
@@ -799,6 +866,7 @@ dependencies:
   resolved_commit: 948d4331343b18d913d5bc502da72ed0c5f19101
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/wireframe-skill
   - .claude/skills/wireframe-skill
   - .cursor/skills/wireframe-skill
   - .github/skills/wireframe-skill
@@ -811,6 +879,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/difit
   - .claude/skills/difit
   - .cursor/skills/difit
   - .github/skills/difit
@@ -823,6 +892,7 @@ dependencies:
   is_virtual: true
   package_type: claude_skill
   deployed_files:
+  - .agents/skills/difit-review
   - .claude/skills/difit-review
   - .cursor/skills/difit-review
   - .github/skills/difit-review
