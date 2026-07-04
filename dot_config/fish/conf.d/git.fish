@@ -126,6 +126,7 @@ abbr --add gdt 'git diff-tree --no-commit-id --name-only -r'
 abbr --add gf 'git fetch'
 abbr --add gfa 'git fetch --all --tags --prune --jobs=10'
 abbr --add gfo 'git fetch origin'
+abbr --add gfp 'git fetch -p'
 
 # Help
 abbr --add ghh 'git help'
