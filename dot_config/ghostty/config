@@ -44,10 +44,6 @@ keybind = ctrl+b>,=toggle_quick_terminal
 # (ctrl b for tmux -> cmb b for ghostty)
 keybind = ctrl+b>r=reload_config
 keybind = ctrl+b>x=close_surface
-# this only works if you have `macos-titlebar-style = tabs or native or transparent`
-# else it behaves like new window
-keybind = ctrl+b>c=new_tab
-keybind = ctrl+b>n=new_window
 
 # tab nav
 keybind = ctrl+b>1=goto_tab:1

@@ -57,9 +57,6 @@ return {
     { key = "{",     mods = "LEADER",     action = act({ MoveTabRelative = -1 }) },
     -- Tab新規作成
     { key = "t",     mods = "SUPER",      action = act({ SpawnTab = "CurrentPaneDomain" }) },
-    { key = "c",     mods = "LEADER",     action = act({ SpawnTab = "CurrentPaneDomain" }) },
-    -- 新規ウィンドウ
-    { key = "n",     mods = "LEADER",     action = act.SpawnWindow },
     -- Tabを閉じる
     { key = "w",     mods = "SUPER",      action = act({ CloseCurrentTab = { confirm = true } }) },
     { key = "}",     mods = "LEADER",     action = act({ MoveTabRelative = 1 }) },
