@@ -6,10 +6,3 @@ auto_switch = false
 
 [ui]
 agent_panel_sort = "spaces"
-
-[keys]
-# タブ移動をプレフィックス不要の直接ショートカットに（デフォルトは prefix+p / prefix+n）
-previous_tab = "cmd+["
-next_tab = "cmd+]"
-# スペース（workspace）追加を cmd+shift+t に（デフォルトは prefix+shift+n）
-new_workspace = "cmd+shift+t"
