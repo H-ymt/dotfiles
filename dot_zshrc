@@ -35,6 +35,27 @@ corepack disable pnpm 2>/dev/null
 # zoxide
 eval "$(zoxide init zsh)"
 
+# git helper functions (fish: dot_config/fish/conf.d/git.fish と同期)
+function git_main_branch() {
+  local branch
+  for branch in main trunk mainline default master; do
+    git show-ref -q --verify "refs/heads/$branch" 2>/dev/null && echo "$branch" && return 0
+  done
+  echo main
+}
+
+function git_current_branch() {
+  git symbolic-ref --short HEAD 2>/dev/null
+}
+
+function git_develop_branch() {
+  local branch
+  for branch in dev devel develop development; do
+    git show-ref -q --verify "refs/heads/$branch" 2>/dev/null && echo "$branch" && return 0
+  done
+  echo develop
+}
+
 # fzf
 source <(fzf --zsh)
 
