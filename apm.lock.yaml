@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-07-04T05:47:23.694194+00:00'
+generated_at: '2026-07-08T09:48:20.972848+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -746,6 +746,19 @@ dependencies:
   - .github/skills/reviewing-a11y
   - .opencode/skills/reviewing-a11y
   content_hash: sha256:5d25c678d2b70acc5c3971ed20c0aedf05c5e25f8f55c07271096051d825c642
+- repo_url: mattpocock/skills
+  host: github.com
+  resolved_commit: 8515a080a74dbcf5019a1a78efc24b5fcafb36b8
+  virtual_path: skills/engineering/grill-with-docs
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/grill-with-docs
+  - .claude/skills/grill-with-docs
+  - .cursor/skills/grill-with-docs
+  - .github/skills/grill-with-docs
+  - .opencode/skills/grill-with-docs
+  content_hash: sha256:e7ef25bbee50cda2eb7b3a8ef541db0a0396dad7d369f7d14fb610671dd1864b
 - repo_url: mattpocock/skills
   host: github.com
   resolved_commit: 0877403d1e867fd9d574117e9b34ade404f36d2a

@@ -73,6 +73,7 @@ dependencies:
   - nulab/bee/skills/using-bee
   - nulab/bee/skills/backlog-notation
   - mattpocock/skills/skills/productivity/grill-me
+  - mattpocock/skills/skills/engineering/grill-with-docs
   - GoogleChrome/modern-web-guidance
   mcp: []
 scripts: {}
