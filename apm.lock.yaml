@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-07-08T09:48:20.972848+00:00'
+generated_at: '2026-07-10T00:54:30.314165+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -772,6 +772,19 @@ dependencies:
   - .github/skills/grill-me
   - .opencode/skills/grill-me
   content_hash: sha256:f321507f77702a54af1db66549ec1685fc625390d06c57d7949cdcda8eb1b5c7
+- repo_url: modem-dev/hunk
+  host: github.com
+  resolved_commit: 059dd13c8bd27fe503ef59652077edf0041034c8
+  virtual_path: skills/hunk-review
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/hunk-review
+  - .claude/skills/hunk-review
+  - .cursor/skills/hunk-review
+  - .github/skills/hunk-review
+  - .opencode/skills/hunk-review
+  content_hash: sha256:1ceb9a909ce1b50e0d84cc584e74ba2af7e65717c6394285c2dc7db16019fa62
 - repo_url: nulab/bee
   host: github.com
   resolved_commit: 276f55c7a1e90d5cb6b7b82bb4ced06d8da51f34

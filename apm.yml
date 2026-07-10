@@ -75,5 +75,6 @@ dependencies:
   - mattpocock/skills/skills/productivity/grill-me
   - mattpocock/skills/skills/engineering/grill-with-docs
   - GoogleChrome/modern-web-guidance
+  - modem-dev/hunk/skills/hunk-review
   mcp: []
 scripts: {}
