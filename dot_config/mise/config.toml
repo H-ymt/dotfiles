@@ -14,7 +14,7 @@ yarn = "4.12.0"
 # --- CLI ユーティリティ (latest: API 安定・バグ修正追従) ---
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@antfu/ni" = "latest"
-"npm:difit" = "latest"
+"npm:hunkdiff" = "latest"
 "npm:resend-cli" = "latest"
 "npm:portless" = "latest"
 "npm:oxfmt" = "latest"
