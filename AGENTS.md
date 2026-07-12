@@ -87,15 +87,6 @@ npm パッケージは `mise.toml` の `[tools]` で管理する。`[bootstrap.p
 
 **注意:** pkg installer 形式の cask や、tap 元が API metadata を公開していない cask は mise の brew-cask マネージャーが非対応。これらは `mise.toml` に追加せず、手動でインストールする（非対応の具体例は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。
 
-## tmux プラグインの追加
-
-TPM 系のプラグインは実体をリポジトリに含めず `[bootstrap.repos]` で clone させる。
-
-```toml
-[bootstrap.repos]
-"~/.tmux/plugins/<plugin-name>" = { url = "https://github.com/<owner>/<plugin-name>.git", ref = "main" }
-```
-
 ## herdr の設定管理
 
 herdr のユーザー設定は `.config/herdr/config.toml`（→ `~/.config/herdr/config.toml`）で管理する。

@@ -55,7 +55,6 @@ github_username = "H-ymt"
 "brew:sheldon" = "latest"
 "brew:starship" = "latest"
 "brew:supabase" = "latest"
-"brew:tmux" = "latest"
 "brew:tree" = "latest"
 "brew:treemd" = "latest"
 "brew:uv" = "latest"
@@ -98,16 +97,6 @@ github_username = "H-ymt"
 # mise の brew-cask マネージャー非対応のため対象外（手動インストール）:
 # - adobe-creative-cloud, logi-options+, microsoft-teams (pkg installer 形式)
 # - linear-linear (サードパーティ tap が API metadata 未公開)
-
-[bootstrap.repos]
-"~/.tmux/plugins/tpm" = { url = "https://github.com/tmux-plugins/tpm.git", ref = "master" }
-"~/.tmux/plugins/tmux" = { url = "https://github.com/tmux-plugins/tmux.git", ref = "master" }
-"~/.tmux/plugins/tmux-resurrect" = { url = "https://github.com/tmux-plugins/tmux-resurrect.git", ref = "master" }
-"~/.tmux/plugins/tmux-continuum" = { url = "https://github.com/tmux-plugins/tmux-continuum.git", ref = "master" }
-"~/.tmux/plugins/tmux-battery" = { url = "https://github.com/tmux-plugins/tmux-battery.git", ref = "master" }
-"~/.tmux/plugins/tmux-online-status" = { url = "https://github.com/tmux-plugins/tmux-online-status.git", ref = "master" }
-"~/.tmux/plugins/vim-tmux-navigator" = { url = "https://github.com/tmux-plugins/vim-tmux-navigator.git", ref = "master" }
-"~/.tmux/plugins/tmux-sessionx" = { url = "https://github.com/omerxx/tmux-sessionx.git", ref = "main" }
 
 [bootstrap.hooks.post-packages]
 run = [
@@ -163,8 +152,6 @@ run = [
 "~/.config/yazi/flavors" = { source = ".config/yazi/flavors", mode = "symlink-each" }
 
 "~/.config/zsh-abbr/user-abbreviations" = { source = ".config/zsh-abbr/user-abbreviations", mode = "symlink" }
-
-"~/.config/tmux/tmux.conf" = { source = ".config/tmux/tmux.conf", mode = "symlink" }
 
 "~/.config/bat/config" = { source = ".config/bat/config", mode = "symlink" }
 "~/.config/bat/themes" = { source = ".config/bat/themes", mode = "symlink-each" }

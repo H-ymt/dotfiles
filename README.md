@@ -17,7 +17,6 @@ mise bootstrap
 `mise bootstrap` で以下が自動実行される:
 
 - `[bootstrap.brew.taps]` / `[bootstrap.packages]` → Homebrew tap・パッケージ・cask を同期（`brew` コマンド不要でインストール可能）
-- `[bootstrap.repos]` → tmux プラグイン (TPM 等) を clone
 - `[dotfiles]` → 設定ファイルを symlink / template で展開
 - `[bootstrap.hooks]` → パッケージ導入後・dotfiles 展開後のセットアップコマンドを実行（詳細は `mise.toml` 参照）
 
@@ -37,7 +36,6 @@ mise bootstrap
 | リポジトリ管理 | [ghq](https://github.com/x-motemen/ghq) + [fzf](https://github.com/junegunn/fzf) | `~/ghq/` |
 | Git | Git + [delta](https://github.com/dandavison/delta) | `~/.gitconfig` |
 | ターミナル | [Ghostty](https://ghostty.org/) / [WezTerm](https://wezfurlong.org/wezterm/) | `~/.config/ghostty/`, `~/.config/wezterm/` |
-| マルチプレクサ | [tmux](https://github.com/tmux/tmux) | `~/.config/tmux/` |
 | エディタ | [Neovim](https://neovim.io/) / [Zed](https://zed.dev/) | `~/.config/nvim/`, `~/.config/zed/` |
 | ファイラ | [Yazi](https://yazi-rs.github.io/) | `~/.config/yazi/` |
 | ビューア | [bat](https://github.com/sharkdp/bat) (Catppuccin Mocha) | `~/.config/bat/` |
