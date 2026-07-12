@@ -1,30 +1,36 @@
 # dotfiles
 
-macOS 開発環境の設定ファイルを [chezmoi](https://www.chezmoi.io/) で管理。
+macOS 開発環境の設定ファイルを [mise bootstrap](https://mise.jdx.dev/bootstrap.html) で管理。
 
 ## セットアップ
 
-ソースは [ghq](https://github.com/x-motemen/ghq) 配下 (`~/ghq/github.com/H-ymt/dotfiles`) に置く。`~/.config/chezmoi/chezmoi.toml` で `sourceDir` を指定する。
+ソースは [ghq](https://github.com/x-motemen/ghq) 配下 (`~/ghq/github.com/H-ymt/dotfiles`) に置く。
 
 ```sh
-brew install chezmoi ghq
+brew install mise ghq
 ghq get git@github.com:H-ymt/dotfiles.git
-mkdir -p ~/.config/chezmoi
-printf 'sourceDir = "%s/github.com/H-ymt/dotfiles"\n' "$(ghq root)" > ~/.config/chezmoi/chezmoi.toml
-chezmoi apply
+cd "$(ghq root)/github.com/H-ymt/dotfiles"
+mise trust
+mise bootstrap
 ```
 
-`chezmoi apply` で以下が自動実行される:
+`mise bootstrap` で以下が自動実行される:
 
-- `run_after_brew-bundle.sh` → `Brewfile` をもとに Homebrew パッケージを同期
-- `run_after_apm-install.sh` → `apm.yml` をもとに Agent Skills をインストール
+- `[bootstrap.brew.taps]` / `[bootstrap.packages]` → Homebrew tap・パッケージ・cask を同期（`brew` コマンド不要でインストール可能）
+- `[bootstrap.repos]` → tmux プラグイン (TPM 等) を clone
+- `[dotfiles]` → 設定ファイルを symlink / template で展開
+- `[bootstrap.hooks]` → パッケージ導入後・dotfiles 展開後のセットアップコマンドを実行（詳細は `mise.toml` 参照）
+
+既存ファイルとの競合はデフォルトで拒否される。強制上書きする場合は `mise bootstrap --force-dotfiles`。実行内容だけ確認したい場合は `mise bootstrap --dry-run`。
+
+> **Note:** mise の brew-cask マネージャーが非対応の cask が一部ある（対象と理由は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。手動でインストールする。
 
 ## 管理ツール
 
 | カテゴリ | ツール | 設定パス |
 |---|---|---|
-| パッケージ | [Homebrew](https://brew.sh/) | `Brewfile` |
-| 言語/ランタイム | [mise](https://mise.jdx.dev/) | `~/.config/mise/` |
+| パッケージ / bootstrap | [Homebrew](https://brew.sh/) + [mise bootstrap](https://mise.jdx.dev/bootstrap.html) | `mise.toml` |
+| 言語/ランタイム | [mise](https://mise.jdx.dev/) | `mise.toml` (`~/.config/mise/config.toml`) |
 | シェル | [Fish](https://fishshell.com/) + [Starship](https://starship.rs/) + [fzf.fish](https://github.com/PatrickF1/fzf.fish) | `~/.config/fish/`, `~/.config/starship.toml` |
 | シェル (fallback) | zsh + [sheldon](https://github.com/rossmacarthur/sheldon) | `~/.zshrc`, `~/.config/sheldon/` |
 | シェル履歴 | [atuin](https://atuin.sh/) | `~/.config/atuin/` |
@@ -86,10 +92,11 @@ apm uninstall owner/repo/path         # スキル削除
 
 ## npm グローバルツール
 
-npm パッケージは Brewfile ではなく `mise` で管理する。
+npm パッケージは `[bootstrap.packages]`（Homebrew）ではなく `[tools]` で管理する。
 
 ```toml
-# ~/.config/mise/config.toml
+# mise.toml
+[tools]
 "npm:<package-name>" = "latest"
 ```
 

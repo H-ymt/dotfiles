@@ -1,3 +1,186 @@
+[vars]
+github_username = "H-ymt"
+
+[bootstrap.brew.taps]
+"aws/tap" = "aws/tap"
+"infisical/get-cli" = "infisical/get-cli"
+"jesseduffield/lazygit" = "jesseduffield/lazygit"
+"k1low/tap" = "k1low/tap"
+"libsql/sqld" = "libsql/sqld"
+"manaflow-ai/cmux" = "manaflow-ai/cmux"
+"nikitabobko/tap" = "nikitabobko/tap"
+"oven-sh/bun" = "oven-sh/bun"
+"shopify/shopify" = "shopify/shopify"
+"steipete/tap" = "steipete/tap"
+"supabase/tap" = "supabase/tap"
+"trasta298/tap" = "trasta298/tap"
+"tursodatabase/tap" = "tursodatabase/tap"
+"tw93/tap" = "tw93/tap"
+"xwmx/taps" = "xwmx/taps"
+
+[bootstrap.packages]
+"brew:agent-browser" = "latest"
+"brew:atuin" = "latest"
+"brew:bash" = "latest"
+"brew:bat" = "latest"
+"brew:btop" = "latest"
+"brew:cloudflare-wrangler" = "latest"
+"brew:crit" = "latest"
+"brew:docker" = "latest"
+"brew:eza" = "latest"
+"brew:fd" = "latest"
+"brew:ffmpeg" = "latest"
+"brew:fish" = "latest"
+"brew:fzf" = "latest"
+"brew:gdrive" = "latest"
+"brew:gh" = "latest"
+"brew:ghq" = "latest"
+"brew:git-delta" = "latest"
+"brew:git-filter-repo" = "latest"
+"brew:glab" = "latest"
+"brew:herdr" = "latest"
+"brew:imagemagick" = "latest"
+"brew:jq" = "latest"
+"brew:killport" = "latest"
+"brew:lazygit" = "latest"
+"brew:lefthook" = "latest"
+"brew:neovim" = "latest"
+"brew:ni" = "latest"
+"brew:ollama" = "latest"
+"brew:pandoc" = "latest"
+"brew:playwright-cli" = "latest"
+"brew:poppler" = "latest"
+"brew:postgresql@14" = "latest"
+"brew:ripgrep" = "latest"
+"brew:sevenzip" = "latest"
+"brew:sheldon" = "latest"
+"brew:starship" = "latest"
+"brew:supabase" = "latest"
+"brew:tmux" = "latest"
+"brew:tree" = "latest"
+"brew:treemd" = "latest"
+"brew:uv" = "latest"
+"brew:vercel-cli" = "latest"
+"brew:wp-cli" = "latest"
+"brew:yazi" = "latest"
+"brew:zoxide" = "latest"
+"brew:infisical/get-cli/infisical" = "latest"
+"brew:k1low/tap/mo" = "latest"
+"brew:oven-sh/bun/bun" = "latest"
+"brew:shopify/shopify/shopify-cli" = "latest"
+"brew:tursodatabase/tap/turso" = "latest"
+
+"brew-cask:chatwork" = "latest"
+"brew-cask:dockdoor" = "latest"
+"brew-cask:claude" = "latest"
+"brew-cask:claude-code" = "latest"
+"brew-cask:codex" = "latest"
+"brew-cask:copilot-cli" = "latest"
+"brew-cask:cursor" = "latest"
+"brew-cask:figma" = "latest"
+"brew-cask:font-ibm-plex-mono" = "latest"
+"brew-cask:font-plemol-jp" = "latest"
+"brew-cask:font-plemol-jp-nf" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:karabiner-elements" = "latest"
+"brew-cask:keycastr" = "latest"
+"brew-cask:local" = "latest"
+"brew-cask:macwinzipper" = "latest"
+"brew-cask:ngrok" = "latest"
+"brew-cask:notion" = "latest"
+"brew-cask:obsidian" = "latest"
+"brew-cask:orbstack" = "latest"
+"brew-cask:raycast" = "latest"
+"brew-cask:slack" = "latest"
+"brew-cask:visual-studio-code" = "latest"
+"brew-cask:wezterm" = "latest"
+"brew-cask:zed" = "latest"
+"brew-cask:zipic" = "latest"
+
+# mise の brew-cask マネージャー非対応のため対象外（手動インストール）:
+# - adobe-creative-cloud, logi-options+, microsoft-teams (pkg installer 形式)
+# - linear-linear (サードパーティ tap が API metadata 未公開)
+
+[bootstrap.repos]
+"~/.tmux/plugins/tpm" = { url = "https://github.com/tmux-plugins/tpm.git", ref = "master" }
+"~/.tmux/plugins/tmux" = { url = "https://github.com/tmux-plugins/tmux.git", ref = "master" }
+"~/.tmux/plugins/tmux-resurrect" = { url = "https://github.com/tmux-plugins/tmux-resurrect.git", ref = "master" }
+"~/.tmux/plugins/tmux-continuum" = { url = "https://github.com/tmux-plugins/tmux-continuum.git", ref = "master" }
+"~/.tmux/plugins/tmux-battery" = { url = "https://github.com/tmux-plugins/tmux-battery.git", ref = "master" }
+"~/.tmux/plugins/tmux-online-status" = { url = "https://github.com/tmux-plugins/tmux-online-status.git", ref = "master" }
+"~/.tmux/plugins/vim-tmux-navigator" = { url = "https://github.com/tmux-plugins/vim-tmux-navigator.git", ref = "master" }
+"~/.tmux/plugins/tmux-sessionx" = { url = "https://github.com/omerxx/tmux-sessionx.git", ref = "main" }
+
+[bootstrap.hooks.post-packages]
+run = [
+  "gh auth status >/dev/null 2>&1 && gh extension list | grep -q seachicken/gh-poi || gh extension install seachicken/gh-poi 2>/dev/null || true",
+  "brew services restart ollama postgresql@14 || true",
+]
+
+[bootstrap.hooks.post-dotfiles]
+run = [
+  "chmod 600 ~/.config/karabiner/karabiner.json ~/.config/zed/settings.json ~/.config/nvim/lua/plugins/colorscheme.lua",
+  "apm install --target all || true",
+  "bat cache --build || true",
+]
+
+[dotfiles]
+"~/.zshrc" = { source = ".zshrc", mode = "symlink" }
+"~/.gitconfig" = { source = ".gitconfig", mode = "symlink" }
+"~/.bunfig.toml" = { source = ".bunfig.toml", mode = "symlink" }
+"~/.claude/CLAUDE.md" = { source = ".claude/CLAUDE.md.tmpl", mode = "template" }
+
+"~/.config/zed/keymap.json" = { source = ".config/zed/keymap.json", mode = "symlink" }
+"~/.config/zed/settings.json" = { source = ".config/zed/settings.json", mode = "symlink" }
+
+"~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
+
+"~/.config/nvim/init.lua" = { source = ".config/nvim/init.lua", mode = "symlink" }
+"~/.config/nvim/.gitignore" = { source = ".config/nvim/.gitignore", mode = "symlink" }
+"~/.config/nvim/LICENSE" = { source = ".config/nvim/LICENSE", mode = "symlink" }
+"~/.config/nvim/lazy-lock.json" = { source = ".config/nvim/lazy-lock.json", mode = "symlink" }
+"~/.config/nvim/README.md" = { source = ".config/nvim/README.md", mode = "symlink" }
+"~/.config/nvim/stylua.toml" = { source = ".config/nvim/stylua.toml", mode = "symlink" }
+"~/.config/nvim/lazyvim.json" = { source = ".config/nvim/lazyvim.json", mode = "symlink" }
+"~/.config/nvim/.neoconf.json" = { source = ".config/nvim/.neoconf.json", mode = "symlink" }
+"~/.config/nvim/lua/config/autocmds.lua" = { source = ".config/nvim/lua/config/autocmds.lua", mode = "symlink" }
+"~/.config/nvim/lua/config/keymaps.lua" = { source = ".config/nvim/lua/config/keymaps.lua", mode = "symlink" }
+"~/.config/nvim/lua/config/options.lua" = { source = ".config/nvim/lua/config/options.lua", mode = "symlink" }
+"~/.config/nvim/lua/config/lazy.lua" = { source = ".config/nvim/lua/config/lazy.lua", mode = "symlink" }
+"~/.config/nvim/lua/plugins/colorscheme.lua" = { source = ".config/nvim/lua/plugins/colorscheme.lua", mode = "symlink" }
+"~/.config/nvim/lua/plugins/copilot.lua" = { source = ".config/nvim/lua/plugins/copilot.lua", mode = "symlink" }
+"~/.config/nvim/lua/plugins/example.lua" = { source = ".config/nvim/lua/plugins/example.lua", mode = "symlink" }
+
+"~/.config/wezterm/keybinds.lua" = { source = ".config/wezterm/keybinds.lua", mode = "symlink" }
+"~/.config/wezterm/wezterm.lua" = { source = ".config/wezterm/wezterm.lua", mode = "symlink" }
+
+"~/.config/starship.toml" = { source = ".config/starship.toml", mode = "symlink" }
+
+"~/.config/sheldon/plugins.toml" = { source = ".config/sheldon/plugins.toml", mode = "symlink" }
+
+"~/.config/herdr/config.toml" = { source = ".config/herdr/config.toml", mode = "symlink" }
+
+"~/.config/yazi/init.lua" = { source = ".config/yazi/init.lua", mode = "symlink" }
+"~/.config/yazi/theme.toml" = { source = ".config/yazi/theme.toml", mode = "symlink" }
+"~/.config/yazi/flavors" = { source = ".config/yazi/flavors", mode = "symlink-each" }
+
+"~/.config/zsh-abbr/user-abbreviations" = { source = ".config/zsh-abbr/user-abbreviations", mode = "symlink" }
+
+"~/.config/tmux/tmux.conf" = { source = ".config/tmux/tmux.conf", mode = "symlink" }
+
+"~/.config/bat/config" = { source = ".config/bat/config", mode = "symlink" }
+"~/.config/bat/themes" = { source = ".config/bat/themes", mode = "symlink-each" }
+
+"~/.config/fish/config.fish" = { source = ".config/fish/config.fish", mode = "symlink" }
+"~/.config/fish/functions" = { source = ".config/fish/functions", mode = "symlink-each" }
+"~/.config/fish/conf.d" = { source = ".config/fish/conf.d", mode = "symlink-each" }
+
+"~/.config/karabiner/karabiner.json" = { source = ".config/karabiner/karabiner.json", mode = "symlink" }
+
+"~/.config/ghostty/config" = { source = ".config/ghostty/config", mode = "symlink" }
+"~/.config/ghostty/README.md" = { source = ".config/ghostty/README.md", mode = "symlink" }
+"~/.config/ghostty/themes" = { source = ".config/ghostty/themes", mode = "symlink-each" }
+
 [tools]
 # --- ランタイム (固定) ---
 node = "24.15.0"
