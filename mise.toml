@@ -69,7 +69,6 @@ github_username = "H-ymt"
 "brew:shopify/shopify/shopify-cli" = "latest"
 "brew:tursodatabase/tap/turso" = "latest"
 
-"brew-cask:chatwork" = "latest"
 "brew-cask:dockdoor" = "latest"
 "brew-cask:claude" = "latest"
 "brew-cask:claude-code" = "latest"
