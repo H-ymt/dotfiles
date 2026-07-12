@@ -118,7 +118,7 @@ run = [
 [bootstrap.hooks.post-dotfiles]
 run = [
   "chmod 600 ~/.config/karabiner/karabiner.json ~/.config/zed/settings.json ~/.config/nvim/lua/plugins/colorscheme.lua",
-  "apm install --target all || true",
+  "apm install --target all",
   "bat cache --build || true",
 ]
 
