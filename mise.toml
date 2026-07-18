@@ -180,7 +180,7 @@ yarn = "4.12.0"
 "npm:lighthouse" = "13.0.3"
 
 # --- CLI ユーティリティ (latest: API 安定・バグ修正追従) ---
-"npm:@anthropic-ai/claude-code" = "latest"
+"npm:@anthropic-ai/claude-code" = { version = "latest", npm_args = "--ignore-scripts=false --allow-scripts=@anthropic-ai/claude-code" }
 "npm:@antfu/ni" = "latest"
 "npm:hunkdiff" = "latest"
 "npm:resend-cli" = "latest"
