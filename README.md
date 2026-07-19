@@ -30,8 +30,7 @@ mise bootstrap
 |---|---|---|
 | パッケージ / bootstrap | [Homebrew](https://brew.sh/) + [mise bootstrap](https://mise.jdx.dev/bootstrap.html) | `mise.toml` |
 | 言語/ランタイム | [mise](https://mise.jdx.dev/) | `mise.toml` (`~/.config/mise/config.toml`) |
-| シェル | [Fish](https://fishshell.com/) + [Starship](https://starship.rs/) + [fzf.fish](https://github.com/PatrickF1/fzf.fish) | `~/.config/fish/`, `~/.config/starship.toml` |
-| シェル (fallback) | zsh + [sheldon](https://github.com/rossmacarthur/sheldon) | `~/.zshrc`, `~/.config/sheldon/` |
+| シェル | [zsh](https://www.zsh.org/) + [sheldon](https://github.com/rossmacarthur/sheldon) + [Starship](https://starship.rs/) + [fzf](https://github.com/junegunn/fzf) | `~/.zshrc`, `~/.config/sheldon/`, `~/.config/starship.toml` |
 | シェル履歴 | [atuin](https://atuin.sh/) | `~/.config/atuin/` |
 | リポジトリ管理 | [ghq](https://github.com/x-motemen/ghq) + [fzf](https://github.com/junegunn/fzf) | `~/ghq/` |
 | Git | Git + [delta](https://github.com/dandavison/delta) | `~/.gitconfig` |
@@ -54,26 +53,12 @@ ghq list                  # 管理下の一覧
 ghq root                  # ルートパス（~/ghq）
 ```
 
-### キーバインド（fish）
+### キーバインド（zsh）
 
 | キー | 機能 |
 |---|---|
-| `Ctrl+G` | `ghq` 管理下のリポジトリを fzf で選んで `cd`（自作: `ghq_fzf_repo`） |
-| `Ctrl+R` | コマンド履歴を fzf で検索 |
-| `Ctrl+Alt+F` | カレントディレクトリのファイルを fzf で検索 |
-| `Ctrl+Alt+S` | `git status` のファイルを fzf で選択 |
-| `Ctrl+Alt+L` | `git log` を fzf で検索 |
-| `Ctrl+V` | 環境変数を fzf で検索 |
-
-### fish プラグイン管理
-
-[fisher](https://github.com/jorgebucaran/fisher) で管理。プラグインは `~/.config/fish/fish_plugins` に列挙される。
-
-```sh
-fisher install <owner>/<repo>   # 追加
-fisher update                   # 更新
-fisher list                     # 一覧
-```
+| `Ctrl+G` | `ghq` 管理下のリポジトリを fzf で選んで `cd`（`ghq-fzf-repo`） |
+| `Ctrl+R` | コマンド履歴を fzf で検索（`fzf --zsh`） |
 
 ## Agent Skills (APM)
 

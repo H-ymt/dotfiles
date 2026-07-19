@@ -1,11 +1,13 @@
-# Fish が主シェル。このファイルは SSH 接続時など Fish が使えない環境向けのフォールバック。
-# Fish: ~/.config/fish/config.fish
-
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/opt/php@8.2/sbin:$PATH"
+export PATH="$HOME/.volta/bin:$HOME/.codeium/windsurf/bin:$HOME/.antigravity/antigravity/bin:$HOME/.turso:$PATH"
+
+# Claude Code
+export ANTHROPIC_MODEL=opus
 
 # Initialize completions (must be before sheldon for compdef)
 autoload -Uz compinit && compinit
@@ -32,10 +34,21 @@ esac
 eval "$(mise activate zsh)"
 corepack disable pnpm 2>/dev/null
 
+# Claude Code: node global の壊れた stub より mise npm backend を優先
+claude() {
+  local prefix
+  prefix="$(mise where npm:@anthropic-ai/claude-code 2>/dev/null)" || true
+  if [[ -n "$prefix" && -x "$prefix/bin/claude" ]]; then
+    "$prefix/bin/claude" "$@"
+  else
+    command claude "$@"
+  fi
+}
+
 # zoxide
 eval "$(zoxide init zsh)"
 
-# git helper functions (fish: dot_config/fish/conf.d/git.fish と同期)
+# git helper functions
 function git_main_branch() {
   local branch
   for branch in main trunk mainline default master; do
@@ -84,6 +97,21 @@ function y() {
 
 # Starship
 eval "$(starship init zsh)"
+
+# atuin (shell history)
+eval "$(atuin init zsh)"
+
+# SSH: ghostty の terminfo がないサーバーでの表示崩れを防ぐ
+ssh() {
+  TERM=xterm-256color command ssh "$@"
+}
+
+# Shopify Hydrogen
+h2() {
+  local prefix
+  prefix="$(npm prefix -s)"
+  "$prefix/node_modules/.bin/shopify" hydrogen "$@"
+}
 
 # Kiro
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

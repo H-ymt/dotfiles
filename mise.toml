@@ -30,7 +30,6 @@ github_username = "H-ymt"
 "brew:eza" = "latest"
 "brew:fd" = "latest"
 "brew:ffmpeg" = "latest"
-"brew:fish" = "latest"
 "brew:fzf" = "latest"
 "brew:gdrive" = "latest"
 "brew:gh" = "latest"
@@ -104,6 +103,11 @@ run = [
   "brew services restart postgresql@14 || true",
 ]
 
+[bootstrap.hooks.post-tools]
+run = [
+  "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true",
+]
+
 [bootstrap.hooks.post-dotfiles]
 run = [
   "chmod 600 ~/.config/karabiner/karabiner.json ~/.config/zed/settings.json ~/.config/nvim/lua/plugins/colorscheme.lua",
@@ -156,19 +160,18 @@ run = [
 "~/.config/bat/config" = { source = ".config/bat/config", mode = "symlink" }
 "~/.config/bat/themes" = { source = ".config/bat/themes", mode = "symlink-each" }
 
-"~/.config/fish/config.fish" = { source = ".config/fish/config.fish", mode = "symlink" }
-"~/.config/fish/functions" = { source = ".config/fish/functions", mode = "symlink-each" }
-"~/.config/fish/conf.d" = { source = ".config/fish/conf.d", mode = "symlink-each" }
-
 "~/.config/karabiner/karabiner.json" = { source = ".config/karabiner/karabiner.json", mode = "symlink" }
 
 "~/.config/ghostty/config" = { source = ".config/ghostty/config", mode = "symlink" }
 "~/.config/ghostty/README.md" = { source = ".config/ghostty/README.md", mode = "symlink" }
 "~/.config/ghostty/themes" = { source = ".config/ghostty/themes", mode = "symlink-each" }
 
+[hooks]
+postinstall = "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true"
+
 [tools]
 # --- ランタイム (固定) ---
-node = "24.15.0"
+node = { version = "24.15.0", postinstall = "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true" }
 pnpm = "11.2.2"
 bun = "latest"
 yarn = "4.12.0"
@@ -180,7 +183,11 @@ yarn = "4.12.0"
 "npm:lighthouse" = "13.0.3"
 
 # --- CLI ユーティリティ (latest: API 安定・バグ修正追従) ---
-"npm:@anthropic-ai/claude-code" = { version = "latest", npm_args = "--ignore-scripts=false --allow-scripts=@anthropic-ai/claude-code" }
+[tools."npm:@anthropic-ai/claude-code"]
+version = "latest"
+allow_builds = ["@anthropic-ai/claude-code"]
+postinstall = "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true"
+
 "npm:@antfu/ni" = "latest"
 "npm:hunkdiff" = "latest"
 "npm:resend-cli" = "latest"

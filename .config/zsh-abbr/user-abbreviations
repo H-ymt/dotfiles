@@ -172,7 +172,7 @@ abbr ggpur="ggu"
 abbr lg="lazygit"
 abbr gbase="gh sync"
 
-# Dynamic branch abbreviations (fish: dot_config/fish/conf.d/git.fish と同期。git_main_branch 等は dot_zshrc で定義)
+# Dynamic branch abbreviations (git_main_branch 等は .zshrc で定義)
 abbr gcm="git checkout \$(git_main_branch)"
 abbr gcd="git checkout \$(git_develop_branch)"
 abbr gswm="git switch \$(git_main_branch)"
@@ -194,7 +194,7 @@ abbr gluc="git pull upstream \$(git_current_branch)"
 abbr glum="git pull upstream \$(git_main_branch)"
 abbr groh="git reset origin/\$(git_current_branch) --hard"
 
-# Editor abbreviations (fish: dot_config/fish/conf.d/editors.fish と同期)
+# Editor abbreviations
 abbr c.="cursor ."
 abbr cr.="cursor -r ."
 abbr z.="zed ."
@@ -202,7 +202,7 @@ abbr zr.="zed -r ."
 abbr co.="code ."
 abbr cor.="code -r ."
 
-# ripgrep abbreviations (fish: dot_config/fish/conf.d/rg.fish と同期)
+# ripgrep abbreviations
 abbr rgi="rg -i"
 abbr rgl="rg -l"
 abbr rgc="rg -C 3"
