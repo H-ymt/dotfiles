@@ -35,6 +35,7 @@ mise bootstrap
 | リポジトリ管理 | [ghq](https://github.com/x-motemen/ghq) + [fzf](https://github.com/junegunn/fzf) | `~/ghq/` |
 | Git | Git + [delta](https://github.com/dandavison/delta) | `~/.gitconfig` |
 | ターミナル | [Ghostty](https://ghostty.org/) / [WezTerm](https://wezfurlong.org/wezterm/) | `~/.config/ghostty/`, `~/.config/wezterm/` |
+| ターミナルマルチプレクサ | [herdr](https://herdr.dev/) | `~/.config/herdr/config.toml` |
 | エディタ | [Neovim](https://neovim.io/) / [Zed](https://zed.dev/) | `~/.config/nvim/`, `~/.config/zed/` |
 | ファイラ | [Yazi](https://yazi-rs.github.io/) | `~/.config/yazi/` |
 | ビューア | [bat](https://github.com/sharkdp/bat) (Catppuccin Mocha) | `~/.config/bat/` |
@@ -86,3 +87,49 @@ npm パッケージは `[bootstrap.packages]`（Homebrew）ではなく `[tools]
 ```sh
 mise install npm:<package-name>
 ```
+
+## herdr（ターミナルマルチプレクサ）
+
+[herdr](https://herdr.dev/) は AI エージェントの並行実行を前提としたターミナルマルチプレクサ。ユーザー設定は `~/.config/herdr/config.toml`（→ dotfiles の `.config/herdr/config.toml` を symlink）で管理する。`session.json` / `*.log` / `*.sock` は実行時に生成されるマシン固有物のため管理しない。
+
+本体は `[bootstrap.packages]` の `brew:herdr` で導入される。プラグインと integration は Homebrew 管理外なので、以下を手動で実行する。
+
+### プラグイン
+
+```sh
+herdr plugin install smarzban/herdr-file-viewer --yes   # git-aware ファイルビューア
+herdr plugin install edmundmiller/herdr-plugin-hunk --yes   # hunk 差分ビューア
+```
+
+> **Note:** 非対話環境では `--yes` が必須。プラグインインストール後は `herdr server reload-config` で設定を再読み込みする。
+
+### エージェント integration
+
+エージェントの作業状態を herdr のパネルに表示するフックを導入する。使用しているエージェントに合わせて選ぶ（`herdr integration install <name>` で一覧表示）。
+
+```sh
+herdr integration install claude   # ~/.claude/hooks/ と settings.json にフックを追加
+herdr integration status           # 導入状況を確認
+```
+
+> **Note:** integration は `~/.claude/settings.json` を書き換える。このファイルは API キー等を含むため dotfiles では管理していない（`CLAUDE.md` のみ管理）。
+
+### キーバインド
+
+prefix キーを押して prefix モードに入った状態で以下を押す。
+
+| キー | 機能 |
+|---|---|
+| `prefix + h` | worktree diff を分割ペインで開く（hunk） |
+| `prefix + f` | ファイルビューアを分割ペインで開く |
+| `prefix + shift + f` | ファイルビューアを新規タブで開く |
+| `prefix + alt + g` | lazygit をポップアップで開く |
+
+### CJK / IME 対応
+
+`config.toml` のトップレベルで、TUI 上でも日本語入力の変換候補ウィンドウがカーソルに追従するよう設定している。
+
+- `reveal_hidden_cursor_for_cjk_ime` — 隠しカーソル位置を外側ターミナルへ公開
+- `cjk_ime_agents` — 上記を適用するエージェント一覧
+- `cjk_ime_cursor_shape` — IME 用カーソル形状
+- `switch_ascii_input_source_in_prefix` — prefix モード中だけ ASCII 入力ソースへ切り替え
