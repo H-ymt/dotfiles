@@ -43,10 +43,10 @@ type = "shell"
 command = "herdr plugin action invoke open-file-viewer-tab --plugin herdr-file-viewer"
 description = "Open file viewer in new tab"
 
-# herdr-plugin-hunk: worktree diff（キーは後で確定する。prefix+h は組み込みの
-# ペイン左移動と衝突するため一旦無効化）
-# [[keys.command]]
-# key = "prefix+h"
-# type = "shell"
-# command = "herdr plugin action invoke worktree-split --plugin hunk.diff"
-# description = "Open worktree diff in split pane"
+# herdr-plugin-hunk: prefix+shift+h で worktree diff
+# （prefix+h は組み込みのペイン左移動と衝突するため shift 付きにする）
+[[keys.command]]
+key = "prefix+shift+h"
+type = "shell"
+command = "herdr plugin action invoke worktree-split --plugin hunk.diff"
+description = "Open worktree diff in split pane"
