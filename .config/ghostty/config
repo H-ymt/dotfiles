@@ -43,7 +43,6 @@ keybind = ctrl+b>,=toggle_quick_terminal
 # Similar Tmux but with Ghostty
 # (ctrl b for tmux -> cmb b for ghostty)
 keybind = ctrl+b>r=reload_config
-keybind = ctrl+b>x=close_surface
 
 # タブ移動・ペイン分割・移動は herdr(prefix=ctrl+b) に委譲する。
 # ここで ctrl+b>1..9 や ctrl+b>- / h/j/k/l を定義すると Ghostty が先にキーを
