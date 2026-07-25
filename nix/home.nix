@@ -50,14 +50,18 @@
     # --- データ変換・メディア ---
     jq
     pandoc
-    poppler
+    # Homebrew の poppler は pdftotext 等のコマンド群を含むが、nixpkgs の
+    # poppler はライブラリのみ。コマンドは poppler_utils 側にある
+    poppler-utils
     ffmpeg
 
     # --- クラウド / SaaS CLI ---
     wrangler # Homebrew: cloudflare-wrangler
     supabase-cli # Homebrew: supabase
     shopify-cli
-    turso
+    # nixpkgs の `turso` は別物（ローカル SQL シェル tursodb）。
+    # Homebrew の tursodatabase/tap/turso に相当するのは turso-cli
+    turso-cli
     infisical
     gdrive
     wp-cli
