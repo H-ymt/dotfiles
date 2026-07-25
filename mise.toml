@@ -25,16 +25,9 @@ github_username = "H-ymt"
 # 運用しているため、ここにも homebrew.casks にも入れず据え置く。tap の API metadata が
 # 未公開で brew bundle でも扱いに難があるため、Nix / mise とは別管理を継続する。
 
-[bootstrap.hooks.post-packages]
-run = [
-  "gh auth status >/dev/null 2>&1 && gh extension list | grep -q seachicken/gh-poi || gh extension install seachicken/gh-poi 2>/dev/null || true",
-]
-
-[bootstrap.hooks.post-dotfiles]
-run = [
-  "apm install --target all",
-  "bat cache --build || true",
-]
+# [bootstrap.hooks.*] は Phase 5 で nix/home.nix の home.activation へ移した。
+# gh-poi extension / apm install / bat cache は darwin-rebuild switch のたびに走る。
+# mise 側にフックを残すと同じ処理が二重に走るため、同じコミットで削除する。issue #1 参照。
 
 [dotfiles]
 # .zshrc / .gitconfig は Phase 4 で nix/home.nix の programs.zsh / programs.git へ移した。

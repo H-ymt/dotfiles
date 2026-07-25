@@ -234,6 +234,43 @@ in
     };
   };
 
+  # Phase 5: mise の [bootstrap.hooks.*] を home-manager の activation script へ移す。
+  #
+  # mise フックは `mise bootstrap` 実行時のみ走ったが、activation script は
+  # `darwin-rebuild switch` のたびに走る。3 つとも冪等かつ失敗許容（|| true）で、
+  # 毎回走っても副作用がないため、変更検知は挟まず素直に毎回実行する。
+  #
+  # PATH に注意: activation は home-manager の最小環境で走るため、参照するコマンドは
+  # フルパスか明示的な PATH 追加が要る。gh / bat は Nix プロファイル
+  # （home.packages 由来）にあるが、apm は Nix 管理外の ~/.local/bin/apm（手動配置）。
+  # apm 自体の導入は Phase 5 の対象外なので、無ければ警告して skip する
+  # （新 PC ではブートストラップ時に別途入れる。mise の `|| true` と同じ寛容さ）。
+  home.activation = {
+    # 旧 [bootstrap.hooks.post-packages]: gh-poi extension を導入する。
+    installGhPoi = config.lib.dag.entryAfter [ "installPackages" ] ''
+      if ${pkgs.gh}/bin/gh auth status >/dev/null 2>&1; then
+        ${pkgs.gh}/bin/gh extension list 2>/dev/null | grep -q seachicken/gh-poi \
+          || ${pkgs.gh}/bin/gh extension install seachicken/gh-poi 2>/dev/null || true
+      fi
+    '';
+
+    # 旧 [bootstrap.hooks.post-dotfiles] の apm install: Agent Skills を導入する。
+    # apm は Nix 管理外のため存在確認してから実行する。
+    installApmSkills = config.lib.dag.entryAfter [ "writeBoundary" ] ''
+      apm_bin="$HOME/.local/bin/apm"
+      if [ -x "$apm_bin" ]; then
+        "$apm_bin" install --target all || true
+      else
+        echo "warning: apm not found at $apm_bin — skipping skill install (Phase 5)" >&2
+      fi
+    '';
+
+    # 旧 [bootstrap.hooks.post-dotfiles] の bat cache: bat のテーマ/シンタックスキャッシュを再構築する。
+    buildBatCache = config.lib.dag.entryAfter [ "installPackages" ] ''
+      ${pkgs.bat}/bin/bat cache --build || true
+    '';
+  };
+
   # delta は独立した programs.delta モジュールへ移った。
   # enableGitIntegration を明示すると git の pager/interactive.diffFilter に自動で結線される。
   programs.delta = {
