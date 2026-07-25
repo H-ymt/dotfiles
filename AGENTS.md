@@ -99,6 +99,25 @@ npm パッケージは `mise.toml` の `[tools]` で管理する。`[bootstrap.p
 
 **同一ツールを複数の経路で登録しない。** core backend と npm backend の両方に登録する、あるいは `[bootstrap.packages]`（Homebrew）と `[tools]`（npm）の双方に同じツールを書くと、PATH 優先順位が衝突して意図しない方が使われる。衝突を矯正するフックを足すのではなく、経路を 1 本に絞ること。
 
+### 宣言と実機の突き合わせ（ドリフト検査）
+
+**`brew list --formula --full-name` を一覧突き合わせに使ってはいけない。** tap 由来の formula を取りこぼすため、インストール済みのものを「未インストール」と誤検出する。
+
+個別確認には `brew list --versions <name>` を使う。`brew leaves` も alias を実体とは別名で出すことがある（例: 実体が `vercel-cli` なのに `vercel` が出る）。
+
+```bash
+# 宣言なきインストール済み（ドリフト）を探す
+brew leaves --installed-on-request | sed 's|.*/||' | sort > /tmp/actual
+grep -oE '^"brew:[^"]+"' mise.toml | sed 's/"brew://;s/"$//;s|.*/||' | sort > /tmp/declared
+comm -13 /tmp/declared /tmp/actual
+
+# 検出されたものが本当に未宣言かを個別確認
+brew list --versions <name>
+brew uses --installed <name>   # 他の依存として入ったのかを判別
+```
+
+`mise` 自身は bootstrap の実行主体なので宣言不要。
+
 ## Nix 基盤層 (Phase 0)
 
 `flake.nix` + `nix/` は [issue #1](https://github.com/H-ymt/dotfiles/issues/1) の三層構成（Nix / Homebrew / mise）へ向けた土台。**Phase 0 時点では何も管理していない。** パッケージ・dotfiles はすべて mise.toml が持つ。
