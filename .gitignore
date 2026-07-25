@@ -1,6 +1,10 @@
 **/.DS_Store
 **/dot_DS_Store
 
+# Nix — build result symlink (nix build で生成)
+/result
+/result-*
+
 # APM — generated output (apm install で生成)
 apm_modules/
 .agents/
