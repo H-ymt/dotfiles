@@ -5,7 +5,6 @@ github_username = "H-ymt"
 [bootstrap.brew.taps]
 "infisical/get-cli" = "infisical/get-cli"
 "k1low/tap" = "k1low/tap"
-"oven-sh/bun" = "oven-sh/bun"
 "shopify/shopify" = "shopify/shopify"
 "tursodatabase/tap" = "tursodatabase/tap"
 
@@ -50,7 +49,6 @@ github_username = "H-ymt"
 "brew:zoxide" = "latest"
 "brew:infisical/get-cli/infisical" = "latest"
 "brew:k1low/tap/mo" = "latest"
-"brew:oven-sh/bun/bun" = "latest"
 "brew:shopify/shopify/shopify-cli" = "latest"
 "brew:tursodatabase/tap/turso" = "latest"
 
