@@ -97,7 +97,8 @@ github_username = "H-ymt"
 [bootstrap.hooks.post-packages]
 run = [
   "gh auth status >/dev/null 2>&1 && gh extension list | grep -q seachicken/gh-poi || gh extension install seachicken/gh-poi 2>/dev/null || true",
-  "brew services restart postgresql@14 || true",
+  # start は起動済みなら no-op。restart だと bootstrap のたびに停止→起動が走る
+  "brew services start postgresql@14 || true",
 ]
 
 [bootstrap.hooks.post-dotfiles]
