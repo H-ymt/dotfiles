@@ -37,8 +37,7 @@ run = [
 ]
 
 [dotfiles]
-"~/.zshrc" = { source = ".zshrc", mode = "symlink" }
-"~/.gitconfig" = { source = ".gitconfig", mode = "symlink" }
+# .zshrc / .gitconfig は Phase 4 で nix/home.nix の programs.zsh / programs.git へ移した。
 "~/.bunfig.toml" = { source = ".bunfig.toml", mode = "symlink" }
 "~/.claude/CLAUDE.md" = { source = ".claude/CLAUDE.md.tmpl", mode = "template" }
 
@@ -51,8 +50,10 @@ run = [
 # nix/home.nix の xdg.configFile へ移した。書き込みが発生する nvim（lazy-lock.json）と
 # karabiner.json（GUI が書き換え）は mkOutOfStoreSymlink、それ以外は Nix store 経由。
 #
-# ここに残るのは Phase 3 対象外のもの:
-# - sheldon / zsh-abbr: Phase 4 で programs.* 化を検討（sheldon は起動速度の実測が条件）
+# ここに残るのは Phase 3 / 4 対象外のもの:
+# - sheldon / zsh-abbr: sheldon は zsh-defer による遅延ロードを使っており、programs.zsh.plugins に
+#   defer 相当がないため Phase 4 でも mise に残す。zsh-abbr は sheldon 経由でロードされるので同様。
+#   .zshrc 本体は programs.zsh へ移したが、eval "$(sheldon source)" は initContent に残してある
 # - herdr: config.toml のみ管理（session.json / *.log / *.sock は実行時生成物で管理外）
 # - zed: verbatim 継続
 "~/.config/sheldon/plugins.toml" = { source = ".config/sheldon/plugins.toml", mode = "symlink" }

@@ -28,6 +28,11 @@
     useUserPackages = true;
     extraSpecialArgs = { inherit username; };
     users.${username} = import ./home.nix;
+
+    # 既存の実ファイル（mise 由来の symlink や各ツールが自動追記した .zshenv/.zprofile 等）と
+    # home-manager 生成物が衝突したとき、abort せず .hm-bak へ退避してから上書きする。
+    # Phase 4 の dotfiles ownership 移管を安全に行うために必要。
+    backupFileExtension = "hm-bak";
   };
 
   # Phase 2: GUI アプリ（cask）を nix-darwin から宣言的に管理する。

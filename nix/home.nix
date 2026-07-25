@@ -1,11 +1,11 @@
 # Phase 1: 純粋な単体 CLI を home.packages で管理する。
 # Phase 3: dotfiles を xdg.configFile で管理する。
+# Phase 4: 宣言的に生成できる設定を programs.* へ移す（starship / git / zsh）。
 #
 # home.packages に追加したものは同じコミットで mise.toml の [bootstrap.packages] から、
-# xdg.configFile に追加したものは同じコミットで mise.toml の [dotfiles] から削除する
-# （同じものを Homebrew/mise と Nix の両方が管理すると衝突する）。
+# xdg.configFile / programs.* に追加したものは同じコミットで mise.toml の
+# [dotfiles] から削除する（同じものを Homebrew/mise と Nix の両方が管理すると衝突する）。
 #
-# Phase 4 で programs.* が入る。
 # 移行計画は https://github.com/H-ymt/dotfiles/issues/1 を参照。
 { config, pkgs, username, ... }:
 
@@ -24,7 +24,7 @@ in
     # --- シェル / プロンプト ---
     bash
     sheldon
-    starship
+    # starship は programs.starship.enable が導入する（Phase 4）
     atuin
     zoxide
     fzf
@@ -42,7 +42,7 @@ in
     gh
     ghq
     glab
-    delta # Homebrew: git-delta
+    # delta は programs.git.delta.enable が導入する（Phase 4）
     git-filter-repo
     lazygit
     lefthook
@@ -101,7 +101,7 @@ in
       source = ../.config/yazi;
       recursive = true;
     };
-    "starship.toml".source = ../.config/starship.toml;
+    # starship.toml は Phase 4 で programs.starship.settings へ移した。
 
     # --- out-of-store（書き込みあり）---
     # LazyVim が lazy-lock.json / lazyvim.json を実行時に書き換えるため store には置けない。
@@ -109,5 +109,287 @@ in
     # Karabiner-Elements の GUI が karabiner.json を書き換える（automatic_backups / assets も生成）。
     "karabiner/karabiner.json".source =
       config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/karabiner/karabiner.json";
+  };
+
+  # Phase 4: 宣言的に生成できる設定を programs.* へ移す。
+  #
+  # verbatim 配置（xdg.configFile / mise [dotfiles]）との違い:
+  # programs.* は Nix の型付きオプションから設定ファイルを *生成* する。
+  # TOML/ini を手書きする代わりに Nix の attrset で書けるので、他の値（username 等）
+  # と組み合わせた宣言ができる。生成物は store 経由なので実体は read-only。
+
+  # starship.toml を 1:1 で移植。format 文字列とセグメント設定はそのまま。
+  # enableZshIntegration は false にして init を programs.zsh 側の initContent が
+  # 持つ eval 行に任せる（既存 .zshrc の実行順序を変えないため）。
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = false;
+    settings = {
+      # 元の starship.toml は """...""" 内で行末 \ を継続に使い全セグメントを 1 行に連結し、
+      # 最後の $character だけ改行の後に置いていた。
+      # home-manager の TOML 生成器は改行入り文字列も basic string の \n エスケープで書き出し、
+      # starship のパーサは format 内の \n を escaped_char エラーで拒否する。
+      # そこで改行は starship 組込みの $line_break 変数で表現する（生成 TOML の表記に依存せず
+      # starship が確実に改行と解釈する）。見た目は元と同じ「プロンプト記号を次行」になる。
+      format =
+        "[░▒▓](#a3aed2)"
+        + "[  ](bg:#a3aed2 fg:#090c0c)"
+        + "[](bg:#769ff0 fg:#a3aed2)"
+        + "$directory"
+        + "[](fg:#769ff0 bg:#394260)"
+        + "$git_branch"
+        + "$git_status"
+        + "[](fg:#394260 bg:#212736)"
+        + "$nodejs"
+        + "$rust"
+        + "$golang"
+        + "$php"
+        + "[](fg:#212736 bg:#1d2230)"
+        + "$time"
+        + "[ ](fg:#1d2230)"
+        + "$line_break$character";
+
+      directory = {
+        style = "fg:#e3e5e5 bg:#769ff0";
+        format = "[ $path ]($style)";
+        truncation_length = 3;
+        truncation_symbol = "…/";
+        substitutions = {
+          "Documents" = "󰈙 ";
+          "Downloads" = " ";
+          "Music" = " ";
+          "Pictures" = " ";
+        };
+      };
+
+      git_branch = {
+        symbol = "";
+        style = "bg:#394260";
+        format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
+      };
+
+      git_status = {
+        style = "bg:#394260";
+        format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
+      };
+
+      nodejs = {
+        symbol = "";
+        style = "bg:#212736";
+        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+      };
+
+      rust = {
+        symbol = "";
+        style = "bg:#212736";
+        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+      };
+
+      golang = {
+        symbol = "";
+        style = "bg:#212736";
+        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+      };
+
+      php = {
+        symbol = "";
+        style = "bg:#212736";
+        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+      };
+
+      time = {
+        disabled = false;
+        time_format = "%R";
+        style = "bg:#1d2230";
+        format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+      };
+    };
+  };
+
+  # .gitconfig を移植。移行ついでに既存の不整合を修正した:
+  # - core.excludesfile = /Users/hymt/.gitignore_global を削除（パスが実在せず、
+  #   hymt は現ユーザー yamato_handai とも異なる死んだ設定だった）
+  # - 壊れた alias を除去: g = git（git g = git git になる）、
+  #   checkout = co（co は未定義で循環）。co = checkout の 1 件のみ残す
+  # email/name は現行 .gitconfig の値をそのまま維持する。
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+
+    # この home-manager では設定は programs.git.settings 配下に集約された
+    # （旧 userName / aliases / extraConfig は deprecated）。
+    settings = {
+      user = {
+        name = "H-ymt";
+        email = "y.handai1272@gmail.com";
+      };
+      alias = {
+        st = "status";
+        co = "checkout";
+      };
+      push.default = "current";
+      init.defaultBranch = "main";
+      merge.conflictstyle = "zdiff3";
+      diff.colorMoved = "default";
+    };
+  };
+
+  # delta は独立した programs.delta モジュールへ移った。
+  # enableGitIntegration を明示すると git の pager/interactive.diffFilter に自動で結線される。
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+      side-by-side = true;
+    };
+  };
+
+  # .zshrc を移植。sheldon（zsh-defer による遅延ロード）は nixpkgs の
+  # programs.zsh.plugins に defer 相当がないため継続し、eval "$(sheldon source)" を
+  # initContent に残す。starship/zoxide/fzf/atuin の各 init もすべて手書きの eval を
+  # 維持することで、既存 .zshrc の実行順序（compinit → sheldon → … → starship → atuin）
+  # を 1 バイトも変えない。
+  #
+  # enableCompletion = false: home-manager が独自の compinit を注入すると二重実行に
+  # なるため無効化し、既存の「sheldon より前に手動 compinit」を initContent で維持する。
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+
+    # programs.zsh.enable は .zshenv / .zprofile も生成するため、既存の実ファイル
+    # （Volta / Vite+ / Cargo が .zshenv に、OrbStack / Obsidian が .zprofile に自動追記したもの）
+    # をここに取り込んで内容を保持する。取り込まないと activation がファイル衝突で止まる。
+    envExtra = ''
+      export VOLTA_HOME="$HOME/.volta"
+      export PATH="$VOLTA_HOME/bin:$PATH"
+
+      # Vite+ bin (https://viteplus.dev)
+      . "$HOME/.vite-plus/env"
+      . "$HOME/.cargo/env"
+    '';
+
+    profileExtra = ''
+      # Added by OrbStack: command-line tools and integration
+      # This won't be added again if you remove it.
+      source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+      # Added by Obsidian
+      export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"
+    '';
+
+    initContent = ''
+      # Amazon Q pre block. Keep at the top of this file.
+      [[ -f "''${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "''${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+
+      # Homebrew
+      export PATH="/opt/homebrew/bin:$PATH"
+      export PATH="/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/opt/php@8.2/sbin:$PATH"
+      export PATH="$HOME/.volta/bin:$HOME/.codeium/windsurf/bin:$HOME/.antigravity/antigravity/bin:$HOME/.turso:$PATH"
+
+      # Claude Code
+      export ANTHROPIC_MODEL=opus
+
+      # Initialize completions (must be before sheldon for compdef)
+      autoload -Uz compinit && compinit
+
+      # zsh-abbr: enable cursor placement in expansions
+      export ABBR_SET_EXPANSION_CURSOR=1
+
+      # sheldon - zsh plugin manager
+      eval "$(sheldon source 2>/dev/null)"
+
+      setopt NO_BANG_HIST
+
+      # Rust / Cargo
+      . "$HOME/.cargo/env"
+
+      # pnpm
+      export PNPM_HOME="$HOME/.local/share/pnpm"
+      case ":$PATH:" in
+        *":$PNPM_HOME:"*) ;;
+        *) export PATH="$PNPM_HOME:$PATH" ;;
+      esac
+
+      # mise
+      eval "$(mise activate zsh)"
+      corepack disable pnpm 2>/dev/null
+
+      # zoxide
+      eval "$(zoxide init zsh)"
+
+      # git helper functions
+      function git_main_branch() {
+        local branch
+        for branch in main trunk mainline default master; do
+          git show-ref -q --verify "refs/heads/$branch" 2>/dev/null && echo "$branch" && return 0
+        done
+        echo main
+      }
+
+      function git_current_branch() {
+        git symbolic-ref --short HEAD 2>/dev/null
+      }
+
+      function git_develop_branch() {
+        local branch
+        for branch in dev devel develop development; do
+          git show-ref -q --verify "refs/heads/$branch" 2>/dev/null && echo "$branch" && return 0
+        done
+        echo develop
+      }
+
+      # fzf
+      source <(fzf --zsh)
+
+      # ghq + fzf でリポジトリにジャンプ (Ctrl+G)
+      function ghq-fzf-repo() {
+        local selected
+        selected=$(ghq list | fzf --preview "eza -T --level=2 --color=always $(ghq root)/{}")
+        if [ -n "$selected" ]; then
+          BUFFER="cd $(ghq root)/$selected"
+          zle accept-line
+        fi
+        zle reset-prompt
+      }
+      zle -N ghq-fzf-repo
+      bindkey '^G' ghq-fzf-repo
+
+      # Yazi
+      function y() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+        yazi "$@" --cwd-file="$tmp"
+        if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+          builtin cd -- "$cwd"
+        fi
+        rm -f -- "$tmp"
+      }
+
+      # Starship
+      eval "$(starship init zsh)"
+
+      # atuin (shell history)
+      eval "$(atuin init zsh)"
+
+      # SSH: ghostty の terminfo がないサーバーでの表示崩れを防ぐ
+      ssh() {
+        TERM=xterm-256color command ssh "$@"
+      }
+
+      # Shopify Hydrogen
+      h2() {
+        local prefix
+        prefix="$(npm prefix -s)"
+        "$prefix/node_modules/.bin/shopify" hydrogen "$@"
+      }
+
+      # Kiro
+      [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+      # Amazon Q post block. Keep at the bottom of this file.
+      [[ -f "''${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "''${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
+      export PATH="$HOME/.local/bin:$PATH"
+    '';
   };
 }
