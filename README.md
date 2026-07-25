@@ -24,6 +24,24 @@ mise bootstrap
 
 > **Note:** mise の brew-cask マネージャーが非対応の cask が一部ある（対象と理由は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。手動でインストールする。
 
+## Nix 基盤層（進行中）
+
+[issue #1](https://github.com/H-ymt/dotfiles/issues/1) で Nix (nix-darwin + home-manager) / Homebrew / mise の三層構成へ段階移行中。
+
+**現在 Phase 0（土台のみ）。** `flake.nix` と `nix/` は存在するが何も管理しておらず、パッケージ・dotfiles はすべて `mise.toml` が持つ。Nix を入れなくても従来どおり `mise bootstrap` だけで環境は構築できる。
+
+Nix 本体は [Determinate Systems](https://docs.determinate.systems/) の graphical installer（[Determinate.pkg](https://install.determinate.systems/determinate-pkg/stable/Universal)）で導入する。macOS では公式がこちらを推奨。
+
+```sh
+# nix-darwin の初回適用（darwin-rebuild がまだ PATH にないため nix run 経由）
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mba
+
+# 以降
+sudo darwin-rebuild switch --flake .#mba
+```
+
+設定名は機種名 (`YamatonoMacBook-Air`) ではなく機種非依存の `mba`。ホスト名変更や PC 買い替えで壊れないよう `--flake .#mba` で明示指定する。
+
 ## 管理ツール
 
 | カテゴリ | ツール | 設定パス |

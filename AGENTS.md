@@ -7,6 +7,10 @@
 ```
 ~/ghq/github.com/H-ymt/dotfiles/  ← リポジトリ = mise bootstrap ソース = APM プロジェクト
 ├── mise.toml                     ← [bootstrap.*] [dotfiles] [tools] を集約（symlink 先: ~/.config/mise/config.toml）
+├── flake.nix                     ← Nix 基盤層（Phase 0: 空の状態。issue #1 参照）
+├── flake.lock                    ← Nix 入力のバージョン固定
+├── nix/darwin.nix                ← nix-darwin 設定
+├── nix/home.nix                  ← home-manager 設定
 ├── apm.yml                       ← マニフェスト（全スキル宣言）
 ├── apm.lock.yaml                 ← ロックファイル（バージョン固定）
 ├── apm_modules/                  ← 外部パッケージ DL 先（.gitignore）
@@ -94,6 +98,27 @@ npm パッケージは `mise.toml` の `[tools]` で管理する。`[bootstrap.p
 - `postflight_steps` を使う cask
 
 **同一ツールを複数の経路で登録しない。** core backend と npm backend の両方に登録する、あるいは `[bootstrap.packages]`（Homebrew）と `[tools]`（npm）の双方に同じツールを書くと、PATH 優先順位が衝突して意図しない方が使われる。衝突を矯正するフックを足すのではなく、経路を 1 本に絞ること。
+
+## Nix 基盤層 (Phase 0)
+
+`flake.nix` + `nix/` は [issue #1](https://github.com/H-ymt/dotfiles/issues/1) の三層構成（Nix / Homebrew / mise）へ向けた土台。**Phase 0 時点では何も管理していない。** パッケージ・dotfiles はすべて mise.toml が持つ。
+
+Nix 本体は [Determinate Systems](https://docs.determinate.systems/) の graphical installer（[Determinate.pkg](https://install.determinate.systems/determinate-pkg/stable/Universal)）で入れる前提。`determinateNix.enable = true` により nix-darwin 側の `nix.*` 管理は無効化される（`nix.enable = false` は書かない）。
+
+```bash
+# 初回のみ（darwin-rebuild がまだ PATH にないため nix run 経由で呼ぶ）
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mba
+
+# 以降
+sudo darwin-rebuild switch --flake .#mba
+
+# 入力の更新（更新前の flake.lock に戻せばロールバックできる）
+nix flake update
+```
+
+設定名は機種名 (`YamatonoMacBook-Air`) ではなく機種非依存の `mba`。ホスト名変更や PC 買い替えで壊れないようにするため、`--flake .#mba` で明示指定する。
+
+**Nix へ移すときは、同じコミットで `mise.toml` 側の対応エントリを削除する。** 同じファイル・パッケージを両方が管理すると ownership が衝突する。移行後は `mise bootstrap --dry-run` で意図しない再配置が起きないことを確認する。
 
 ## herdr の設定管理
 
