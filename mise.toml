@@ -9,9 +9,9 @@ github_username = "H-ymt"
 "brew:crit" = "latest"
 "brew:herdr" = "latest"
 "brew:vercel-cli" = "latest"
-# Phase 1.5 で個別検証（サービス管理 / socket 連携のため一括移行から除外）:
-"brew:postgresql@14" = "latest" # brew services で稼働中。launchd + データディレクトリ移行が必要
-"brew:docker" = "latest"        # OrbStack の socket 連携
+# docker CLI は brew-cask:orbstack が同梱する（~/.orbstack/bin/docker → OrbStack.app）。
+# daemon 提供元（OrbStack）と CLI 提供元を一致させるため、Homebrew formula の docker は
+# 持たない。postgresql@14 は Phase 1.5 で不要と判断し完全に削除した（DB ごと）。
 # codex cask が depends_on: formula: [ripgrep] を宣言しているため Homebrew に残す。
 # Nix 版と二重管理しないよう home.packages には入れない
 "brew:ripgrep" = "latest"
@@ -59,8 +59,6 @@ github_username = "H-ymt"
 [bootstrap.hooks.post-packages]
 run = [
   "gh auth status >/dev/null 2>&1 && gh extension list | grep -q seachicken/gh-poi || gh extension install seachicken/gh-poi 2>/dev/null || true",
-  # start は起動済みなら no-op。restart だと bootstrap のたびに停止→起動が走る
-  "brew services start postgresql@14 || true",
 ]
 
 [bootstrap.hooks.post-dotfiles]
