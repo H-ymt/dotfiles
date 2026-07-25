@@ -327,7 +327,6 @@ in
 
       # Homebrew
       export PATH="/opt/homebrew/bin:$PATH"
-      export PATH="/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/opt/php@8.2/sbin:$PATH"
       export PATH="$HOME/.volta/bin:$HOME/.codeium/windsurf/bin:$HOME/.antigravity/antigravity/bin:$HOME/.turso:$PATH"
 
       # Claude Code
