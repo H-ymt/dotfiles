@@ -118,22 +118,27 @@ in
   # TOML/ini を手書きする代わりに Nix の attrset で書けるので、他の値（username 等）
   # と組み合わせた宣言ができる。生成物は store 経由なので実体は read-only。
 
-  # starship.toml を 1:1 で移植。format 文字列とセグメント設定はそのまま。
+  # starship の公式 Tokyo Night プリセットを移植したもの。
+  # https://starship.rs/ja-JP/presets/tokyo-night
+  # 以前の設定はこのプリセットから $os / $bun セグメントを欠いた状態だったが、
+  # プリセット完全版に揃えた。
+  # プリセットからの唯一の変更点: format 末尾を丸セパレータ  で閉じる
+  # （プリセットはスペースで四角のまま終わるが、左端の ░▒▓ グラデと対にするため）。
   # enableZshIntegration は false にして init を programs.zsh 側の initContent が
   # 持つ eval 行に任せる（既存 .zshrc の実行順序を変えないため）。
   programs.starship = {
     enable = true;
     enableZshIntegration = false;
     settings = {
-      # 元の starship.toml は """...""" 内で行末 \ を継続に使い全セグメントを 1 行に連結し、
-      # 最後の $character だけ改行の後に置いていた。
+      # プリセットは """...""" 内で行末 \ を継続に使い全セグメントを 1 行に連結し、
+      # 最後の $character だけ改行の後に置く。
       # home-manager の TOML 生成器は改行入り文字列も basic string の \n エスケープで書き出し、
       # starship のパーサは format 内の \n を escaped_char エラーで拒否する。
       # そこで改行は starship 組込みの $line_break 変数で表現する（生成 TOML の表記に依存せず
-      # starship が確実に改行と解釈する）。見た目は元と同じ「プロンプト記号を次行」になる。
+      # starship が確実に改行と解釈する）。見た目はプリセットと同じ「プロンプト記号を次行」になる。
       format =
         "[░▒▓](#a3aed2)"
-        + "[  ](bg:#a3aed2 fg:#090c0c)"
+        + "$os"
         + "[](bg:#769ff0 fg:#a3aed2)"
         + "$directory"
         + "[](fg:#769ff0 bg:#394260)"
@@ -141,12 +146,13 @@ in
         + "$git_status"
         + "[](fg:#394260 bg:#212736)"
         + "$nodejs"
+        + "$bun"
         + "$rust"
         + "$golang"
         + "$php"
         + "[](fg:#212736 bg:#1d2230)"
         + "$time"
-        + "[ ](fg:#1d2230)"
+        + "[](fg:#1d2230)"
         + "$line_break$character";
 
       directory = {
@@ -179,6 +185,12 @@ in
         format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
       };
 
+      bun = {
+        symbol = "";
+        style = "bg:#212736";
+        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+      };
+
       rust = {
         symbol = "";
         style = "bg:#212736";
@@ -202,6 +214,36 @@ in
         time_format = "%R";
         style = "bg:#1d2230";
         format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+      };
+
+      os = {
+        disabled = false;
+        style = "bg:#a3aed2 fg:#090c0c";
+        format = "[ $symbol ]($style)";
+        symbols = {
+          Windows = "󰍲";
+          Ubuntu = "󰕈";
+          SUSE = "";
+          Raspbian = "󰐿";
+          Mint = "󰣭";
+          Macos = "󰀵";
+          Manjaro = "";
+          Linux = "󰌽";
+          Gentoo = "󰣨";
+          Fedora = "󰣛";
+          Alpine = "";
+          Amazon = "";
+          Android = "";
+          AOSC = "";
+          Arch = "󰣇";
+          Artix = "󰣇";
+          EndeavourOS = "";
+          CentOS = "";
+          Debian = "󰣚";
+          Redhat = "󱄛";
+          RedHatEnterprise = "󱄛";
+          Pop = "";
+        };
       };
     };
   };

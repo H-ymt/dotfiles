@@ -5,9 +5,16 @@ config.automatically_reload_config = true
 config.font_size = 14.5
 config.font = wezterm.font_with_fallback({
 	{ family = "IBM Plex Mono", italic = false },
-	{ family = "IBM Plex Sans JP" },
+	-- PlemolJP Console NF は Nerd Font 版。IBM Plex Mono に無いグリフ
+	-- （starship の Powerline セパレータ  や日本語）をここが補う。
+	-- 日本語もカバーするので旧 fallback の IBM Plex Sans JP は不要になった。
+	{ family = "PlemolJP Console NF" },
 })
 config.freetype_load_flags = "NO_HINTING"
+-- WezTerm は既定で Powerline セパレータや block 文字を自前ベクター描画する
+-- （custom_block_glyphs=true）。だが U+E0B6 の自前実装は「三角」で、丸端にならない。
+-- false にしてフォント（PlemolJP Console NF）の丸グリフを使わせる。
+config.custom_block_glyphs = false
 config.front_end = "WebGpu"
 config.use_ime = true
 config.window_background_opacity = 0.90
