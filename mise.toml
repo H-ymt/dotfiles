@@ -1,56 +1,17 @@
 [vars]
 github_username = "H-ymt"
 
-# [bootstrap.packages] から実際に参照している tap のみを宣言する
-[bootstrap.brew.taps]
-"infisical/get-cli" = "infisical/get-cli"
-"k1low/tap" = "k1low/tap"
-"shopify/shopify" = "shopify/shopify"
-"tursodatabase/tap" = "tursodatabase/tap"
-
 [bootstrap.packages]
-"brew:atuin" = "latest"
-"brew:bash" = "latest"
-"brew:bat" = "latest"
-"brew:btop" = "latest"
-"brew:cloudflare-wrangler" = "latest"
+# 純粋な単体 CLI は Phase 1 で Nix (nix/home.nix の home.packages) へ移した。
+# ここに残るのは Nix へ移せない/移していないものだけ。issue #1 参照。
+#
+# nixpkgs 未収録のため Homebrew に残す:
 "brew:crit" = "latest"
-"brew:docker" = "latest"
-"brew:eza" = "latest"
-"brew:fd" = "latest"
-"brew:ffmpeg" = "latest"
-"brew:fzf" = "latest"
-"brew:gdrive" = "latest"
-"brew:gh" = "latest"
-"brew:ghq" = "latest"
-"brew:git-delta" = "latest"
-"brew:git-filter-repo" = "latest"
-"brew:glab" = "latest"
 "brew:herdr" = "latest"
-"brew:jq" = "latest"
-"brew:killport" = "latest"
-"brew:lazygit" = "latest"
-"brew:lefthook" = "latest"
-"brew:neovim" = "latest"
-"brew:pandoc" = "latest"
-"brew:poppler" = "latest"
-"brew:postgresql@14" = "latest"
-"brew:ripgrep" = "latest"
-"brew:sevenzip" = "latest"
-"brew:sheldon" = "latest"
-"brew:starship" = "latest"
-"brew:supabase" = "latest"
-"brew:tree" = "latest"
-"brew:treemd" = "latest"
-"brew:uv" = "latest"
 "brew:vercel-cli" = "latest"
-"brew:wp-cli" = "latest"
-"brew:yazi" = "latest"
-"brew:zoxide" = "latest"
-"brew:infisical/get-cli/infisical" = "latest"
-"brew:k1low/tap/mo" = "latest"
-"brew:shopify/shopify/shopify-cli" = "latest"
-"brew:tursodatabase/tap/turso" = "latest"
+# Phase 1.5 で個別検証（サービス管理 / socket 連携のため一括移行から除外）:
+"brew:postgresql@14" = "latest" # brew services で稼働中。launchd + データディレクトリ移行が必要
+"brew:docker" = "latest"        # OrbStack の socket 連携
 
 "brew-cask:dockdoor" = "latest"
 "brew-cask:claude" = "latest"

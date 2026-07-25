@@ -1,8 +1,11 @@
-# Phase 0: 何も管理しない空の home-manager 設定。
+# Phase 1: 純粋な単体 CLI を home.packages で管理する。
 #
-# Phase 1 で home.packages、Phase 3 で xdg.configFile、Phase 4 で programs.* が入る。
-# 追加時は必ず mise.toml の対応エントリを同じコミットで削除する。
-{ username, ... }:
+# ここに追加したものは同じコミットで mise.toml の [bootstrap.packages] から削除する
+# （同じツールを Homebrew と Nix の両方が管理すると PATH が衝突する）。
+#
+# Phase 3 で xdg.configFile、Phase 4 で programs.* が入る。
+# 移行計画は https://github.com/H-ymt/dotfiles/issues/1 を参照。
+{ pkgs, username, ... }:
 
 {
   home.username = username;
@@ -12,4 +15,57 @@
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
+
+  home.packages = with pkgs; [
+    # --- シェル / プロンプト ---
+    bash
+    sheldon
+    starship
+    atuin
+    zoxide
+    fzf
+
+    # --- ファイル操作・検索 ---
+    bat
+    eza
+    fd
+    ripgrep
+    tree
+    treemd
+    yazi
+    _7zz # Homebrew: sevenzip
+
+    # --- Git ---
+    gh
+    ghq
+    glab
+    delta # Homebrew: git-delta
+    git-filter-repo
+    lazygit
+    lefthook
+
+    # --- エディタ ---
+    neovim
+
+    # --- データ変換・メディア ---
+    jq
+    pandoc
+    poppler
+    ffmpeg
+
+    # --- クラウド / SaaS CLI ---
+    wrangler # Homebrew: cloudflare-wrangler
+    supabase-cli # Homebrew: supabase
+    shopify-cli
+    turso
+    infisical
+    gdrive
+    wp-cli
+
+    # --- その他 ---
+    btop
+    killport
+    uv
+    mo
+  ];
 }
