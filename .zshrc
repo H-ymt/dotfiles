@@ -34,17 +34,6 @@ esac
 eval "$(mise activate zsh)"
 corepack disable pnpm 2>/dev/null
 
-# Claude Code: node global の壊れた stub より mise npm backend を優先
-claude() {
-  local prefix
-  prefix="$(mise where npm:@anthropic-ai/claude-code 2>/dev/null)" || true
-  if [[ -n "$prefix" && -x "$prefix/bin/claude" ]]; then
-    "$prefix/bin/claude" "$@"
-  else
-    command claude "$@"
-  fi
-}
-
 # zoxide
 eval "$(zoxide init zsh)"
 

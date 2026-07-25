@@ -65,6 +65,8 @@ mise trust
 mise bootstrap
 ```
 
+`mise bootstrap` の完了後、mise 非対応のため手動インストールが必要なものが残る（一覧と理由は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。
+
 ## npm グローバルツールの追加
 
 npm パッケージは `mise.toml` の `[tools]` で管理する。`[bootstrap.packages]`（Homebrew）には追加しない。
@@ -85,7 +87,13 @@ npm パッケージは `mise.toml` の `[tools]` で管理する。`[bootstrap.p
 "brew-cask:<cask>" = "latest"
 ```
 
-**注意:** pkg installer 形式の cask や、tap 元が API metadata を公開していない cask は mise の brew-cask マネージャーが非対応。これらは `mise.toml` に追加せず、手動でインストールする（非対応の具体例は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。
+**注意:** 以下は mise の brew マネージャーが非対応。`mise.toml` に追加すると `mise bootstrap` が中断するため追加せず、手動でインストールする（対象の一覧と個別理由は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。
+
+- pkg installer 形式の cask
+- tap 元が API metadata を公開していない formula / cask
+- `postflight_steps` を使う cask
+
+**同一ツールを複数の経路で登録しない。** core backend と npm backend の両方に登録する、あるいは `[bootstrap.packages]`（Homebrew）と `[tools]`（npm）の双方に同じツールを書くと、PATH 優先順位が衝突して意図しない方が使われる。衝突を矯正するフックを足すのではなく、経路を 1 本に絞ること。
 
 ## herdr の設定管理
 

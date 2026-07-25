@@ -1,25 +1,15 @@
 [vars]
 github_username = "H-ymt"
 
+# [bootstrap.packages] から実際に参照している tap のみを宣言する
 [bootstrap.brew.taps]
-"aws/tap" = "aws/tap"
 "infisical/get-cli" = "infisical/get-cli"
-"jesseduffield/lazygit" = "jesseduffield/lazygit"
 "k1low/tap" = "k1low/tap"
-"libsql/sqld" = "libsql/sqld"
-"manaflow-ai/cmux" = "manaflow-ai/cmux"
-"nikitabobko/tap" = "nikitabobko/tap"
 "oven-sh/bun" = "oven-sh/bun"
 "shopify/shopify" = "shopify/shopify"
-"steipete/tap" = "steipete/tap"
-"supabase/tap" = "supabase/tap"
-"trasta298/tap" = "trasta298/tap"
 "tursodatabase/tap" = "tursodatabase/tap"
-"tw93/tap" = "tw93/tap"
-"xwmx/taps" = "xwmx/taps"
 
 [bootstrap.packages]
-"brew:agent-browser" = "latest"
 "brew:atuin" = "latest"
 "brew:bash" = "latest"
 "brew:bat" = "latest"
@@ -43,7 +33,6 @@ github_username = "H-ymt"
 "brew:lazygit" = "latest"
 "brew:lefthook" = "latest"
 "brew:neovim" = "latest"
-"brew:ni" = "latest"
 "brew:pandoc" = "latest"
 "brew:playwright-cli" = "latest"
 "brew:poppler" = "latest"
@@ -68,7 +57,6 @@ github_username = "H-ymt"
 
 "brew-cask:dockdoor" = "latest"
 "brew-cask:claude" = "latest"
-"brew-cask:claude-code" = "latest"
 "brew-cask:codex" = "latest"
 "brew-cask:copilot-cli" = "latest"
 "brew-cask:cursor" = "latest"
@@ -81,7 +69,6 @@ github_username = "H-ymt"
 "brew-cask:keycastr" = "latest"
 "brew-cask:local" = "latest"
 "brew-cask:macwinzipper" = "latest"
-"brew-cask:ngrok" = "latest"
 "brew-cask:notion" = "latest"
 "brew-cask:obsidian" = "latest"
 "brew-cask:orbstack" = "latest"
@@ -92,9 +79,20 @@ github_username = "H-ymt"
 "brew-cask:zed" = "latest"
 "brew-cask:zipic" = "latest"
 
-# mise の brew-cask マネージャー非対応のため対象外（手動インストール）:
-# - adobe-creative-cloud, logi-options+, microsoft-teams (pkg installer 形式)
-# - linear-linear (サードパーティ tap が API metadata 未公開)
+# mise の brew マネージャー非対応。ここに追加すると bootstrap が中断するため
+# 宣言せず手動でインストールする。新 PC セットアップ時はこの一覧を消化すること。
+#
+# pkg installer 形式:
+#   adobe-creative-cloud, logi-options+, microsoft-teams
+#     -> brew install --cask <name>
+# tap が API metadata 未公開:
+#   linear-linear
+#     -> brew install --cask linear-linear
+#   ax
+#     -> brew install yusukebe/tap/ax（現状は ~/.local/bin に Bun 製バイナリを配置済み）
+# cask が postflight_steps を使用:
+#   ngrok
+#     -> brew install --cask ngrok
 
 [bootstrap.hooks.post-packages]
 run = [
@@ -102,14 +100,8 @@ run = [
   "brew services restart postgresql@14 || true",
 ]
 
-[bootstrap.hooks.post-tools]
-run = [
-  "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true",
-]
-
 [bootstrap.hooks.post-dotfiles]
 run = [
-  "chmod 600 ~/.config/karabiner/karabiner.json ~/.config/zed/settings.json ~/.config/nvim/lua/plugins/colorscheme.lua",
   "apm install --target all",
   "bat cache --build || true",
 ]
@@ -165,13 +157,10 @@ run = [
 "~/.config/ghostty/README.md" = { source = ".config/ghostty/README.md", mode = "symlink" }
 "~/.config/ghostty/themes" = { source = ".config/ghostty/themes", mode = "symlink-each" }
 
-[hooks]
-postinstall = "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true"
-
 [tools]
 # --- ランタイム (固定) ---
-node = { version = "24.15.0", postinstall = "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true" }
-pnpm = "11.2.2"
+node = "24.15.0"
+pnpm = "11.17.0"
 bun = "latest"
 yarn = "4.12.0"
 
@@ -193,8 +182,5 @@ yarn = "4.12.0"
 "npm:agent-browser" = "latest"
 "npm:linearis" = "latest"
 
-# postinstall が必要なため個別テーブルで定義（[tools] 直下の単純キーより後に置くこと）
-[tools."npm:@anthropic-ai/claude-code"]
-version = "latest"
-allow_builds = ["@anthropic-ai/claude-code"]
-postinstall = "bash \"$(dirname \"$(readlink -f \"${MISE_CONFIG_FILE:-$HOME/.config/mise/config.toml}\")\")/scripts/fix-claude-code.sh\" || true"
+# npm backend (npm:@anthropic-ai/claude-code) と併用すると PATH が衝突するため core のみ
+claude-code = "latest"
