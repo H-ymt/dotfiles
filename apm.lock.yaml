@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-07-10T00:54:30.314165+00:00'
+generated_at: '2026-07-25T02:34:41.115227+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -898,3 +898,16 @@ dependencies:
   - .github/skills/wireframe-skill
   - .opencode/skills/wireframe-skill
   content_hash: sha256:3898324327332359e800cae46b04848a8fa9041b1f9464314c6a5a7118bf25bc
+- repo_url: yusukebe/ax
+  host: github.com
+  resolved_commit: 90d270ad2cac4f618fe1f16b7c548f986f155f8d
+  virtual_path: skills/ax
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/ax
+  - .claude/skills/ax
+  - .cursor/skills/ax
+  - .github/skills/ax
+  - .opencode/skills/ax
+  content_hash: sha256:3e8c939cce32daf43d9567706393259555828ac52ab3c0c2750371eff99a35e8
