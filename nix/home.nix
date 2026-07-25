@@ -29,7 +29,6 @@
     bat
     eza
     fd
-    ripgrep
     tree
     treemd
     yazi

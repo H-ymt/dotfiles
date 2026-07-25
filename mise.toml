@@ -12,6 +12,9 @@ github_username = "H-ymt"
 # Phase 1.5 で個別検証（サービス管理 / socket 連携のため一括移行から除外）:
 "brew:postgresql@14" = "latest" # brew services で稼働中。launchd + データディレクトリ移行が必要
 "brew:docker" = "latest"        # OrbStack の socket 連携
+# codex cask が depends_on: formula: [ripgrep] を宣言しているため Homebrew に残す。
+# Nix 版と二重管理しないよう home.packages には入れない
+"brew:ripgrep" = "latest"
 
 "brew-cask:dockdoor" = "latest"
 "brew-cask:claude" = "latest"
