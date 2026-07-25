@@ -256,10 +256,15 @@ in
 
     # 旧 [bootstrap.hooks.post-dotfiles] の apm install: Agent Skills を導入する。
     # apm は Nix 管理外のため存在確認してから実行する。
+    #
+    # apm は PyInstaller 製で内部の GitPython が git 実行ファイルを要求するが、
+    # activation は最小 PATH で走るため git が見つからず ImportError で落ちる。
+    # pkgs.git のフルパスを GIT_PYTHON_GIT_EXECUTABLE と PATH の両方に渡して解決する。
     installApmSkills = config.lib.dag.entryAfter [ "writeBoundary" ] ''
       apm_bin="$HOME/.local/bin/apm"
       if [ -x "$apm_bin" ]; then
-        "$apm_bin" install --target all || true
+        export GIT_PYTHON_GIT_EXECUTABLE="${pkgs.git}/bin/git"
+        PATH="${pkgs.git}/bin:$PATH" "$apm_bin" install --target all || true
       else
         echo "warning: apm not found at $apm_bin — skipping skill install (Phase 5)" >&2
       fi
