@@ -79,6 +79,7 @@ yarn = "4.12.0"
 "npm:@googleworkspace/cli" = "latest"
 "npm:agent-browser" = "latest"
 "npm:linearis" = "latest"
+"npm:xserver-cli" = "latest"
 
 # npm backend (npm:@anthropic-ai/claude-code) と併用すると PATH が衝突するため core のみ
 claude-code = "latest"
