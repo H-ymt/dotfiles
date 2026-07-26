@@ -118,41 +118,37 @@ in
   # TOML/ini を手書きする代わりに Nix の attrset で書けるので、他の値（username 等）
   # と組み合わせた宣言ができる。生成物は store 経由なので実体は read-only。
 
-  # starship の公式 Tokyo Night プリセットを移植したもの。
+  # starship 公式 Tokyo Night プリセットを移植したもの。
   # https://starship.rs/ja-JP/presets/tokyo-night
-  # 以前の設定はこのプリセットから $os / $bun セグメントを欠いた状態だったが、
-  # プリセット完全版に揃えた。
-  # プリセットからの唯一の変更点: format 末尾を丸セパレータ  で閉じる
-  # （プリセットはスペースで四角のまま終わるが、左端の ░▒▓ グラデと対にするため）。
-  # enableZshIntegration は false にして init を programs.zsh 側の initContent が
-  # 持つ eval 行に任せる（既存 .zshrc の実行順序を変えないため）。
+  # 区切りは Powerline 右向き三角  (U+E0B0)。Ghostty 内蔵 sprite が
+  # セル高いっぱいに正しく描くため font 側の小細工は不要。
+  # 丸端 (U+E0B4/E0B6) は Ghostty との相性で三角の切れ込みが残るため使わず、
+  # プリセット公式どおり右端はスペースで閉じる。
+  # enableZshIntegration は false のまま（init は programs.zsh の initContent が
+  # 持つ eval 行に任せ、既存 .zshrc の実行順序を変えない）。
+  # format 内の改行は starship 組込みの $line_break で表す（home-manager の TOML
+  # 生成器が \n を書き出すと starship パーサが escaped_char エラーで拒否するため）。
   programs.starship = {
     enable = true;
     enableZshIntegration = false;
     settings = {
-      # プリセットは """...""" 内で行末 \ を継続に使い全セグメントを 1 行に連結し、
-      # 最後の $character だけ改行の後に置く。
-      # home-manager の TOML 生成器は改行入り文字列も basic string の \n エスケープで書き出し、
-      # starship のパーサは format 内の \n を escaped_char エラーで拒否する。
-      # そこで改行は starship 組込みの $line_break 変数で表現する（生成 TOML の表記に依存せず
-      # starship が確実に改行と解釈する）。見た目はプリセットと同じ「プロンプト記号を次行」になる。
       format =
         "[░▒▓](#a3aed2)"
         + "$os"
-        + "[](bg:#769ff0 fg:#a3aed2)"
+        + "[](bg:#769ff0 fg:#a3aed2)"
         + "$directory"
-        + "[](fg:#769ff0 bg:#394260)"
+        + "[](fg:#769ff0 bg:#394260)"
         + "$git_branch"
         + "$git_status"
-        + "[](fg:#394260 bg:#212736)"
+        + "[](fg:#394260 bg:#212736)"
         + "$nodejs"
         + "$bun"
         + "$rust"
         + "$golang"
         + "$php"
-        + "[](fg:#212736 bg:#1d2230)"
+        + "[](fg:#212736 bg:#1d2230)"
         + "$time"
-        + "[](fg:#1d2230)"
+        + "[ ](fg:#1d2230)"
         + "$line_break$character";
 
       directory = {
@@ -162,14 +158,14 @@ in
         truncation_symbol = "…/";
         substitutions = {
           "Documents" = "󰈙 ";
-          "Downloads" = " ";
-          "Music" = " ";
-          "Pictures" = " ";
+          "Downloads" = "󰇚 ";
+          "Music" = "󰝚 ";
+          "Pictures" = "󰏣 ";
         };
       };
 
       git_branch = {
-        symbol = "";
+        symbol = "";
         style = "bg:#394260";
         format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
       };
@@ -180,31 +176,31 @@ in
       };
 
       nodejs = {
-        symbol = "";
+        symbol = "";
         style = "bg:#212736";
         format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
       };
 
       bun = {
-        symbol = "";
+        symbol = "";
         style = "bg:#212736";
         format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
       };
 
       rust = {
-        symbol = "";
+        symbol = "";
         style = "bg:#212736";
         format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
       };
 
       golang = {
-        symbol = "";
+        symbol = "";
         style = "bg:#212736";
         format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
       };
 
       php = {
-        symbol = "";
+        symbol = "";
         style = "bg:#212736";
         format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
       };
@@ -213,7 +209,7 @@ in
         disabled = false;
         time_format = "%R";
         style = "bg:#1d2230";
-        format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+        format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
       };
 
       os = {
@@ -223,26 +219,26 @@ in
         symbols = {
           Windows = "󰍲";
           Ubuntu = "󰕈";
-          SUSE = "";
+          SUSE = "";
           Raspbian = "󰐿";
           Mint = "󰣭";
           Macos = "󰀵";
-          Manjaro = "";
+          Manjaro = "";
           Linux = "󰌽";
           Gentoo = "󰣨";
           Fedora = "󰣛";
-          Alpine = "";
-          Amazon = "";
-          Android = "";
-          AOSC = "";
+          Alpine = "";
+          Amazon = "";
+          Android = "";
+          AOSC = "";
           Arch = "󰣇";
           Artix = "󰣇";
-          EndeavourOS = "";
-          CentOS = "";
+          EndeavourOS = "";
+          CentOS = "";
           Debian = "󰣚";
           Redhat = "󱄛";
           RedHatEnterprise = "󱄛";
-          Pop = "";
+          Pop = "";
         };
       };
     };
