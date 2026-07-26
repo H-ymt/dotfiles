@@ -1,66 +1,81 @@
 # dotfiles
 
-macOS 開発環境の設定ファイルを [mise bootstrap](https://mise.jdx.dev/bootstrap.html) で管理。
+macOS 開発環境を **Nix (nix-darwin + home-manager) / Homebrew / mise** の三層で管理する。
+
+| 層 | 役割 | 主なソース |
+|---|---|---|
+| **Nix** | 単体 CLI パッケージ・dotfiles の大半・GUI アプリ（cask）・セットアップフックを宣言的に管理 | `flake.nix`, `nix/darwin.nix`, `nix/home.nix` |
+| **Homebrew** | nixpkgs 未収録の formula のみ（nix-darwin の `brew bundle` 経由で導入） | `nix/darwin.nix` の `homebrew`, `mise.toml` の `[bootstrap.packages]` |
+| **mise** | 言語ランタイム・npm グローバルツール・一部 dotfiles | `mise.toml` |
+
+Nix が `home.packages`（CLI）・`xdg.configFile` / `programs.*`（dotfiles）・`home.activation`（セットアップフック）・`homebrew.casks`（GUI）を持ち、mise がランタイム / npm ツール（`[tools]`）と一部の dotfiles（sheldon / herdr / zed / zsh-abbr 等）を持つ。各エントリの帰属理由は `mise.toml` と `nix/home.nix` のコメントに記す。
 
 ## セットアップ
 
 ソースは [ghq](https://github.com/x-motemen/ghq) 配下 (`~/ghq/github.com/H-ymt/dotfiles`) に置く。
 
 ```sh
+# 1. 前提ツール
 brew install mise ghq
+
+# 2. リポジトリ取得
 ghq get git@github.com:H-ymt/dotfiles.git
 cd "$(ghq root)/github.com/H-ymt/dotfiles"
+
+# 3. Nix 本体（Determinate Systems の graphical installer）を導入
+#    https://install.determinate.systems/determinate-pkg/stable/Universal
+
+# 4. nix-darwin を初回適用（darwin-rebuild がまだ PATH にないため nix run 経由）
+sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mba
+
+# 5. mise 管理分（ランタイム / npm ツール / 残りの dotfiles）を展開
 mise trust
 mise bootstrap
 ```
 
-`mise bootstrap` で以下が自動実行される:
+以降、Nix 管理分の更新は `sudo darwin-rebuild switch --flake .#mba`、mise 管理分は `mise bootstrap` で反映する。
 
-- `[bootstrap.brew.taps]` / `[bootstrap.packages]` → Homebrew tap・パッケージ・cask を同期（`brew` コマンド不要でインストール可能）
-- `[dotfiles]` → 設定ファイルを symlink / template で展開
-- `[bootstrap.hooks]` → パッケージ導入後・dotfiles 展開後のセットアップコマンドを実行（詳細は `mise.toml` 参照）
+> **Note:** Nix 本体は [Determinate Systems](https://docs.determinate.systems/) の graphical installer で導入する（macOS 公式推奨）。`determinateNix.enable = true` により nix-darwin 側の `nix.*` 管理は無効化される。
 
-既存ファイルとの競合はデフォルトで拒否される。強制上書きする場合は `mise bootstrap --force-dotfiles`。実行内容だけ確認したい場合は `mise bootstrap --dry-run`。
-
-> **Note:** mise の brew-cask マネージャーが非対応の cask が一部ある（対象と理由は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。手動でインストールする。
-
-## Nix 基盤層（進行中）
-
-[issue #1](https://github.com/H-ymt/dotfiles/issues/1) で Nix (nix-darwin + home-manager) / Homebrew / mise の三層構成へ段階移行中。
-
-**現在 Phase 0（土台のみ）。** `flake.nix` と `nix/` は存在するが何も管理しておらず、パッケージ・dotfiles はすべて `mise.toml` が持つ。Nix を入れなくても従来どおり `mise bootstrap` だけで環境は構築できる。
-
-Nix 本体は [Determinate Systems](https://docs.determinate.systems/) の graphical installer（[Determinate.pkg](https://install.determinate.systems/determinate-pkg/stable/Universal)）で導入する。macOS では公式がこちらを推奨。
-
-```sh
-# nix-darwin の初回適用（darwin-rebuild がまだ PATH にないため nix run 経由）
-sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake .#mba
-
-# 以降
-sudo darwin-rebuild switch --flake .#mba
-```
+### 設定名について
 
 設定名は機種名 (`YamatonoMacBook-Air`) ではなく機種非依存の `mba`。ホスト名変更や PC 買い替えで壊れないよう `--flake .#mba` で明示指定する。
 
+### 更新・ロールバック
+
+```sh
+# Nix 入力（nixpkgs / home-manager 等）を更新。壊れたら flake.lock を戻せば復帰
+nix flake update
+sudo darwin-rebuild switch --flake .#mba
+
+# dry-run（何も変更せず適用内容だけ確認）
+mise bootstrap --dry-run
+```
+
+既存ファイルと Nix 生成物が衝突した場合は abort せず `.hm-bak` へ退避してから上書きする（`backupFileExtension`）。mise の `[dotfiles]` は既存ファイルとの競合をデフォルトで拒否し、上書きが必要な場合のみ `mise bootstrap --force-dotfiles`。
+
 ## 管理ツール
 
-| カテゴリ | ツール | 設定パス |
-|---|---|---|
-| パッケージ / bootstrap | [Homebrew](https://brew.sh/) + [mise bootstrap](https://mise.jdx.dev/bootstrap.html) | `mise.toml` |
-| 言語/ランタイム | [mise](https://mise.jdx.dev/) | `mise.toml` (`~/.config/mise/config.toml`) |
-| シェル | [zsh](https://www.zsh.org/) + [sheldon](https://github.com/rossmacarthur/sheldon) + [Starship](https://starship.rs/) + [fzf](https://github.com/junegunn/fzf) | `~/.zshrc`, `~/.config/sheldon/`, `~/.config/starship.toml` |
-| シェル履歴 | [atuin](https://atuin.sh/) | `~/.config/atuin/` |
-| リポジトリ管理 | [ghq](https://github.com/x-motemen/ghq) + [fzf](https://github.com/junegunn/fzf) | `~/ghq/` |
-| Git | Git + [delta](https://github.com/dandavison/delta) | `~/.gitconfig` |
-| ターミナル | [Ghostty](https://ghostty.org/) / [WezTerm](https://wezfurlong.org/wezterm/) | `~/.config/ghostty/`, `~/.config/wezterm/` |
-| ターミナルマルチプレクサ | [herdr](https://herdr.dev/) | `~/.config/herdr/config.toml` |
-| エディタ | [Neovim](https://neovim.io/) / [Zed](https://zed.dev/) | `~/.config/nvim/`, `~/.config/zed/` |
-| ファイラ | [Yazi](https://yazi-rs.github.io/) | `~/.config/yazi/` |
-| ビューア | [bat](https://github.com/sharkdp/bat) (Catppuccin Mocha) | `~/.config/bat/` |
-| モニタ | [btop](https://github.com/aristocratos/btop) | `~/.config/btop/` |
-| キーリマップ | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) | `~/.config/karabiner/` |
-| Linear CLI | [linearis](https://github.com/H-ymt/linearis) | `apm.yml` 経由のスキル |
-| AI Agent Skills | [APM](https://github.com/danielmeppiel/apm) | `apm.yml`, `.claude/skills/` |
+「管理層」は設定を宣言しているソースを示す（Nix = `nix/home.nix`、mise = `mise.toml`）。
+
+| カテゴリ | ツール | 管理層 | 設定パス |
+|---|---|---|---|
+| 言語/ランタイム | [mise](https://mise.jdx.dev/) | mise | `mise.toml` (`~/.config/mise/config.toml`) |
+| シェル | [zsh](https://www.zsh.org/) + [Starship](https://starship.rs/) | Nix (`programs.zsh` / `programs.starship`) | `~/.zshrc`, starship 設定は `nix/home.nix` の attrset |
+| シェルプラグイン | [sheldon](https://github.com/rossmacarthur/sheldon) + [fzf](https://github.com/junegunn/fzf) | mise (sheldon) / Nix (fzf) | `~/.config/sheldon/plugins.toml` |
+| シェル履歴 | [atuin](https://atuin.sh/) | Nix | `~/.config/atuin/` |
+| リポジトリ管理 | [ghq](https://github.com/x-motemen/ghq) + [fzf](https://github.com/junegunn/fzf) | Nix | `~/ghq/` |
+| Git | Git + [delta](https://github.com/dandavison/delta) | Nix (`programs.git` / `programs.delta`) | `nix/home.nix` の attrset |
+| ターミナル | [Ghostty](https://ghostty.org/) / [WezTerm](https://wezfurlong.org/wezterm/) | Nix | `~/.config/ghostty/`, `~/.config/wezterm/` |
+| ターミナルマルチプレクサ | [herdr](https://herdr.dev/) | mise | `~/.config/herdr/config.toml` |
+| エディタ | [Neovim](https://neovim.io/) / [Zed](https://zed.dev/) | Nix (nvim) / mise (zed) | `~/.config/nvim/`, `~/.config/zed/` |
+| ファイラ | [Yazi](https://yazi-rs.github.io/) | Nix | `~/.config/yazi/` |
+| ビューア | [bat](https://github.com/sharkdp/bat) | Nix | `~/.config/bat/` |
+| モニタ | [btop](https://github.com/aristocratos/btop) | Nix (パッケージ) | `~/.config/btop/` |
+| キーリマップ | [Karabiner-Elements](https://karabiner-elements.pqrs.org/) | Nix (out-of-store) | `~/.config/karabiner/` |
+| GUI アプリ | Cursor / VS Code / Raycast / OrbStack ほか | Nix (`homebrew.casks`) | `nix/darwin.nix` |
+| Linear CLI | [linearis](https://github.com/H-ymt/linearis) | mise (`[tools]`) | `mise.toml` |
+| AI Agent Skills | [APM](https://github.com/danielmeppiel/apm) | apm | `apm.yml`, `.claude/skills/` |
 
 ## ghq + fzf でリポジトリを管理する
 
