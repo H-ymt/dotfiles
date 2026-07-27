@@ -210,3 +210,10 @@ abbr rgh="rg --hidden"
 abbr rgw="rg -w"
 abbr rgt="rg -t"
 abbr rgf="rg -F"
+
+# eza abbreviations
+abbr ls="eza --icons"
+abbr ll="eza -l --icons"
+
+# bat abbreviations
+abbr cat="bat --paging=never"
