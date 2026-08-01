@@ -37,6 +37,13 @@ github_username = "H-ymt"
 #   ~/.local/bin は nix/home.nix の programs.zsh.initContent 末尾で PATH に入るので追加設定は不要。
 #   ~/.agents/skills 配下は APM 管理外の項目が既に同居しており（browser-use / recall 等）、
 #   apm install --target all は宣言外のディレクトリを消さないため衝突しない。
+#   さらに実体を ~/.agents/skills に置いたうえで ~/.claude/skills ~/.codex/skills ~/.cursor/skills
+#   へ symlink を張る。~/.claude/skills は APM の --target 出力先と同じディレクトリだが、
+#   apm.yml に terminal-browser の宣言はなく、APM は宣言外エントリを削除しないため共存する。
+#   .gitignore は `.claude/skills/*` 済みなのでリポジトリ側にも影響しない。
+#   副作用: VS Code (Code - Insiders) の User/settings.json に
+#   "terminal.integrated.enableImages": true を書き込む（ターミナル画像表示の有効化）。
+#   この設定は現状 dotfiles 管理外。管理対象へ移すなら同キーの二重管理に注意する。
 #   注意: Apple Silicon macOS 専用（Darwin + arm64 以外は installer が exit 1）。
 #   PC 移行時は上記コマンドを手で実行する。
 
