@@ -21,7 +21,10 @@ dependencies:
   - Cocoon-AI/architecture-diagram-generator/architecture-diagram
   - johnlindquist/claude-workshop-skills/skills/chrome-devtools
   - LottieFiles/motion-design-skill/skills/motion-design
-  - remotion-dev/skills/skills/remotion
+  - remotion-dev/skills/skills/remotion-best-practices
+  - remotion-dev/skills/skills/remotion-create
+  - remotion-dev/skills/skills/remotion-docs
+  - remotion-dev/skills/skills/remotion-render
   - yhassy/wireframe-skill
   - WordPress/agent-skills/skills/wordpress-router
   - WordPress/agent-skills/skills/wp-abilities-api
@@ -75,5 +78,6 @@ dependencies:
   - GoogleChrome/modern-web-guidance
   - modem-dev/hunk/skills/hunk-review
   - yusukebe/ax/skills/ax
+  - github/gh-stack/skills/gh-stack
   mcp: []
 scripts: {}
