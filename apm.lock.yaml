@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-07-26T09:40:23.421281+00:00'
+generated_at: '2026-08-01T13:42:38.580783+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -473,6 +473,19 @@ dependencies:
   - .github/skills/figma-use
   - .opencode/skills/figma-use
   content_hash: sha256:876d6be44e1d64553682f179d73213408a8d5faa56abfedfc3b646f18f318a0b
+- repo_url: github/gh-stack
+  host: github.com
+  resolved_commit: 8c9c8331309529e2114d4c34e77f4edea543f9fa
+  virtual_path: skills/gh-stack
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/gh-stack
+  - .claude/skills/gh-stack
+  - .cursor/skills/gh-stack
+  - .github/skills/gh-stack
+  - .opencode/skills/gh-stack
+  content_hash: sha256:10a4da93d82f822cbcd2eec43ec8ccf02d70bc98662b86531c6fb00de9856c65
 - repo_url: greensock/gsap-skills
   host: github.com
   resolved_commit: aed9cfd3277740755f6bfc1155c7aa645403b760
@@ -850,6 +863,58 @@ dependencies:
   - .github/skills/gh-fix-ci
   - .opencode/skills/gh-fix-ci
   content_hash: sha256:02b4d97e4bd91e342e3ec3efa06b7871097d6a64e8398f4ed5b69c64d8d902fb
+- repo_url: remotion-dev/skills
+  host: github.com
+  resolved_commit: 4951f6aca2a236f2f2a2bff4734566963fe12707
+  virtual_path: skills/remotion-best-practices
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/remotion-best-practices
+  - .claude/skills/remotion-best-practices
+  - .cursor/skills/remotion-best-practices
+  - .github/skills/remotion-best-practices
+  - .opencode/skills/remotion-best-practices
+  content_hash: sha256:fa26cd6fba04b66265590358f165fca9c5cc8b27f1d437f1d6db6f33bf7c27ac
+- repo_url: remotion-dev/skills
+  host: github.com
+  resolved_commit: 4951f6aca2a236f2f2a2bff4734566963fe12707
+  virtual_path: skills/remotion-create
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/remotion-create
+  - .claude/skills/remotion-create
+  - .cursor/skills/remotion-create
+  - .github/skills/remotion-create
+  - .opencode/skills/remotion-create
+  content_hash: sha256:23b9b1fa33cbca9f2be32be34bd0876d20ee76256810749b3ca411bab4f86372
+- repo_url: remotion-dev/skills
+  host: github.com
+  resolved_commit: 4951f6aca2a236f2f2a2bff4734566963fe12707
+  virtual_path: skills/remotion-docs
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/remotion-docs
+  - .claude/skills/remotion-docs
+  - .cursor/skills/remotion-docs
+  - .github/skills/remotion-docs
+  - .opencode/skills/remotion-docs
+  content_hash: sha256:b6d59366861f6c28c1ac1b599f6f8d05347388dce1be28c5b9f4359c4c97e78b
+- repo_url: remotion-dev/skills
+  host: github.com
+  resolved_commit: 4951f6aca2a236f2f2a2bff4734566963fe12707
+  virtual_path: skills/remotion-render
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/remotion-render
+  - .claude/skills/remotion-render
+  - .cursor/skills/remotion-render
+  - .github/skills/remotion-render
+  - .opencode/skills/remotion-render
+  content_hash: sha256:755c9ab17a1f3b92a60735885c8461a57cac6dd14a2cdc0f6c7199ea6525ad81
 - repo_url: resend/email-best-practices
   host: github.com
   resolved_commit: ef764286d84d665634e14040a726d295c962120e

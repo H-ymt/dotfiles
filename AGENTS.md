@@ -37,7 +37,7 @@ mise bootstrap --skip repos,tools
 # 既存ファイルを強制上書き（デフォルトは競合を拒否）
 mise bootstrap --force-dotfiles
 
-# 手動でスキルをインストール（通常は post-dotfiles hook が自動実行）
+# 手動でスキルをインストール（通常は darwin-rebuild switch の activation が自動実行）
 apm install --target all
 
 # 外部スキルを追加
@@ -57,7 +57,10 @@ apm uninstall owner/repo/path/to/skill
    ```yaml
    - H-ymt/skills/skills/<skill-name>
    ```
-3. `mise bootstrap --only dotfiles`（`post-dotfiles` hook が自動で `apm install` を実行）
+3. `sudo darwin-rebuild switch --flake .#mba`（`home.activation` が `apm install --target all` を実行）
+
+   スキルだけ即座に入れたい場合は `apm install --target all` を直接叩く。
+   `mise bootstrap --only dotfiles` は dotfiles を配置するだけで `apm install` は走らない。
 
 ## PC 移行手順
 
