@@ -284,11 +284,21 @@ in
   # apm 自体の導入は Phase 5 の対象外なので、無ければ警告して skip する
   # （新 PC ではブートストラップ時に別途入れる。mise の `|| true` と同じ寛容さ）。
   home.activation = {
-    # 旧 [bootstrap.hooks.post-packages]: gh-poi extension を導入する。
-    installGhPoi = config.lib.dag.entryAfter [ "installPackages" ] ''
+    # 旧 [bootstrap.hooks.post-packages]: gh extension を導入する。
+    # gh extension は Nix / Homebrew / mise のいずれでも宣言できないため、
+    # ここで列挙して冪等にインストールする。追加はこのリストへ 1 行足すだけ。
+    installGhExtensions = config.lib.dag.entryAfter [ "installPackages" ] ''
       if ${pkgs.gh}/bin/gh auth status >/dev/null 2>&1; then
-        ${pkgs.gh}/bin/gh extension list 2>/dev/null | grep -q seachicken/gh-poi \
-          || ${pkgs.gh}/bin/gh extension install seachicken/gh-poi 2>/dev/null || true
+        installed=$(${pkgs.gh}/bin/gh extension list 2>/dev/null || true)
+        for ext in \
+          seachicken/gh-poi \
+          github/gh-stack \
+          dlvhdr/gh-dash \
+          H-ymt/gh-refresh \
+        ; do
+          echo "$installed" | grep -q "$ext" \
+            || ${pkgs.gh}/bin/gh extension install "$ext" 2>/dev/null || true
+        done
       fi
     '';
 

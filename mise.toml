@@ -48,7 +48,7 @@ github_username = "H-ymt"
 #   PC 移行時は上記コマンドを手で実行する。
 
 # [bootstrap.hooks.*] は Phase 5 で nix/home.nix の home.activation へ移した。
-# gh-poi extension / apm install / bat cache は darwin-rebuild switch のたびに走る。
+# gh extension / apm install / bat cache は darwin-rebuild switch のたびに走る。
 # mise 側にフックを残すと同じ処理が二重に走るため、同じコミットで削除する。issue #1 参照。
 
 [dotfiles]
