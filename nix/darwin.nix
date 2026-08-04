@@ -50,9 +50,7 @@
     };
 
     # サードパーティ tap。homebrew/cask 本体に入っているものは宣言不要。
-    taps = [
-      "shobhit99/tap" # supercmd
-    ];
+    taps = [ ];
 
     casks = [
       # --- エディタ / ターミナル ---
@@ -84,7 +82,6 @@
       # --- ユーティリティ ---
       "dockdoor"
       "keycastr"
-      "shobhit99/tap/supercmd"
       "karabiner-elements"
       "macwinzipper"
       "zipic"
