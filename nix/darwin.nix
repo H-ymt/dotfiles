@@ -49,6 +49,11 @@
       upgrade = false; # 既存 cask を勝手に upgrade しない
     };
 
+    # サードパーティ tap。homebrew/cask 本体に入っているものは宣言不要。
+    taps = [
+      "shobhit99/tap" # supercmd
+    ];
+
     casks = [
       # --- エディタ / ターミナル ---
       "cursor"
@@ -79,6 +84,7 @@
       # --- ユーティリティ ---
       "dockdoor"
       "keycastr"
+      "shobhit99/tap/supercmd"
       "karabiner-elements"
       "macwinzipper"
       "zipic"
