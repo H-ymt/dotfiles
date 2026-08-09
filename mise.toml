@@ -38,13 +38,9 @@ github_username = "H-ymt"
 #   PC 移行時は mise bootstrap 後に上記コマンドを手で実行する。
 #
 #   旧 terminal-browser (zenbu-labs/terminal-browser) は 2026-08-09 に本プラグインへ置き換えた。
-#   撤去対象: ~/.local/bin/terminal-browser、~/.local/share/terminal-browser、
+#   撤去済み: ~/.local/bin/terminal-browser、~/.local/share/terminal-browser、
 #   ~/.agents/skills/terminal-browser（実体）と ~/.claude ~/.codex ~/.cursor の各 symlink。
-#   上流にアンインストーラは無いため手動で rm する:
-#     rm -f ~/.claude/skills/terminal-browser ~/.codex/skills/terminal-browser \
-#           ~/.cursor/skills/terminal-browser
-#     rm -rf ~/.agents/skills/terminal-browser ~/.local/share/terminal-browser \
-#            ~/.local/bin/terminal-browser
+#   上流にアンインストーラが無いため手動 rm で撤去した（installer の配置物のみが対象）。
 #   VS Code (Code - Insiders) の "terminal.integrated.enableImages": true は
 #   terminal-browser の installer が書き込んだ設定だが、herdr-browser のターミナル描画にも
 #   有効なため意図的に残している。この設定は現状 dotfiles 管理外。
