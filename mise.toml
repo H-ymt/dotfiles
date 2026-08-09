@@ -27,25 +27,27 @@ github_username = "H-ymt"
 
 # --- 三層のいずれでも宣言できず、手動インストールを継続するもの ---
 #
-# terminal-browser (zenbu-labs/terminal-browser):
-#   curl -fsSL https://terminal-browser.sh/install | bash
-#   上流が curl|bash 配布のみで、Homebrew formula / tap も npm パッケージも cargo crate も
-#   存在しない。nixpkgs にも未収録のため Nix へも寄せられない。
-#   インストーラは事前ビルド済み tarball を SHA256 検証つきで展開するだけで、
-#   ~/.local/bin/terminal-browser（ラッパー）、~/.local/share/terminal-browser/app（本体）、
-#   ~/.agents/skills/terminal-browser（Agent Skill）を配置する。shell rc は書き換えない。
-#   ~/.local/bin は nix/home.nix の programs.zsh.initContent 末尾で PATH に入るので追加設定は不要。
-#   ~/.agents/skills 配下は APM 管理外の項目が既に同居しており（browser-use / recall 等）、
-#   apm install --target all は宣言外のディレクトリを消さないため衝突しない。
-#   さらに実体を ~/.agents/skills に置いたうえで ~/.claude/skills ~/.codex/skills ~/.cursor/skills
-#   へ symlink を張る。~/.claude/skills は APM の --target 出力先と同じディレクトリだが、
-#   apm.yml に terminal-browser の宣言はなく、APM は宣言外エントリを削除しないため共存する。
-#   .gitignore は `.claude/skills/*` 済みなのでリポジトリ側にも影響しない。
-#   副作用: VS Code (Code - Insiders) の User/settings.json に
-#   "terminal.integrated.enableImages": true を書き込む（ターミナル画像表示の有効化）。
-#   この設定は現状 dotfiles 管理外。管理対象へ移すなら同キーの二重管理に注意する。
-#   注意: Apple Silicon macOS 専用（Darwin + arm64 以外は installer が exit 1）。
-#   PC 移行時は上記コマンドを手で実行する。
+# herdr-browser (StructuPath/herdr-browser):
+#   herdr plugin install StructuPath/herdr-browser --yes
+#   herdr のプラグイン機構で管理するため、Nix / Homebrew / mise のいずれの宣言対象にもならない。
+#   実体は ~/.config/herdr/plugins/github/ 配下に herdr 自身が commit 固定で取得する
+#   （plugin id: structupath.browser）。バージョン確認は `herdr plugin list`。
+#   依存: herdr >= 0.7.0 / Node.js >= 20 / agent-browser。
+#   agent-browser は mise.toml の [tools] で "npm:agent-browser" として宣言済みなので
+#   別途 npm install -g する必要はない（上流 README の手順との差異に注意）。
+#   PC 移行時は mise bootstrap 後に上記コマンドを手で実行する。
+#
+#   旧 terminal-browser (zenbu-labs/terminal-browser) は 2026-08-09 に本プラグインへ置き換えた。
+#   撤去対象: ~/.local/bin/terminal-browser、~/.local/share/terminal-browser、
+#   ~/.agents/skills/terminal-browser（実体）と ~/.claude ~/.codex ~/.cursor の各 symlink。
+#   上流にアンインストーラは無いため手動で rm する:
+#     rm -f ~/.claude/skills/terminal-browser ~/.codex/skills/terminal-browser \
+#           ~/.cursor/skills/terminal-browser
+#     rm -rf ~/.agents/skills/terminal-browser ~/.local/share/terminal-browser \
+#            ~/.local/bin/terminal-browser
+#   VS Code (Code - Insiders) の "terminal.integrated.enableImages": true は
+#   terminal-browser の installer が書き込んだ設定だが、herdr-browser のターミナル描画にも
+#   有効なため意図的に残している。この設定は現状 dotfiles 管理外。
 
 # [bootstrap.hooks.*] は Phase 5 で nix/home.nix の home.activation へ移した。
 # gh extension / apm install / bat cache は darwin-rebuild switch のたびに走る。
