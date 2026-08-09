@@ -50,3 +50,11 @@ key = "prefix+shift+h"
 type = "shell"
 command = "herdr plugin action invoke worktree-split --plugin hunk.diff"
 description = "Open worktree diff in split pane"
+
+# herdr-browser: prefix+shift+b でブラウザペインを split 起動
+# （README 推奨の prefix+b は組み込みの toggle_sidebar と衝突するため shift 付きにする）
+[[keys.command]]
+key = "prefix+shift+b"
+type = "shell"
+command = "herdr plugin action invoke open --plugin structupath.browser"
+description = "Open browser pane"
