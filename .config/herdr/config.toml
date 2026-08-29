@@ -1,5 +1,8 @@
 onboarding = false
 
+# CJK IME 関連は herdr 0.8.0 時点で [experimental] 配下。
+# トップレベルに書くと unknown config key として無視される
+[experimental]
 # TUI がカーソルを隠していても、IME が候補ウィンドウの位置を
 # 追えるように外側のターミナルへカーソル位置を公開する
 reveal_hidden_cursor_for_cjk_ime = true
