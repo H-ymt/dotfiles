@@ -25,7 +25,6 @@ dependencies:
   - remotion-dev/skills/skills/remotion-create
   - remotion-dev/skills/skills/remotion-docs
   - remotion-dev/skills/skills/remotion-render
-  - yhassy/wireframe-skill
   - WordPress/agent-skills/skills/wordpress-router
   - WordPress/agent-skills/skills/wp-abilities-api
   - WordPress/agent-skills/skills/wp-block-development
@@ -60,8 +59,7 @@ dependencies:
   - cloudflare/skills/skills/web-perf
   - cloudflare/skills/skills/workers-best-practices
   - cloudflare/skills/skills/wrangler
-  - supabase/agent-skills/skills/supabase-postgres-best-practices
-  - vercel-labs/skills/skills/find-skills
+  - cloudflare/security-audit-skill/skills/security-audit
   - masuP9/a11y-specialist-skills/skills/auditing-wcag
   - masuP9/a11y-specialist-skills/skills/planning-a11y-improvement
   - masuP9/a11y-specialist-skills/skills/planning-wcag-audit
