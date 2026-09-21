@@ -50,7 +50,9 @@
     };
 
     # サードパーティ tap。homebrew/cask 本体に入っているものは宣言不要。
-    taps = [ ];
+    taps = [
+      "fayazara/tap" # screendrop
+    ];
 
     casks = [
       # --- エディタ / ターミナル ---
@@ -88,6 +90,7 @@
       "thaw"
       "logi-options+" # 手動枠だった（pkg installer 形式）
       "adobe-creative-cloud" # 手動枠だった（pkg installer 形式）
+      "fayazara/tap/screendrop"
 
       # --- フォント（homebrew/cask 本体に統合済み。追加 tap は不要）---
       "font-ibm-plex-mono"
