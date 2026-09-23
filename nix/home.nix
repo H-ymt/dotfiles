@@ -312,7 +312,7 @@ in
       apm_bin="$HOME/.local/bin/apm"
       if [ -x "$apm_bin" ]; then
         export GIT_PYTHON_GIT_EXECUTABLE="${pkgs.git}/bin/git"
-        PATH="${pkgs.git}/bin:$PATH" "$apm_bin" install --target all || true
+        PATH="${pkgs.git}/bin:$PATH" "$apm_bin" install --target claude || true
       else
         echo "warning: apm not found at $apm_bin — skipping skill install (Phase 5)" >&2
       fi

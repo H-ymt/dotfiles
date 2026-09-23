@@ -38,13 +38,13 @@ mise bootstrap --skip repos,tools
 mise bootstrap --force-dotfiles
 
 # 手動でスキルをインストール（通常は darwin-rebuild switch の activation が自動実行）
-apm install --target all
+apm install --target claude
 
 # 外部スキルを追加
-apm install owner/repo/path/to/skill --target all
+apm install owner/repo/path/to/skill --target claude
 
 # 外部スキルを最新に更新
-apm install --update --target all
+apm install --update --target claude
 
 # スキルを削除
 apm uninstall owner/repo/path/to/skill
@@ -57,10 +57,12 @@ apm uninstall owner/repo/path/to/skill
    ```yaml
    - H-ymt/skills/skills/<skill-name>
    ```
-3. `sudo darwin-rebuild switch --flake .#mba`（`home.activation` が `apm install --target all` を実行）
+3. `sudo darwin-rebuild switch --flake .#mba`（`home.activation` が `apm install --target claude` を実行）
 
-   スキルだけ即座に入れたい場合は `apm install --target all` を直接叩く。
+   スキルだけ即座に入れたい場合は `apm install --target claude` を直接叩く。
    `mise bootstrap --only dotfiles` は dotfiles を配置するだけで `apm install` は走らない。
+
+`--target` は `claude` のみ。`~/.claude/skills` はリポジトリの `.claude/skills` への symlink で、Cursor も互換ディレクトリとして `~/.claude/skills` を読むため、Claude Code と Cursor の両方がこの 1 か所で賄える。`~/.cursor/skills` まで同じ場所へ向けるとスキルが二重に読み込まれる。
 
 ## PC 移行手順
 
