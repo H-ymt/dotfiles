@@ -473,6 +473,19 @@ dependencies:
   - .github/skills/wrangler
   - .opencode/skills/wrangler
   content_hash: sha256:11edeb37eedb91deedde694b2bb1cc4ff4e8b5a8f1836c217a8c871fe39abcb5
+- repo_url: coji/natural-japanese
+  host: github.com
+  resolved_commit: 9a78a42964096da509b8f3e011f0085a5f080151
+  virtual_path: skills/natural-japanese
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .agents/skills/natural-japanese
+  - .claude/skills/natural-japanese
+  - .cursor/skills/natural-japanese
+  - .github/skills/natural-japanese
+  - .opencode/skills/natural-japanese
+  content_hash: sha256:6b522424613a4f552b3b45f8cef72d172c20e27b06fee7ac88a069c1d9d54ed0
 - repo_url: figma/mcp-server-guide
   host: github.com
   resolved_commit: 07316dd2920d61303ca0e52812b31f5f341e7b15
