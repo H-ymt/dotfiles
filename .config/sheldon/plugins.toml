@@ -29,11 +29,21 @@ use = [
 ]
 
 # ========================================
-# Syntax highlighting and autosuggestions
+# Syntax highlighting and autosuggestions (deja)
 # ========================================
-[plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
-use = ["{{ name }}.zsh"]
+# deja は zsh-autosuggestions の置き換え。併用すると deja 側が無効化されるため入れない。
+# バイナリは nix/home.nix の home.packages で導入する。上流の deja.plugin.zsh と同じ処理を
+# inline で持ち、リポジトリ全体の clone を避ける。init.zsh は deja がバイナリ更新時に自動で再生成する。
+[plugins.deja]
+inline = '''
+if (( $+commands[deja] )); then
+  if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then
+    source "$HOME/.local/share/deja/init.zsh"
+  else
+    eval "$(deja init zsh)"
+  fi
+fi
+'''
 
 # syntax-highlighting must be loaded last
 [plugins.zsh-syntax-highlighting]

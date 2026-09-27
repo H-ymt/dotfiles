@@ -7,7 +7,7 @@
 # [dotfiles] から削除する（同じものを Homebrew/mise と Nix の両方が管理すると衝突する）。
 #
 # 移行計画は https://github.com/H-ymt/dotfiles/issues/1 を参照。
-{ config, pkgs, username, ... }:
+{ config, pkgs, pkgsUnstable, username, ... }:
 
 let
   # dotfiles リポジトリの絶対パス。out-of-store symlink の参照先に使う。
@@ -26,6 +26,9 @@ in
     sheldon
     # starship は programs.starship.enable が導入する（Phase 4）
     atuin
+    # zsh の ghost text 補完。読み込みは sheldon（.config/sheldon/plugins.toml）。
+    # 安定版は v0.2.6 と古いため unstable から取る
+    pkgsUnstable.deja
     zoxide
     fzf
 

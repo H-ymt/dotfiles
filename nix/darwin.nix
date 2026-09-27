@@ -3,7 +3,7 @@
 # パッケージ・dotfiles はすべて mise.toml が管理し続ける。ここに移してよいのは
 # 「同じコミットで mise.toml 側から消したもの」だけ（Ownership 衝突の回避）。
 # 移行計画は https://github.com/H-ymt/dotfiles/issues/1 を参照。
-{ username, ... }:
+{ username, pkgsUnstable, ... }:
 
 {
   # Determinate Nix installer が /nix と nix-daemon を所有する。
@@ -26,7 +26,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit username; };
+    extraSpecialArgs = { inherit username pkgsUnstable; };
     users.${username} = import ./home.nix;
 
     # 既存の実ファイル（mise 由来の symlink や各ツールが自動追記した .zshenv/.zprofile 等）と
