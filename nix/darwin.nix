@@ -65,7 +65,6 @@
       # --- AI CLI / ツール ---
       "claude"
       "codex"
-      "copilot-cli"
 
       # --- 生産性 / コミュニケーション ---
       "notion"

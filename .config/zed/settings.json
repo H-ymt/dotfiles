@@ -55,7 +55,7 @@
     "dock": "left",
   },
   "edit_predictions": {
-    "provider": "copilot",
+    "provider": "none",
   },
   "agent_servers": {
     "claude-acp": {
