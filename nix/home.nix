@@ -121,128 +121,156 @@ in
   # TOML/ini を手書きする代わりに Nix の attrset で書けるので、他の値（username 等）
   # と組み合わせた宣言ができる。生成物は store 経由なので実体は read-only。
 
-  # starship 公式 Tokyo Night プリセットを移植したもの。
-  # https://starship.rs/ja-JP/presets/tokyo-night
-  # 区切りは Powerline 右向き三角  (U+E0B0)。Ghostty 内蔵 sprite が
-  # セル高いっぱいに正しく描くため font 側の小細工は不要。
-  # 丸端 (U+E0B4/E0B6) は Ghostty との相性で三角の切れ込みが残るため使わず、
-  # プリセット公式どおり右端はスペースで閉じる。
+  # Sin-cy/dotfiles の starship.toml を移植したもの。
+  # https://github.com/Sin-cy/dotfiles/blob/main/starship/.config/starship/starship.toml
+  # 左に ディレクトリ・リモート種別・ブランチ・worktree・git 状態を 1 行で出し、
+  # 言語バージョン等の残りモジュールは right_format の $all で右端に寄せる。
+  # 配色は catppuccin mocha（原典の palettes.custom1）。未使用の他パレットは持ち込まない。
   # enableZshIntegration は false のまま（init は programs.zsh の initContent が
   # 持つ eval 行に任せ、既存 .zshrc の実行順序を変えない）。
-  # format 内の改行は starship 組込みの $line_break で表す（home-manager の TOML
-  # 生成器が \n を書き出すと starship パーサが escaped_char エラーで拒否するため）。
+  # custom.* の command は starship が現在のシェル（zsh）で実行する。原典の
+  # 複数行スクリプトは、TOML 生成器の改行エスケープ問題を避けるため 1 行の case 文に畳んだ。
   programs.starship = {
     enable = true;
     enableZshIntegration = false;
     settings = {
+      scan_timeout = 100;
+      command_timeout = 500;
+      follow_symlinks = false;
+      add_newline = false;
+      palette = "custom1";
+
       format =
-        "[░▒▓](#a3aed2)"
-        + "$os"
-        + "[](bg:#769ff0 fg:#a3aed2)"
-        + "$directory"
-        + "[](fg:#769ff0 bg:#394260)"
+        "$directory"
+        + "\${custom.giturl}"
         + "$git_branch"
+        + "\${custom.git_worktree}"
         + "$git_status"
-        + "[](fg:#394260 bg:#212736)"
-        + "$nodejs"
-        + "$bun"
-        + "$rust"
-        + "$golang"
-        + "$php"
-        + "[](fg:#212736 bg:#1d2230)"
-        + "$time"
-        + "[ ](fg:#1d2230)"
-        + "$line_break$character";
+        + "$line_break"
+        + "$character";
+      right_format = "$all";
 
       directory = {
-        style = "fg:#e3e5e5 bg:#769ff0";
+        style = "teal";
         format = "[ $path ]($style)";
-        truncation_length = 3;
-        truncation_symbol = "…/";
+        truncation_length = 4;
         substitutions = {
           "Documents" = "󰈙 ";
-          "Downloads" = "󰇚 ";
-          "Music" = "󰝚 ";
-          "Pictures" = "󰏣 ";
+          "Downloads" = " ";
+          "Music" = " ";
+          "Pictures" = " ";
+          "Developer" = "󰲋 ";
+          "Others" = " ";
         };
       };
 
+      line_break.disabled = true;
+
+      character = {
+        success_symbol = "[ ](bold fg:green)";
+        error_symbol = "[✘ ](bold fg:red)";
+        vimcmd_symbol = "[: ](bold fg:yellow)";
+      };
+
+      custom.giturl = {
+        description = "Display symbol for remote Git server";
+        command = "case \"$(command git ls-remote --get-url 2>/dev/null)\" in *github*) echo ' ' ;; *gitlab*) echo ' ' ;; *bitbucket*) echo ' ' ;; *git*) echo ' ' ;; *) echo ' ' ;; esac";
+        when = "git rev-parse --is-inside-work-tree 2> /dev/null";
+        format = "$output";
+        require_repo = true;
+        ignore_timeout = true;
+      };
+
       git_branch = {
-        symbol = "";
-        style = "bg:#394260";
-        format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
+        symbol = "[](base) ";
+        style = "fg:lavender bg:base";
+        format = "  [$symbol$branch]($style)[](base)";
       };
 
       git_status = {
-        style = "bg:#394260";
-        format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
+        format = "[$untracked$staged$modified$renamed$conflicted$ahead_behind ]($style)";
+        staged = "[+](green)";
+        modified = "[!](yellow)";
+        renamed = "[»](blue)";
+        deleted = "[-](red)";
+        untracked = "[?](red)";
+        stashed = "[≡](lavender)";
+        conflicted = "[✖](red bold)";
+        ahead = "[⇡\${count}](teal)";
+        behind = "[⇣\${count}](peach)";
+        diverged = "[⇕⇡\${ahead_count}⇣\${behind_count}](mauve)";
+      };
+
+      custom.git_worktree = {
+        description = "Show indicator when inside a git worktree";
+        command = "[ \"$(git rev-parse --path-format=absolute --git-common-dir 2>/dev/null)\" != \"$(git rev-parse --path-format=absolute --git-dir 2>/dev/null)\" ] && echo '⛓ '";
+        when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1";
+        format = " ([$output ]($style))";
+        style = "bold green";
+        require_repo = true;
+        ignore_timeout = true;
       };
 
       nodejs = {
         symbol = "";
-        style = "bg:#212736";
-        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+        format = "[ $symbol( $version) ]($style)";
       };
 
-      bun = {
-        symbol = "";
-        style = "bg:#212736";
-        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
-      };
+      bun.detect_files = [ "bun.lock" "bun.lockb" ];
 
       rust = {
         symbol = "";
-        style = "bg:#212736";
-        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+        format = "[ $symbol( $version) ]($style)";
       };
 
       golang = {
         symbol = "";
-        style = "bg:#212736";
-        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+        format = "[ $symbol( $version) ]($style)";
+        detect_files = [ "go.mod" ];
       };
 
       php = {
-        symbol = "";
-        style = "bg:#212736";
-        format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+        symbol = "";
+        format = "[ $symbol( $version) ]($style)";
       };
 
-      time = {
-        disabled = false;
-        time_format = "%R";
-        style = "bg:#1d2230";
-        format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+      python = {
+        symbol = "";
+        format = "[ $symbol( $version) ]($style)";
       };
 
-      os = {
-        disabled = false;
-        style = "bg:#a3aed2 fg:#090c0c";
-        format = "[ $symbol ]($style)";
-        symbols = {
-          Windows = "󰍲";
-          Ubuntu = "󰕈";
-          SUSE = "";
-          Raspbian = "󰐿";
-          Mint = "󰣭";
-          Macos = "󰀵";
-          Manjaro = "";
-          Linux = "󰌽";
-          Gentoo = "󰣨";
-          Fedora = "󰣛";
-          Alpine = "";
-          Amazon = "";
-          Android = "";
-          AOSC = "";
-          Arch = "󰣇";
-          Artix = "󰣇";
-          EndeavourOS = "";
-          CentOS = "";
-          Debian = "󰣚";
-          Redhat = "󱄛";
-          RedHatEnterprise = "󱄛";
-          Pop = "";
-        };
+      docker_context = {
+        symbol = "";
+        format = "[ $symbol( $context) ]($style)";
+      };
+
+      palettes.custom1 = {
+        crust = "#11111b";
+        mantle = "#181825";
+        base = "#1e1e2e";
+        overlay2 = "#9399b2";
+        overlay1 = "#7f849c";
+        overlay0 = "#6c7086";
+        surface2 = "#585b70";
+        surface1 = "#45475a";
+        surface0 = "#313244";
+        text = "#cdd6f4";
+        subtext1 = "#bac2de";
+        subtext0 = "#a6adc8";
+        rosewater = "#f5e0dc";
+        flamingo = "#f2cdcd";
+        pink = "#f5c2e7";
+        mauve = "#cba6f7";
+        red = "#f38ba8";
+        maroon = "#eba0ac";
+        peach = "#fab387";
+        yellow = "#f9e2af";
+        green = "#a6e3a1";
+        teal = "#94e2d5";
+        sky = "#89dceb";
+        sapphire = "#74c7ec";
+        blue = "#89b4fa";
+        lavender = "#b4befe";
       };
     };
   };
