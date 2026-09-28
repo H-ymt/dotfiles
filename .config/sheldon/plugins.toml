@@ -36,6 +36,9 @@ use = [
 # inline で持ち、リポジトリ全体の clone を避ける。init.zsh は deja がバイナリ更新時に自動で再生成する。
 [plugins.deja]
 inline = '''
+# 既定の fg=8 は端末パレット次第で入力文字と見分けにくいため、catppuccin mocha の surface2 で薄く出す。
+# init.zsh は `: ${DEJA_HIGHLIGHT_STYLE:=...}` で未設定時のみ既定値を入れるので、source 前に定義する。
+typeset -g DEJA_HIGHLIGHT_STYLE='fg=#585b70'
 if (( $+commands[deja] )); then
   if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then
     source "$HOME/.local/share/deja/init.zsh"
