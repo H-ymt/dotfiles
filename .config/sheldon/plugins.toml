@@ -45,6 +45,16 @@ if (( $+commands[deja] )); then
   else
     eval "$(deja init zsh)"
   fi
+
+  # zsh-autocomplete は非同期補完の後、region_highlight を退避時点の内容へ巻き戻し、
+  # zsh-autosuggestions 用の _zsh_autosuggest_highlight_apply だけを呼び直す。
+  # deja のゴースト色がそこで消えて入力文字と同じ前景色になるため、同名関数で deja の再適用を差し込む。
+  if (( $+functions[_deja_highlight_apply] )); then
+    _zsh_autosuggest_highlight_apply() {
+      _deja_highlight_reset
+      _deja_highlight_apply
+    }
+  fi
 fi
 '''
 
