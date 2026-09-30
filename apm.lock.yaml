@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-09-23T04:38:15.979969+00:00'
+generated_at: '2026-09-30T14:28:57.528994+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -19,6 +19,15 @@ dependencies:
   - .claude/skills/chrome-extensions
   - .claude/skills/modern-web-guidance
   content_hash: sha256:739597e382a6b9425ce1fe6b6f4470835bc5d3e55cf1591ba3eac94bbea19739
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: 5cff7aa20b396a40fe9a2670307a9424227de188
+  virtual_path: skills/doc-to-excalidraw
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/doc-to-excalidraw
+  content_hash: sha256:ba49b9900f00e8c1226b5f906756326df040012545648bafd696c136218e6389
 - repo_url: H-ymt/skills
   host: github.com
   resolved_commit: 632bcfecc2629857fe5cd2df858d5877faac7a74
