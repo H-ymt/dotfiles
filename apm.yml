@@ -16,8 +16,6 @@ dependencies:
   - H-ymt/skills/skills/xserver
   - H-ymt/skills/skills/doc-to-excalidraw
   - anthropics/skills/skills/frontend-design
-  - openai/skills/skills/.curated/gh-address-comments
-  - openai/skills/skills/.curated/gh-fix-ci
   - figma/mcp-server-guide/skills/figma-use
   - Cocoon-AI/architecture-diagram-generator/architecture-diagram
   - johnlindquist/claude-workshop-skills/skills/chrome-devtools
