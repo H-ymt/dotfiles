@@ -38,7 +38,6 @@ in
     fd
     tree
     treemd
-    glow # ターミナルで Markdown を描画する
     yazi
     _7zz # Homebrew: sevenzip
 
