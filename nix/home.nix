@@ -38,6 +38,7 @@ in
     fd
     tree
     treemd
+    glow # ターミナルで Markdown を描画する
     yazi
     _7zz # Homebrew: sevenzip
 
@@ -77,6 +78,7 @@ in
     killport
     uv
     mo
+    nb # 登録手順は AGENTS.md の「nb と Obsidian vault」参照
   ];
 
   # Phase 3: dotfiles を xdg.configFile で管理する。

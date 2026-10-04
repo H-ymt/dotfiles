@@ -151,6 +151,23 @@ herdr のユーザー設定は `.config/herdr/config.toml`（→ `~/.config/herd
 - **`config.toml` のみ管理対象。** テーマ・UI 設定が入る
 - **`session.json` / `*.log` / `*.sock` は管理しない。** ワークスペース状態・ログ・ソケットは herdr が実行時に自動生成するマシン固有物のため、`[dotfiles]` に追加しない
 
+## nb と Obsidian vault
+
+[nb](https://github.com/xwmx/nb) は `home.packages`（`nix/home.nix`）で入れ、Obsidian vault（`~/ghq/github.com/H-ymt/obsidian`）を notebook として使う。
+設定は `~/.nb` / `~/.nbrc` の実行時状態で dotfiles 管理外。PC 移行時は `darwin-rebuild switch` の後に手で実行する。
+
+```bash
+# nb notebooks init は既存の git リポジトリを拒否するため symlink で登録する
+ln -s ~/ghq/github.com/H-ymt/obsidian ~/.nb/obsidian
+nb use obsidian       # デフォルト notebook を vault にする
+nb set auto_sync 0    # remote が無いので自動同期は切る
+nb set editor nvim    # 既定は $EDITOR（nano）
+```
+
+- **正本は Obsidian vault。** nb は素早いキャプチャと検索の入口にとどめる
+- **同期は yaos 一本。** nb の自動 commit とは別経路で競合しないが、nb の `sync` は使わない
+- **追加は abbr `nba`。** `Zettelkasten/FleetingNote/` へ `--title` 付きで作る（nb にフォルダの既定設定が無いため）。`--title` なしだとタイムスタンプ名になる。frontmatter は付かない
+
 ## 注意事項
 
 - **スキル一覧はセッション開始時に読み込まれる。** 追加後は `/clear` または再起動が必要

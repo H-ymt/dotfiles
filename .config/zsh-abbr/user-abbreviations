@@ -218,5 +218,8 @@ abbr ll="eza -l --icons"
 # bat abbreviations
 abbr cat="bat --paging=never"
 
+# nb abbreviations
+abbr nba="nb add Zettelkasten/FleetingNote/ --title \"%\""
+
 # terminal-browser abbreviations
 abbr tb="terminal-browser"
