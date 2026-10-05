@@ -78,7 +78,7 @@ github_username = "H-ymt"
 [tools]
 # --- ランタイム (固定) ---
 node = "24.20.0"
-pnpm = "12.3.4"
+pnpm = "12.9.1"
 bun = "latest"
 yarn = "4.12.0"
 
