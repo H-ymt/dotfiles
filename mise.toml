@@ -1,6 +1,10 @@
 [vars]
 github_username = "H-ymt"
 
+[settings]
+# 既定の 24h は新モデル対応などの追従が遅れるためグローバルは短くする。厳しくしたいプロジェクトは各自の mise.toml で上書きする
+minimum_release_age = "4h"
+
 [bootstrap.packages]
 # 純粋な単体 CLI は Phase 1 で Nix (nix/home.nix の home.packages) へ移した。
 # ここに残るのは Nix へ移せない/移していないものだけ。issue #1 参照。
