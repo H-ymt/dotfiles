@@ -76,6 +76,6 @@ dependencies:
   - modem-dev/hunk/skills/hunk-review
   - yusukebe/ax/skills/ax
   - github/gh-stack/skills/gh-stack
-  - coji/natural-japanese/skills/natural-japanese
+  - nanaism/yomiyasu/skills/yomiyasu
   mcp: []
 scripts: {}
