@@ -78,6 +78,9 @@ in
     uv
     mo
     nb # 登録手順は AGENTS.md の「nb と Obsidian vault」参照
+    # AI エージェントが読むコマンド出力を縮める CLI プロキシ。安定版は 0.41 と古いため unstable から取る。
+    # Claude Code / Cursor へのフック登録は home.activation の registerRtkHooks で行う
+    pkgsUnstable.rtk
   ];
 
   # Phase 3: dotfiles を xdg.configFile で管理する。
@@ -360,6 +363,23 @@ in
     # Figma への読み込み（Plugins > Development > Import plugin from manifest）は手動で 1 回だけ。
     # 置き場所は固定なので、版を上げても上書きされるだけで Figma 側の再読み込みは不要。
     # 版を上げるときは version を書き換える。.version が一致していれば何もしない（冪等）。
+    # rtk のフックを Claude Code（~/.claude/settings.json）と Cursor（~/.cursor/hooks.json）に登録する。
+    # どちらも dotfiles 管理外のファイルなので、rtk init に追記させる。2 回目以降は何も変えない（冪等）。
+    # --hook-only: RTK.md を作らず、~/.claude/CLAUDE.md（mise の template 管理）に @RTK.md を足させない。
+    # 統計の送信（telemetry）は既定でオフのまま触らない。
+    registerRtkHooks = config.lib.dag.entryAfter [ "installPackages" ] ''
+      rtk_bin="${pkgsUnstable.rtk}/bin/rtk"
+      if [ -d "$HOME/.claude" ]; then
+        "$rtk_bin" init -g --hook-only --auto-patch >/dev/null 2>&1 \
+          || echo "warning: rtk hook registration for Claude Code failed" >&2
+        rm -f "$HOME/.claude/settings.json.bak"
+      fi
+      if [ -d "$HOME/.cursor" ]; then
+        "$rtk_bin" init -g --agent cursor --hook-only --auto-patch >/dev/null 2>&1 \
+          || echo "warning: rtk hook registration for Cursor failed" >&2
+      fi
+    '';
+
     installFigmaMcpBridgePlugin = config.lib.dag.entryAfter [ "writeBoundary" ] ''
       version="v0.0.23"
       dest="$HOME/Applications/figma-plugins/figma-mcp-bridge"
