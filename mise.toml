@@ -13,6 +13,9 @@ minimum_release_age = "4h"
 "brew:crit" = "latest"
 "brew:herdr" = "latest"
 "brew:vercel-cli" = "latest"
+# nixpkgs（unstable 含む）は 1.x 止まりで追従が遅い。mise registry の aqua backend は
+# GitHub Release の無い v2 タグに解決されて 404 になるため、ソースビルドの core formula を使う
+"brew:opencode" = "latest"
 # docker CLI は brew-cask:orbstack が同梱する（~/.orbstack/bin/docker → OrbStack.app）。
 # daemon 提供元（OrbStack）と CLI 提供元を一致させるため、Homebrew formula の docker は
 # 持たない。postgresql@14 は Phase 1.5 で不要と判断し完全に削除した（DB ごと）。
