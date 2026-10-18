@@ -85,7 +85,7 @@ minimum_release_age = "4h"
 [tools]
 # --- ランタイム (固定) ---
 node = "24.20.0"
-pnpm = "12.9.1"
+pnpm = "12.10.1"
 bun = "latest"
 yarn = "4.12.0"
 
