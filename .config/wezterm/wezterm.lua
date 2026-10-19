@@ -54,36 +54,68 @@ config.show_new_tab_button_in_tab_bar = false
 config.use_fancy_tab_bar = false
 config.tab_max_width = 32
 
-local SOLID_LEFT = wezterm.nerdfonts.ple_left_half_circle_thick
-local SOLID_RIGHT = wezterm.nerdfonts.ple_right_half_circle_thick
+local nf = wezterm.nerdfonts
+local SOLID_LEFT = nf.ple_left_half_circle_thick
+local SOLID_RIGHT = nf.ple_right_half_circle_thick
+
+-- 前面プロセス名 → アイコン。未登録はターミナルアイコンにする
+local PROCESS_ICONS = {
+	nvim = nf.custom_vim,
+	vim = nf.custom_vim,
+	claude = nf.md_robot_outline,
+	git = nf.dev_git,
+	lazygit = nf.dev_git,
+	yazi = nf.md_folder_outline,
+	node = nf.dev_nodejs_small,
+	ssh = nf.md_server_network,
+}
+
+local TAB = {
+	bar = "#000000",
+	active_bg = "#26233a",
+	active_fg = "#e0def4",
+	accent = "#c4a7e7",
+	inactive_fg = "#6e6a86",
+	hover_fg = "#908caa",
+}
+
+local function process_icon(pane)
+	local name = (pane.foreground_process_name or ""):match("([^/]+)$") or ""
+	return PROCESS_ICONS[name] or nf.cod_terminal
+end
 
 wezterm.on("format-tab-title", function(tab, _, _, _, hover, max_width)
 	local title = tab.tab_title
 	if title == nil or #title == 0 then
 		title = tab.active_pane.title
 	end
-	title = wezterm.truncate_right(title, max_width - 6)
-	local label = " " .. (tab.tab_index + 1) .. "  " .. title .. " "
+	-- 角丸 2 + 余白 4 + 番号 + アイコン分を差し引く
+	title = wezterm.truncate_right(title, max_width - 10)
+	local index = tostring(tab.tab_index + 1)
+	local icon = process_icon(tab.active_pane)
 
-	local edge = "#000000"
 	if tab.is_active then
 		return {
-			{ Background = { Color = edge } },
-			{ Foreground = { Color = "#26233a" } },
+			{ Background = { Color = TAB.bar } },
+			{ Text = " " },
+			{ Foreground = { Color = TAB.active_bg } },
 			{ Text = SOLID_LEFT },
-			{ Background = { Color = "#26233a" } },
-			{ Foreground = { Color = "#e0def4" } },
+			{ Background = { Color = TAB.active_bg } },
+			{ Foreground = { Color = TAB.accent } },
 			{ Attribute = { Intensity = "Bold" } },
-			{ Text = label },
-			{ Background = { Color = edge } },
-			{ Foreground = { Color = "#26233a" } },
+			{ Text = index .. " " .. icon .. " " },
+			{ Foreground = { Color = TAB.active_fg } },
+			{ Text = title },
+			{ Background = { Color = TAB.bar } },
+			{ Foreground = { Color = TAB.active_bg } },
 			{ Text = SOLID_RIGHT },
 		}
 	end
+	local fg = hover and TAB.hover_fg or TAB.inactive_fg
 	return {
-		{ Background = { Color = edge } },
-		{ Foreground = { Color = hover and "#e0def4" or "#6e6a86" } },
-		{ Text = " " .. label .. " " },
+		{ Background = { Color = TAB.bar } },
+		{ Foreground = { Color = fg } },
+		{ Text = "  " .. index .. " " .. icon .. " " .. title .. "  " },
 	}
 end)
 
