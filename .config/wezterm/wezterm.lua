@@ -9,6 +9,8 @@ config.font = wezterm.font_with_fallback({
 	{ family = "PlemolJP" },
 })
 config.freetype_load_flags = "NO_HINTING"
+-- 既定 (WhenFollowedBySpace) だと Nerd Font のアイコンが後ろの空白まではみ出して大きく見えるため 1 セルに収める
+config.allow_square_glyphs_to_overflow_width = "Never"
 config.front_end = "WebGpu"
 config.use_ime = true
 config.window_background_opacity = 0.90
