@@ -15,6 +15,7 @@ dependencies:
   - H-ymt/skills/skills/japanese-tech-writing
   - H-ymt/skills/skills/xserver
   - H-ymt/skills/skills/doc-to-excalidraw
+  - H-ymt/skills/skills/figma-bridge
   - anthropics/skills/skills/frontend-design
   - figma/mcp-server-guide/skills/figma-use
   - Cocoon-AI/architecture-diagram-generator/architecture-diagram
