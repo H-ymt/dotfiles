@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-10-10T12:54:58.705196+00:00'
+generated_at: '2026-10-19T13:32:01.626554+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -37,6 +37,15 @@ dependencies:
   deployed_files:
   - .claude/skills/empirical-prompt-tuning
   content_hash: sha256:92d054be3c36e62f693ff3d00bef23aa53d9ea867ae0485ad41cdc0250238dd5
+- repo_url: H-ymt/skills
+  host: github.com
+  resolved_commit: aebd9fc9153c05b7b8adf4c8592b442757f3b15b
+  virtual_path: skills/figma-bridge
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/figma-bridge
+  content_hash: sha256:2b1859427131b0ff98dff1050edbd9074e363599221a7faababbeff4ec68b9c7
 - repo_url: H-ymt/skills
   host: github.com
   resolved_commit: 632bcfecc2629857fe5cd2df858d5877faac7a74
