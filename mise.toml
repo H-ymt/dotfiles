@@ -60,6 +60,9 @@ minimum_release_age = "4h"
 # .zshrc / .gitconfig は Phase 4 で nix/home.nix の programs.zsh / programs.git へ移した。
 "~/.bunfig.toml" = { source = ".bunfig.toml", mode = "symlink" }
 "~/.claude/CLAUDE.md" = { source = ".claude/CLAUDE.md.tmpl", mode = "template" }
+# Cursor はワークスペースから / まで親ディレクトリの AGENTS.md を読むため、~ 配下のプロジェクトすべてに効く。
+"~/AGENTS.md" = { source = ".claude/CLAUDE.md.tmpl", mode = "template" }
+"~/.codex/AGENTS.md" = { source = ".claude/CLAUDE.md.tmpl", mode = "template" }
 
 "~/.config/zed/keymap.json" = { source = ".config/zed/keymap.json", mode = "symlink" }
 "~/.config/zed/settings.json" = { source = ".config/zed/settings.json", mode = "symlink" }
