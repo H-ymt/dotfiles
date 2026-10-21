@@ -588,13 +588,13 @@ dependencies:
   content_hash: sha256:9e21bc98b4201b1753250e617dd66dad417c2392c8f362158eb2a82329a3899e
 - repo_url: nanaism/yomiyasu
   host: github.com
-  resolved_commit: 373356eb874af5184962c88e925ea7eb58450318
+  resolved_commit: fbe02c93877d697cc53d9377b7a45dd8a1dd99b3
   virtual_path: skills/yomiyasu
   is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .claude/skills/yomiyasu
-  content_hash: sha256:bb0fa19545be58b23824830e62e72e9bfcbd6be2000cd8e2edb12668fc47c84e
+  content_hash: sha256:f5c50a4ebeed8dd5c976ec40dbd59b3979abb085893b2c2cd68eed32e34379ae
 - repo_url: nulab/bee
   host: github.com
   resolved_commit: 276f55c7a1e90d5cb6b7b82bb4ced06d8da51f34
