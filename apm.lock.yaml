@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-10-24T10:07:43.230821+00:00'
+generated_at: '2026-10-24T10:46:15.524473+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -310,6 +310,15 @@ dependencies:
 - repo_url: cloudflare/skills
   host: github.com
   resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
+  virtual_path: skills/sandbox-stable
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/sandbox-stable
+  content_hash: sha256:4c6ad34430c75b84e68edc9f721d5a54fdd8a1d6754807154b5f7bc45665d0a4
+- repo_url: cloudflare/skills
+  host: github.com
+  resolved_commit: 86505e44f87d801aa1864a3c4109e9a8ae5c409f
   virtual_path: skills/web-perf
   is_virtual: true
   package_type: claude_skill
@@ -568,6 +577,15 @@ dependencies:
   deployed_files:
   - .claude/skills/grill-me
   content_hash: sha256:fe33aaa8e8dcd606107b1bfe3109f257b4a7e0f4907afd6506b62ccfb73cd1d3
+- repo_url: modem-dev/hunk
+  host: github.com
+  resolved_commit: 8da098499e44808a19d6bfe6df91ac9ebd26521e
+  virtual_path: packages/hunk/skills/hunk-review
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/hunk-review
+  content_hash: sha256:a21818376de6c7c73d722115bf70a04cb8cf518fc836dee1b7d1646fce73c00e
 - repo_url: nanaism/yomiyasu
   host: github.com
   resolved_commit: 15244a1369c192d6b7e74963ee9709537fadf166

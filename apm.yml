@@ -55,7 +55,7 @@ dependencies:
   - cloudflare/skills/skills/cloudflare-email-service
   - cloudflare/skills/skills/cloudflare
   - cloudflare/skills/skills/durable-objects
-  - cloudflare/skills/skills/sandbox-sdk
+  - cloudflare/skills/skills/sandbox-stable
   - cloudflare/skills/skills/web-perf
   - cloudflare/skills/skills/workers-best-practices
   - cloudflare/skills/skills/wrangler
@@ -74,7 +74,7 @@ dependencies:
   - mattpocock/skills/skills/productivity/grill-me
   - mattpocock/skills/skills/engineering/grill-with-docs
   - GoogleChrome/modern-web-guidance
-  - modem-dev/hunk/skills/hunk-review
+  - modem-dev/hunk/packages/hunk/skills/hunk-review
   - yusukebe/ax/skills/ax
   - github/gh-stack/skills/gh-stack
   - nanaism/yomiyasu/skills/yomiyasu
