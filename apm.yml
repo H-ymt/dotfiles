@@ -4,7 +4,6 @@ description: yamato_handai dotfiles — agent skills managed by APM
 author: H-ymt
 dependencies:
   apm:
-  - H-ymt/skills/skills/figma-design-tokens
   - H-ymt/skills/skills/image-optimize
   - H-ymt/skills/skills/figma-rule
   - H-ymt/skills/skills/github-pr-review-operation

@@ -49,15 +49,6 @@ dependencies:
 - repo_url: H-ymt/skills
   host: github.com
   resolved_commit: a47fec77076ca586da5ec7877ea5b7ccb3b2b3b0
-  virtual_path: skills/figma-design-tokens
-  is_virtual: true
-  package_type: claude_skill
-  deployed_files:
-  - .claude/skills/figma-design-tokens
-  content_hash: sha256:3c1e6b1bea59afb00e161a2ba9afbc27fb22a111907eac59099fd856f5efedd3
-- repo_url: H-ymt/skills
-  host: github.com
-  resolved_commit: a47fec77076ca586da5ec7877ea5b7ccb3b2b3b0
   virtual_path: skills/figma-rule
   is_virtual: true
   package_type: claude_skill
