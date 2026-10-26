@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-10-26T09:09:44.847466+00:00'
+generated_at: '2026-10-26T09:44:16.899776+00:00'
 apm_version: 0.8.11
 dependencies:
 - repo_url: Cocoon-AI/architecture-diagram-generator
@@ -21,7 +21,7 @@ dependencies:
   content_hash: sha256:01b44faf7f96ba9d764cc38811faa677d6b340286997913d85ff9efd9ef22874
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/clean-my-mac
   is_virtual: true
   package_type: claude_skill
@@ -30,7 +30,7 @@ dependencies:
   content_hash: sha256:3a432e50f9e1bd91be7be569c87e69e0b96152a8102adb36afd5e49da1ec1da7
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/doc-to-excalidraw
   is_virtual: true
   package_type: claude_skill
@@ -39,7 +39,7 @@ dependencies:
   content_hash: sha256:831cd30bc3879dc8577014d0697da078ae41936c43cde3c8b14285b521893995
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/empirical-prompt-tuning
   is_virtual: true
   package_type: claude_skill
@@ -48,7 +48,7 @@ dependencies:
   content_hash: sha256:92d054be3c36e62f693ff3d00bef23aa53d9ea867ae0485ad41cdc0250238dd5
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/figma-bridge
   is_virtual: true
   package_type: claude_skill
@@ -57,7 +57,7 @@ dependencies:
   content_hash: sha256:2b1859427131b0ff98dff1050edbd9074e363599221a7faababbeff4ec68b9c7
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/figma-rule
   is_virtual: true
   package_type: claude_skill
@@ -66,7 +66,7 @@ dependencies:
   content_hash: sha256:6a668ae94b95e7fec46b0bc7ba8aa9f66738c88c002c75e04f2d8132ecf25c59
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/github-pr-review-operation
   is_virtual: true
   package_type: claude_skill
@@ -75,16 +75,16 @@ dependencies:
   content_hash: sha256:30f51a05c4ea0f75b88625a816504c9a8ac604d368a1710308b9f9b1ad17e4d7
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/h10o-figma
   is_virtual: true
   package_type: claude_skill
   deployed_files:
   - .claude/skills/h10o-figma
-  content_hash: sha256:ef8398d2a5bcd3615a97170af2b548e0bcbb0800695046550c371ec4006da325
+  content_hash: sha256:155ce68d75d18c2896eaf4aee7d466921e5a59ee7ff0096f9235cb43698c02a3
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/h10o-review
   is_virtual: true
   package_type: claude_skill
@@ -93,7 +93,7 @@ dependencies:
   content_hash: sha256:179dc8e94bf16aa07b23f89721858c9c6b9a97011f4371a84f62894131d8b2f6
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/image-optimize
   is_virtual: true
   package_type: claude_skill
@@ -102,7 +102,7 @@ dependencies:
   content_hash: sha256:fa6e7cbbc09dcef3e00da7ee98e0bd9424560e3e9e153bb5236fcbfaf963c954
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/japanese-tech-writing
   is_virtual: true
   package_type: claude_skill
@@ -111,7 +111,7 @@ dependencies:
   content_hash: sha256:e7e74e6ef15a98e3b2d406105ab1e5abf145f6f5f04110600ccdb038d2d85fa4
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/lighthouse-perf-report
   is_virtual: true
   package_type: claude_skill
@@ -120,7 +120,7 @@ dependencies:
   content_hash: sha256:b2b576363074fb234a4afd25e72842b29c244a8d43e3ec778abca4a9a5090f78
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/linearis
   is_virtual: true
   package_type: claude_skill
@@ -129,7 +129,7 @@ dependencies:
   content_hash: sha256:f4223a9060095a23c7d45cd681685663e66316a98264aa89a4331900c419c06d
 - repo_url: H-ymt/skills
   host: github.com
-  resolved_commit: 2f5ad087d6ab84153dd046c2355136014d868d55
+  resolved_commit: ea058008310e1674df9e4703493e0069ebd24494
   virtual_path: skills/xserver
   is_virtual: true
   package_type: claude_skill
