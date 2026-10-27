@@ -8,7 +8,7 @@ dependencies:
   - H-ymt/skills/skills/figma-rule
   - H-ymt/skills/skills/github-pr-review-operation
   - H-ymt/skills/skills/h10o-review
-  - H-ymt/skills/skills/h10o-figma
+  - H-ymt/skills/skills/h10o-figma-to-code
   - H-ymt/skills/skills/lighthouse-perf-report
   - H-ymt/skills/skills/empirical-prompt-tuning
   - H-ymt/skills/skills/linearis
@@ -79,5 +79,6 @@ dependencies:
   - yusukebe/ax/skills/ax
   - github/gh-stack/skills/gh-stack
   - nanaism/yomiyasu/skills/yomiyasu
+  - GLANZ-CREATIVE/skills/skills/ftp-deploy-workflow
   mcp: []
 scripts: {}
