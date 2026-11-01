@@ -361,6 +361,150 @@ dependencies:
   deployed_files:
   - .claude/skills/wrangler
   content_hash: sha256:9b410cfe14c41d3d4ace5d42e2e19f4eb96104c659b5ed45abf341db28d81029
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/animate
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/animate
+  content_hash: sha256:7598d33e7f60dd5c24531eaaa897621cc3bdb48e8050324211627973bc59c4ce
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/animate-expo
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/animate-expo
+  content_hash: sha256:5de09593d564091f9db60aabede7bed760251e118548272050a247c653c417d2
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/animation-performance
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/animation-performance
+  content_hash: sha256:b68ba704106e27b1f83df0cb817e09ec947abb76825d86eabdee2954b6c1bb84
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/animation-vocabulary
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/animation-vocabulary
+  content_hash: sha256:0058036865ecbb864fd0c4132efcc62425355d6e99c7e6ef6a936742d62a5dea
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/apple-design
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/apple-design
+  content_hash: sha256:0190417d092a0df447b000154e39733ea6d97efad6d3bec8a6ce3845aeb88914
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/ask-sonner
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/ask-sonner
+  content_hash: sha256:8bd257b845985f4b35b603b510a126604176521094af79c4b7347ffeb8a8f7ab
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/break-ui
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/break-ui
+  content_hash: sha256:60ada67662925f4df5e3c6ff41cac3ab241b66f8898100a5ffcd7ba7196cb868
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/emil-design-eng
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/emil-design-eng
+  content_hash: sha256:51f2537e04d15911b41d78e2de24c36a0e26d41beae15e82a954fe5496a5eda9
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/find-animation-opportunities
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/find-animation-opportunities
+  content_hash: sha256:465d087c41768e4f14ed640dd049036009f613feb55baaa5831b68b33178f9d2
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/improve-animations
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/improve-animations
+  content_hash: sha256:524ea241e41d58bbdd8e288700fe24f5725e2a2f3ae7186ad7cebf9055058356
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/mobile-native
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/mobile-native
+  content_hash: sha256:f221cea36642168df6d3d6d7f236237cbf1ae669138ff7df07775674223d49ad
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/pick-ui-library
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/pick-ui-library
+  content_hash: sha256:5d2a77bf0ecafbda85aa95fb49999b6d77945d9066ec83d970b62e5b388cd686
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/prototype
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/prototype
+  content_hash: sha256:77be567d8c946608fdd15e61b62ab383cdf289a194dce2479828b7eda860d3ba
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/remove-animations
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/remove-animations
+  content_hash: sha256:5d738305c722c25e054a9e3b67e68d4429617d9fbae4bc8861b73cc25c8ba84c
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/review-animations
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/review-animations
+  content_hash: sha256:b4e5f0f4fe3e2743c85bf7354108f48a0b9d502cb20ef5c4a9c195da91f93736
+- repo_url: emilkowalski/skills
+  host: github.com
+  resolved_commit: a81dbca07f2217b7103e510c0f13f8d5b017afc9
+  virtual_path: skills/write-swift
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/write-swift
+  content_hash: sha256:f20bb9cf51dbee1900b264820a12f1d3d378dc4d23ac758e7ba9e644c49a2459
 - repo_url: figma/mcp-server-guide
   host: github.com
   resolved_commit: 056adaf7564d3dc5fa2e1c7828bbec925d5fa6bb

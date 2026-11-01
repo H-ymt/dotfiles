@@ -80,5 +80,21 @@ dependencies:
   - github/gh-stack/skills/gh-stack
   - nanaism/yomiyasu/skills/yomiyasu
   - GLANZ-CREATIVE/skills/skills/ftp-deploy-workflow
+  - emilkowalski/skills/skills/emil-design-eng
+  - emilkowalski/skills/skills/animate
+  - emilkowalski/skills/skills/animate-expo
+  - emilkowalski/skills/skills/review-animations
+  - emilkowalski/skills/skills/improve-animations
+  - emilkowalski/skills/skills/find-animation-opportunities
+  - emilkowalski/skills/skills/remove-animations
+  - emilkowalski/skills/skills/animation-performance
+  - emilkowalski/skills/skills/animation-vocabulary
+  - emilkowalski/skills/skills/apple-design
+  - emilkowalski/skills/skills/write-swift
+  - emilkowalski/skills/skills/pick-ui-library
+  - emilkowalski/skills/skills/prototype
+  - emilkowalski/skills/skills/mobile-native
+  - emilkowalski/skills/skills/break-ui
+  - emilkowalski/skills/skills/ask-sonner
   mcp: []
 scripts: {}
