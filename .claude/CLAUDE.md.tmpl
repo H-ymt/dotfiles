@@ -43,6 +43,13 @@ KPI が与えられたら達成するまで試行する。ただしカバレッ�
 
 コードレビューは、特に指示がない場合は `hunk-review` スキルを参照して hunk で差分を表示する。
 
+# コミットメッセージ
+
+- [Conventional Commits](https://www.conventionalcommits.org/ja/v1.0.0/) に従う: `<type>(<scope>): <description>`
+- type は `feat` `fix` `docs` `style` `refactor` `perf` `test` `build` `ci` `chore` `revert` から選ぶ。scope は任意
+- description は日本語で、何をしたかを簡潔に書く。末尾に句点を付けない
+- 破壊的変更は type の後に `!` を付け、本文に `BREAKING CHANGE:` で内容を書く
+
 # スタック PR
 
 依存する PR を積むときは `gh-stack` スキルを使う。
