@@ -74,11 +74,12 @@ dependencies:
   - nulab/bee/skills/backlog-notation
   - mattpocock/skills/skills/productivity/grill-me
   - mattpocock/skills/skills/engineering/grill-with-docs
-  - GoogleChrome/modern-web-guidance
+  - GoogleChrome/modern-web-guidance/skills/modern-web-guidance
+  - GoogleChrome/modern-web-guidance/skills/chrome-extensions
   - modem-dev/hunk/packages/hunk/skills/hunk-review
   - yusukebe/ax/skills/ax
   - github/gh-stack/skills/gh-stack
-  - nanaism/yomiyasu/skills/yomiyasu
+  - nanaism/yomiyasu
   - GLANZ-CREATIVE/skills/skills/ftp-deploy-workflow
   - emilkowalski/skills/skills/emil-design-eng
   - emilkowalski/skills/skills/animate
