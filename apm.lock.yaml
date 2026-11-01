@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-11-01T03:00:42.218600+00:00'
+generated_at: '2026-11-01T03:24:13.993259+00:00'
 apm_version: 0.35.0
 dependencies:
 - repo_url: anthropics/skills
@@ -1596,7 +1596,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: clean-my-mac
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/clean-my-mac
   is_virtual: true
@@ -1641,7 +1641,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: doc-to-excalidraw
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/doc-to-excalidraw
   is_virtual: true
@@ -1666,7 +1666,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: empirical-prompt-tuning
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/empirical-prompt-tuning
   is_virtual: true
@@ -1681,7 +1681,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: figma-bridge
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/figma-bridge
   is_virtual: true
@@ -1696,7 +1696,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: figma-rule
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/figma-rule
   is_virtual: true
@@ -1713,7 +1713,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: github-pr-review-operation
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/github-pr-review-operation
   is_virtual: true
@@ -1728,7 +1728,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: h10o-figma-to-code
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/h10o-figma-to-code
   is_virtual: true
@@ -1740,16 +1740,16 @@ dependencies:
   - .claude/skills/h10o-figma-to-code/references/components.md
   - .claude/skills/h10o-figma-to-code/references/visual.md
   deployed_file_hashes:
-    .claude/skills/h10o-figma-to-code/SKILL.md: sha256:6492c5369c5a579280d7fb6a353d26f88b9ae63402cea0ccf007f2788f73443e
-    .claude/skills/h10o-figma-to-code/references/admin.md: sha256:6246ec4ac2f16a0b6edfe3b2ebeaee08bf82c971f83d122d5ccd70906bbf6903
-    .claude/skills/h10o-figma-to-code/references/components.md: sha256:8df11a6744994b8b0adc7e180a1fec8fa1a0a76b2024025fad998c0fbfe6e204
-    .claude/skills/h10o-figma-to-code/references/visual.md: sha256:b34306b63f1c9f5e3a56d984ef9528917df35e414d488ee7d72b0a20402785d4
-  content_hash: sha256:cb71cd6737e048b0fc9d274dd87417a0ced584001874cb1129cf5730fc243617
+    .claude/skills/h10o-figma-to-code/SKILL.md: sha256:bd982d4853ec029ce137f456bde6624fb2aab3c4e1773dbd983530ad41e40316
+    .claude/skills/h10o-figma-to-code/references/admin.md: sha256:0d39cd41a17d9881edfc50a769091249932f5282ed2249d6b0fdb811da9890da
+    .claude/skills/h10o-figma-to-code/references/components.md: sha256:55e9550e9382df3d0d2b9a3754a892d91a3a6d987b26fd1c6bd68bcae15b5c04
+    .claude/skills/h10o-figma-to-code/references/visual.md: sha256:98445baa7dd2dfc6b6241513767edd4e749ab187847ceb6022c4c2081c5c7333
+  content_hash: sha256:c785ee795aa2e40cf3e66cc2f2ef32468288e7da7a9c8b2465f0af5ea9b627c3
 - repo_url: h-ymt/skills
   materialization_repo_url: H-ymt/skills
   name: h10o-review
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/h10o-review
   is_virtual: true
@@ -1774,7 +1774,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: image-optimize
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/image-optimize
   is_virtual: true
@@ -1791,7 +1791,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: japanese-tech-writing
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/japanese-tech-writing
   is_virtual: true
@@ -1806,7 +1806,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: lighthouse-perf-report
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/lighthouse-perf-report
   is_virtual: true
@@ -1827,7 +1827,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: linearis
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/linearis
   is_virtual: true
@@ -1842,7 +1842,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: xserver
   host: github.com
-  resolved_commit: 348eb2df1979e7e789f7e6c2e9313c793a097844
+  resolved_commit: 53304fc6a6a8a0049db350e4ec6bf15b21034c44
   version: unknown
   virtual_path: skills/xserver
   is_virtual: true
@@ -7215,7 +7215,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/h10o-figma-to-code
   active_owner: h-ymt/skills/skills/h10o-figma-to-code
-  content_hash: sha256:6492c5369c5a579280d7fb6a353d26f88b9ae63402cea0ccf007f2788f73443e
+  content_hash: sha256:bd982d4853ec029ce137f456bde6624fb2aab3c4e1773dbd983530ad41e40316
 - kind: project-relative
   target: claude
   value: .claude/skills/h10o-figma-to-code/references/admin.md
@@ -7224,7 +7224,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/h10o-figma-to-code
   active_owner: h-ymt/skills/skills/h10o-figma-to-code
-  content_hash: sha256:6246ec4ac2f16a0b6edfe3b2ebeaee08bf82c971f83d122d5ccd70906bbf6903
+  content_hash: sha256:0d39cd41a17d9881edfc50a769091249932f5282ed2249d6b0fdb811da9890da
 - kind: project-relative
   target: claude
   value: .claude/skills/h10o-figma-to-code/references/components.md
@@ -7233,7 +7233,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/h10o-figma-to-code
   active_owner: h-ymt/skills/skills/h10o-figma-to-code
-  content_hash: sha256:8df11a6744994b8b0adc7e180a1fec8fa1a0a76b2024025fad998c0fbfe6e204
+  content_hash: sha256:55e9550e9382df3d0d2b9a3754a892d91a3a6d987b26fd1c6bd68bcae15b5c04
 - kind: project-relative
   target: claude
   value: .claude/skills/h10o-figma-to-code/references/visual.md
@@ -7242,7 +7242,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/h10o-figma-to-code
   active_owner: h-ymt/skills/skills/h10o-figma-to-code
-  content_hash: sha256:b34306b63f1c9f5e3a56d984ef9528917df35e414d488ee7d72b0a20402785d4
+  content_hash: sha256:98445baa7dd2dfc6b6241513767edd4e749ab187847ceb6022c4c2081c5c7333
 - kind: project-relative
   target: claude
   value: .claude/skills/h10o-review
