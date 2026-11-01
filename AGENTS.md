@@ -44,7 +44,7 @@ apm install --target claude
 apm install owner/repo/path/to/skill --target claude
 
 # 外部スキルを最新に更新
-apm install --update --target claude
+apm update --target claude
 
 # スキルを削除
 apm uninstall owner/repo/path/to/skill

@@ -30,7 +30,7 @@ mise bootstrap
 sudo darwin-rebuild switch --flake .#mba   # apply Nix changes
 nix flake update                           # bump inputs (revert flake.lock to roll back)
 mise bootstrap                             # apply mise changes
-apm install --update --target claude       # update Agent Skills
+apm update --target claude                 # update Agent Skills
 ```
 
 ## Manual steps
