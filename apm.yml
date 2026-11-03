@@ -2,6 +2,10 @@ name: dotfiles
 version: 1.0.0
 description: yamato_handai dotfiles — agent skills managed by APM
 author: H-ymt
+# 出力先を .claude/skills に固定する。未指定だと .opencode/ などの検出結果に
+# 引っ張られて別ディレクトリへ配置されることがある。
+targets:
+- claude
 dependencies:
   apm:
   - H-ymt/skills/skills/image-optimize
