@@ -51,6 +51,12 @@ minimum_release_age = "4h"
 #   VS Code (Code - Insiders) の "terminal.integrated.enableImages": true は
 #   terminal-browser の installer が書き込んだ設定だが、herdr-browser のターミナル描画にも
 #   有効なため意図的に残している。この設定は現状 dotfiles 管理外。
+#
+# Cursor CLI (agent):
+#   curl https://cursor.com/install -fsS | bash
+#   Homebrew cask "cursor-cli" は旧名 cursor-agent しかリンクせず、公式名の agent が入らないため使わない。
+#   公式インストーラは ~/.local/bin に agent を置く（PATH は nix/home.nix 側で通っている）。
+#   更新は agent 自身の自動更新か `agent update`。
 
 # [bootstrap.hooks.*] は Phase 5 で nix/home.nix の home.activation へ移した。
 # gh extension / apm install / bat cache は darwin-rebuild switch のたびに走る。

@@ -65,7 +65,6 @@
       # --- AI CLI / ツール ---
       "claude"
       "codex"
-      "cursor-cli" # cursor-agent / agent。curl のインストーラではなく cask で入れる
 
       # --- 生産性 / コミュニケーション ---
       "notion"
