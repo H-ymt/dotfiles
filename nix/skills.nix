@@ -141,8 +141,7 @@ let
       "linearis"
       "xserver"
     ]
-    // fromRepo inputs.glanz-skills [ "ftp-deploy-workflow" ]
-    // fromRepo inputs.issue-graph [ "issue-graph" ];
+    // fromRepo inputs.glanz-skills [ "ftp-deploy-workflow" ];
 in
 {
   home.file = lib.mapAttrs' (
