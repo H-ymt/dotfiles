@@ -63,6 +63,14 @@
                         "vendor_id": 1452
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "vendor_id": 2007
+                    },
+                    "ignore": false
                 }
             ],
             "name": "Default profile",

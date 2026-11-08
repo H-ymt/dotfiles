@@ -6,3 +6,6 @@
 /result-*
 
 .claude/settings.local.json
+
+# Karabiner-Elements が実行時に生成する
+.config/karabiner/automatic_backups/

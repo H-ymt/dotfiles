@@ -116,8 +116,10 @@ in
     # LazyVim が lazy-lock.json / lazyvim.json を実行時に書き換えるため store には置けない。
     "nvim".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/nvim";
     # Karabiner-Elements の GUI が karabiner.json を書き換える（automatic_backups / assets も生成）。
-    "karabiner/karabiner.json".source =
-      config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/karabiner/karabiner.json";
+    # ファイル単位で symlink すると GUI の保存で実ファイルに置き換わり、変更検知も効かない。
+    # 公式の指定どおりディレクトリごと symlink する:
+    # https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/
+    "karabiner".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/karabiner";
   };
 
   # Phase 4: 宣言的に生成できる設定を programs.* へ移す。
@@ -337,11 +339,6 @@ in
       ${pkgs.bat}/bin/bat cache --build || true
     '';
 
-    # Figma MCP Bridge の Figma プラグイン本体を配置する。
-    # 本体は第三者の配布物なのでリポジトリには入れず、Releases の固定バージョンを取得する。
-    # Figma への読み込み（Plugins > Development > Import plugin from manifest）は手動で 1 回だけ。
-    # 置き場所は固定なので、版を上げても上書きされるだけで Figma 側の再読み込みは不要。
-    # 版を上げるときは version を書き換える。.version が一致していれば何もしない（冪等）。
     # rtk のフックを Claude Code（~/.claude/settings.json）と Cursor（~/.cursor/hooks.json）に登録する。
     # どちらも dotfiles 管理外のファイルなので、rtk init に追記させる。2 回目以降は何も変えない（冪等）。
     # --hook-only: RTK.md を作らず、~/.claude/CLAUDE.md（mise の template 管理）に @RTK.md を足させない。
@@ -349,40 +346,27 @@ in
     registerRtkHooks = config.lib.dag.entryAfter [ "installPackages" ] ''
       rtk_bin="${pkgsUnstable.rtk}/bin/rtk"
       if [ -d "$HOME/.claude" ]; then
-        "$rtk_bin" init -g --hook-only --auto-patch >/dev/null 2>&1 \
+        "$rtk_bin" init -g --hook-only --auto-patch --no-trust-filters </dev/null >/dev/null 2>&1 \
           || echo "warning: rtk hook registration for Claude Code failed" >&2
         rm -f "$HOME/.claude/settings.json.bak"
       fi
       if [ -d "$HOME/.cursor" ]; then
-        "$rtk_bin" init -g --agent cursor --hook-only --auto-patch >/dev/null 2>&1 \
+        "$rtk_bin" init -g --agent cursor --hook-only --auto-patch --no-trust-filters </dev/null >/dev/null 2>&1 \
           || echo "warning: rtk hook registration for Cursor failed" >&2
       fi
     '';
-
-    installFigmaMcpBridgePlugin = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-      version="v0.0.23"
-      dest="$HOME/Applications/figma-plugins/figma-mcp-bridge"
-      if [ "$(cat "$dest/.version" 2>/dev/null)" != "$version" ]; then
-        tmp=$(mktemp -d)
-        if ${pkgs.curl}/bin/curl -fsSL -o "$tmp/bridge.zip" \
-             "https://github.com/gethopp/figma-mcp-bridge/releases/download/$version/figma-mcp-bridge-$version.zip" \
-           && ${pkgs.unzip}/bin/unzip -q "$tmp/bridge.zip" -d "$tmp/x"; then
-          manifest=$(find "$tmp/x" -path "*/plugin/manifest.json" | head -n 1)
-          if [ -n "$manifest" ]; then
-            mkdir -p "$(dirname "$dest")"
-            rm -rf "$dest"
-            cp -R "$(dirname "$(dirname "$manifest")")" "$dest"
-            echo "$version" > "$dest/.version"
-          else
-            echo "warning: plugin/manifest.json not found in figma-mcp-bridge $version" >&2
-          fi
-        else
-          echo "warning: failed to download figma-mcp-bridge $version — skipping" >&2
-        fi
-        rm -rf "$tmp"
-      fi
-    '';
   };
+
+  # Figma への読み込み（Plugins > Development > Import plugin from manifest）は手動で 1 回だけ。
+  home.file."Applications/figma-plugins/figma-mcp-bridge".source =
+    let
+      version = "v0.0.23";
+    in
+    pkgs.fetchzip {
+      url = "https://github.com/gethopp/figma-mcp-bridge/releases/download/${version}/figma-mcp-bridge-${version}.zip";
+      stripRoot = false;
+      hash = "sha256-LyFpNKTbo7tJBMXHm6uVnV2gjL5l3qL+0DQLlEdX00w=";
+    };
 
   # delta は独立した programs.delta モジュールへ移った。
   # enableGitIntegration を明示すると git の pager/interactive.diffFilter に自動で結線される。
