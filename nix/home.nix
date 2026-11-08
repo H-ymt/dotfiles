@@ -49,6 +49,7 @@ in
     glab
     # delta は programs.git.delta.enable が導入する（Phase 4）
     git-filter-repo
+    gitleaks
     lazygit
     lefthook
 

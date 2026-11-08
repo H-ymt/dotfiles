@@ -62,6 +62,7 @@ ghq get git@github.com:H-ymt/dotfiles.git
 cd "$(ghq root)/github.com/H-ymt/dotfiles"
 mise trust
 mise bootstrap
+lefthook install   # pre-commit で gitleaks を走らせ、秘密情報のコミットを止める
 ```
 
 `mise bootstrap` の完了後、mise 非対応のため手動インストールが必要なものが残る（一覧と理由は `mise.toml` の `[bootstrap.packages]` 末尾コメント参照）。
@@ -160,5 +161,6 @@ nb set editor nvim    # 既定は $EDITOR（nano）
 
 ## 注意事項
 
+- **`~/.claude/settings.json` はリポジトリで管理しない。** 理由は 2 つ。`autoMode`（クライアント案件の情報を含む）は user の settings.json からしか読まれないため、public リポジトリに入れられない。また Claude Code の書き込みで symlink が通常ファイルに置き換わるという報告がある。MCP サーバーの定義は `~/.claude.json`（`claude mcp add --scope user`）に置く。settings.json の `mcpServers` は読まれない
 - **スキル一覧はセッション開始時に読み込まれる。** 追加後は `/clear` または再起動が必要
 - **`mise.toml` の `[dotfiles]` はデフォルトで既存ファイルとの競合を拒否する。** 上書きが必要な場合のみ `--force-dotfiles` を使う
