@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-11-07T11:52:10.511852+00:00'
+generated_at: '2026-11-08T05:26:01.802523+00:00'
 apm_version: 0.35.0
 dependencies:
 - repo_url: anthropics/skills
@@ -1580,7 +1580,7 @@ dependencies:
   materialization_repo_url: H-ymt/skills
   name: clean-my-mac
   host: github.com
-  resolved_commit: 41a9178fb5cc1d9e73fd41cd5a67bb7bfa361530
+  resolved_commit: 3325726f93e29c5d6297802ea307a5cfd4e09c2b
   version: unknown
   virtual_path: skills/clean-my-mac
   is_virtual: true
@@ -1601,26 +1601,32 @@ dependencies:
   - .claude/skills/clean-my-mac/scripts/cleanup_homebrew.sh
   - .claude/skills/clean-my-mac/scripts/cleanup_node.sh
   - .claude/skills/clean-my-mac/scripts/cleanup_snapshots.sh
+  - .claude/skills/clean-my-mac/scripts/cleanup_toolchains.sh
   - .claude/skills/clean-my-mac/scripts/cleanup_xcode.sh
   - .claude/skills/clean-my-mac/scripts/detect_wp_env.sh
+  - .claude/skills/clean-my-mac/scripts/list_stale_node_modules.sh
+  - .claude/skills/clean-my-mac/tests/scripts.test.sh
   deployed_file_hashes:
-    .claude/skills/clean-my-mac/SKILL.md: sha256:b9fb1ddfc0cb5a04677e7d3b1f9c18788351bfd3f846230ffa74e3fdb051965b
+    .claude/skills/clean-my-mac/SKILL.md: sha256:762767c4c35d38b6c93ef93a816d9f9c0dc64a104944a5124077d90c44fa13f7
     .claude/skills/clean-my-mac/config/protected_paths.txt: sha256:f053cf880ab00b4e0f727d4c20807036c32c7a253775999e2100d61c952488da
     .claude/skills/clean-my-mac/config/safe_cleanup_rules.json: sha256:cd38dfbf01ce10426954eb91ff636d016009e50f33917c2585bbac28874f6277
     .claude/skills/clean-my-mac/reference/cleanup-strategies.md: sha256:7b4a657933790a679df5d3b86f348c47e29b6fa594537a73a1829510975bb4d5
     .claude/skills/clean-my-mac/reference/dangerous-paths.md: sha256:562ec2275d7a9d8031c693abd522c8d9f0fef3b0a164da8e60771081a4abee11
     .claude/skills/clean-my-mac/reference/macos-storage-guide.md: sha256:2dd1e97b6b6c3103f53b38c820ce3494d5511ea0da28416a8098fee93ae7b545
     .claude/skills/clean-my-mac/reference/safe-paths.md: sha256:71a7c8daf7d5c41711e5255827be95ea8952485caf1f3dda091eaa9d0ea4e3eb
-    .claude/skills/clean-my-mac/scripts/analyze_storage.sh: sha256:5fa5dc93b8d0222e5425b285206ebeefb9e1c42a087dd6cd78ae2ad8d32e2110
-    .claude/skills/clean-my-mac/scripts/cleanup_caches.sh: sha256:3bc1e30ec5d820d22e14af211c1015413118dff1fbe6d179e95e8e0a519dd54b
+    .claude/skills/clean-my-mac/scripts/analyze_storage.sh: sha256:88f76e3709a88a131a3d2a1fcf736811fe615312808c8f65e7930a4d8abee123
+    .claude/skills/clean-my-mac/scripts/cleanup_caches.sh: sha256:a02d5e3cba1b5792b2f1faf5b7c85aa9e028e11e62abf642bb093b835b1050f2
     .claude/skills/clean-my-mac/scripts/cleanup_dev_tools.sh: sha256:8c4b88c9fb84a9bd0a0ff9f38158c6f8c71d6938ef416d43311e8f1fc987e120
     .claude/skills/clean-my-mac/scripts/cleanup_docker.sh: sha256:2b33dc3c4b4acf7962b41bbc44e3497bd72bcdd6ca281a4909f0358547465f34
     .claude/skills/clean-my-mac/scripts/cleanup_homebrew.sh: sha256:ce78fc44958671eb1a6be5bced73d606ce653d4d5d199e4092f71b0ef3831870
     .claude/skills/clean-my-mac/scripts/cleanup_node.sh: sha256:46367fd261997b076fd96303d1fe6dae140431703539b55e73ce79eaec9c2d26
     .claude/skills/clean-my-mac/scripts/cleanup_snapshots.sh: sha256:779e1aff2ec727903cb1d2c18b6f5084fa170725e8c85dfcb4372e8e72351706
+    .claude/skills/clean-my-mac/scripts/cleanup_toolchains.sh: sha256:0e92ea1da909a1ecc6e1783f273e729a0dd9979121c76de739305107e14a7414
     .claude/skills/clean-my-mac/scripts/cleanup_xcode.sh: sha256:c00d8307eb9db77e39e6f22a08e0a54ea9748733c20f9eede1bc539383b563c1
-    .claude/skills/clean-my-mac/scripts/detect_wp_env.sh: sha256:cf285abb92ebc9f87c4d23533201a06a48fb1abc1c2776e02c318b12b374315e
-  content_hash: sha256:3a432e50f9e1bd91be7be569c87e69e0b96152a8102adb36afd5e49da1ec1da7
+    .claude/skills/clean-my-mac/scripts/detect_wp_env.sh: sha256:0ecbe67f425791029adf23c63fab90c456bd0a6faeced1fa024bca4b08942a54
+    .claude/skills/clean-my-mac/scripts/list_stale_node_modules.sh: sha256:58766590c82c5851fbea091d360b03564aae42586b59ed9186fae55749ea631a
+    .claude/skills/clean-my-mac/tests/scripts.test.sh: sha256:68feffecbaa37e47e3f3f63fd59c57988900c2d2a23ae44006a2774295ae5c03
+  content_hash: sha256:8d216a798d633101dae1001e1eee46f1319ed6f4292fbd339da5bfa064ead484
 - repo_url: h-ymt/skills
   materialization_repo_url: H-ymt/skills
   name: doc-to-excalidraw
@@ -4085,7 +4091,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/clean-my-mac
   active_owner: h-ymt/skills/skills/clean-my-mac
-  content_hash: sha256:b9fb1ddfc0cb5a04677e7d3b1f9c18788351bfd3f846230ffa74e3fdb051965b
+  content_hash: sha256:762767c4c35d38b6c93ef93a816d9f9c0dc64a104944a5124077d90c44fa13f7
 - kind: project-relative
   target: claude
   value: .claude/skills/clean-my-mac/config/protected_paths.txt
@@ -4148,7 +4154,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/clean-my-mac
   active_owner: h-ymt/skills/skills/clean-my-mac
-  content_hash: sha256:5fa5dc93b8d0222e5425b285206ebeefb9e1c42a087dd6cd78ae2ad8d32e2110
+  content_hash: sha256:88f76e3709a88a131a3d2a1fcf736811fe615312808c8f65e7930a4d8abee123
 - kind: project-relative
   target: claude
   value: .claude/skills/clean-my-mac/scripts/cleanup_caches.sh
@@ -4157,7 +4163,7 @@ deployments:
   owners:
   - h-ymt/skills/skills/clean-my-mac
   active_owner: h-ymt/skills/skills/clean-my-mac
-  content_hash: sha256:3bc1e30ec5d820d22e14af211c1015413118dff1fbe6d179e95e8e0a519dd54b
+  content_hash: sha256:a02d5e3cba1b5792b2f1faf5b7c85aa9e028e11e62abf642bb093b835b1050f2
 - kind: project-relative
   target: claude
   value: .claude/skills/clean-my-mac/scripts/cleanup_dev_tools.sh
@@ -4205,6 +4211,15 @@ deployments:
   content_hash: sha256:779e1aff2ec727903cb1d2c18b6f5084fa170725e8c85dfcb4372e8e72351706
 - kind: project-relative
   target: claude
+  value: .claude/skills/clean-my-mac/scripts/cleanup_toolchains.sh
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/clean-my-mac
+  active_owner: h-ymt/skills/skills/clean-my-mac
+  content_hash: sha256:0e92ea1da909a1ecc6e1783f273e729a0dd9979121c76de739305107e14a7414
+- kind: project-relative
+  target: claude
   value: .claude/skills/clean-my-mac/scripts/cleanup_xcode.sh
   runtime: null
   scope: project
@@ -4220,7 +4235,25 @@ deployments:
   owners:
   - h-ymt/skills/skills/clean-my-mac
   active_owner: h-ymt/skills/skills/clean-my-mac
-  content_hash: sha256:cf285abb92ebc9f87c4d23533201a06a48fb1abc1c2776e02c318b12b374315e
+  content_hash: sha256:0ecbe67f425791029adf23c63fab90c456bd0a6faeced1fa024bca4b08942a54
+- kind: project-relative
+  target: claude
+  value: .claude/skills/clean-my-mac/scripts/list_stale_node_modules.sh
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/clean-my-mac
+  active_owner: h-ymt/skills/skills/clean-my-mac
+  content_hash: sha256:58766590c82c5851fbea091d360b03564aae42586b59ed9186fae55749ea631a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/clean-my-mac/tests/scripts.test.sh
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/clean-my-mac
+  active_owner: h-ymt/skills/skills/clean-my-mac
+  content_hash: sha256:68feffecbaa37e47e3f3f63fd59c57988900c2d2a23ae44006a2774295ae5c03
 - kind: project-relative
   target: claude
   value: .claude/skills/cloudflare
