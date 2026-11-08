@@ -13,6 +13,7 @@ dependencies:
   - H-ymt/skills/skills/github-pr-review-operation
   - H-ymt/skills/skills/h10o-review
   - H-ymt/skills/skills/h10o-figma-to-code
+  - H-ymt/skills/skills/h10o-figma-tidy
   - H-ymt/skills/skills/lighthouse-perf-report
   - H-ymt/skills/skills/empirical-prompt-tuning
   - H-ymt/skills/skills/linearis

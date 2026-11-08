@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-11-07T11:44:33.155848+00:00'
+generated_at: '2026-11-07T11:52:10.511852+00:00'
 apm_version: 0.35.0
 dependencies:
 - repo_url: anthropics/skills
@@ -1708,6 +1708,25 @@ dependencies:
   deployed_file_hashes:
     .claude/skills/github-pr-review-operation/SKILL.md: sha256:f976792a739b7a61521ec89dd3c28c5730872f311d6fe0adc731c1d01eeede2e
   content_hash: sha256:30f51a05c4ea0f75b88625a816504c9a8ac604d368a1710308b9f9b1ad17e4d7
+- repo_url: h-ymt/skills
+  materialization_repo_url: H-ymt/skills
+  name: h10o-figma-tidy
+  host: github.com
+  resolved_commit: 41a9178fb5cc1d9e73fd41cd5a67bb7bfa361530
+  version: unknown
+  virtual_path: skills/h10o-figma-tidy
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/h10o-figma-tidy
+  - .claude/skills/h10o-figma-tidy/SKILL.md
+  - .claude/skills/h10o-figma-tidy/references/figma-bridge.md
+  - .claude/skills/h10o-figma-tidy/references/figma-mcp.md
+  deployed_file_hashes:
+    .claude/skills/h10o-figma-tidy/SKILL.md: sha256:32d500216be2fa36589ee07fac3b7a9c28872b727c1c06ee3fb98e12ceea4067
+    .claude/skills/h10o-figma-tidy/references/figma-bridge.md: sha256:6a8407d3cb0285b4c2dd8dbbf481cb4f8ac0579e4692b86c0a1bb3beb4fd8784
+    .claude/skills/h10o-figma-tidy/references/figma-mcp.md: sha256:6025782cbaec261a38747400ced44879c9f8bb9cd4365c39d0fef6fe9bdc8518
+  content_hash: sha256:ab32eeef5d4e44b250575c87c15bcf7ca99f79a19623299b3874c91f447f15ca
 - repo_url: h-ymt/skills
   materialization_repo_url: H-ymt/skills
   name: h10o-figma-to-code
@@ -7109,6 +7128,42 @@ deployments:
   - greensock/gsap-skills/skills/gsap-utils
   active_owner: greensock/gsap-skills/skills/gsap-utils
   content_hash: sha256:1927bcc4ea95b38203404ad5ea1d060b15c4a886c65ae53e885ff1793aabe0ba
+- kind: project-relative
+  target: claude
+  value: .claude/skills/h10o-figma-tidy
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/h10o-figma-tidy
+  active_owner: h-ymt/skills/skills/h10o-figma-tidy
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/h10o-figma-tidy/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/h10o-figma-tidy
+  active_owner: h-ymt/skills/skills/h10o-figma-tidy
+  content_hash: sha256:32d500216be2fa36589ee07fac3b7a9c28872b727c1c06ee3fb98e12ceea4067
+- kind: project-relative
+  target: claude
+  value: .claude/skills/h10o-figma-tidy/references/figma-bridge.md
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/h10o-figma-tidy
+  active_owner: h-ymt/skills/skills/h10o-figma-tidy
+  content_hash: sha256:6a8407d3cb0285b4c2dd8dbbf481cb4f8ac0579e4692b86c0a1bb3beb4fd8784
+- kind: project-relative
+  target: claude
+  value: .claude/skills/h10o-figma-tidy/references/figma-mcp.md
+  runtime: null
+  scope: project
+  owners:
+  - h-ymt/skills/skills/h10o-figma-tidy
+  active_owner: h-ymt/skills/skills/h10o-figma-tidy
+  content_hash: sha256:6025782cbaec261a38747400ced44879c9f8bb9cd4365c39d0fef6fe9bdc8518
 - kind: project-relative
   target: claude
   value: .claude/skills/h10o-figma-to-code
