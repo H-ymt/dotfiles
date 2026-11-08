@@ -1,23 +1,20 @@
 # dotfiles 管理ガイド (mise bootstrap)
 
-このリポジトリは [mise bootstrap](https://mise.jdx.dev/bootstrap.html) 一本で Homebrew パッケージ・dotfiles・Agent Skills を管理する。chezmoi は使用しない。
+このリポジトリは Nix（nix-darwin + home-manager）と [mise bootstrap](https://mise.jdx.dev/bootstrap.html) で Homebrew パッケージ・dotfiles・Agent Skills を管理する。chezmoi は使用しない。
 
 ## ディレクトリ構造
 
 ```
-~/ghq/github.com/H-ymt/dotfiles/  ← リポジトリ = mise bootstrap ソース = APM プロジェクト
-├── mise.toml                     ← [bootstrap.*] [dotfiles] [tools] を集約（symlink 先: ~/.config/mise/config.toml）
-├── flake.nix                     ← Nix 基盤層（Phase 0: 空の状態。issue #1 参照）
-├── flake.lock                    ← Nix 入力のバージョン固定
+~/ghq/github.com/H-ymt/dotfiles/  ← リポジトリ = mise bootstrap ソース
+├── mise.toml                     ← [bootstrap.*] [dotfiles] [tools] [tasks] を集約（symlink 先: ~/.config/mise/config.toml）
+├── flake.nix                     ← Nix 基盤層（issue #1 参照）
+├── flake.lock                    ← Nix 入力（スキルを含む）のバージョン固定
 ├── nix/darwin.nix                ← nix-darwin 設定
 ├── nix/home.nix                  ← home-manager 設定
-├── apm.yml                       ← マニフェスト（全スキル宣言）
-├── apm.lock.yaml                 ← ロックファイル（バージョン固定）
-├── apm_modules/                  ← 外部パッケージ DL 先（.gitignore）
-└── .claude/skills/ etc.          ← APM 出力先（.gitignore）
+└── nix/skills.nix                ← Agent Skills の宣言（~/.claude/skills へ配置）
 ```
 
-自作スキルは `H-ymt/skills` リポジトリで管理（GitHub 外部スキルとして参照）。
+自作スキルは `H-ymt/skills` リポジトリで管理し、flake input として取り込む。
 
 ## コマンド
 
@@ -37,32 +34,25 @@ mise bootstrap --skip repos,tools
 # 既存ファイルを強制上書き（デフォルトは競合を拒否）
 mise bootstrap --force-dotfiles
 
-# 手動でスキルをインストール（通常は darwin-rebuild switch の activation が自動実行）
-apm install --target claude
+# Nix の設定（スキルを含む）を適用する。どのディレクトリからでも実行できる
+mise run dotfiles:apply
 
-# 外部スキルを追加
-apm install owner/repo/path/to/skill --target claude
+# flake の入力（nixpkgs・スキルなど）を更新して適用する
+mise run dotfiles:update
 
-# 外部スキルを最新に更新
-apm update --target claude
-
-# スキルを削除
-apm uninstall owner/repo/path/to/skill
+# スキルだけ更新する
+nix flake update agents-nix h-ymt-skills glanz-skills && mise run dotfiles:apply
 ```
 
-## 自作スキルの追加
+`dotfiles:*` タスクは `gh auth token` を `NIX_CONFIG` で Nix に渡す（引数で渡すと `ps` に値が出る）。private な `GLANZ-CREATIVE/skills` の新しい rev の取得と GitHub API のレート制限回避に要るため、`sudo darwin-rebuild` を直接叩くときも `NIX_CONFIG="access-tokens = github.com=$(gh auth token)" sudo --preserve-env=NIX_CONFIG darwin-rebuild switch --flake .#mba` とする。
 
-1. `H-ymt/skills` リポジトリに `skills/<skill-name>/SKILL.md` を作成・push
-2. `apm.yml` に追加:
-   ```yaml
-   - H-ymt/skills/skills/<skill-name>
-   ```
-3. `sudo darwin-rebuild switch --flake .#mba`（`home.activation` が `apm install --target claude` を実行）
+## Agent Skills
 
-   スキルだけ即座に入れたい場合は `apm install --target claude` を直接叩く。
-   `mise bootstrap --only dotfiles` は dotfiles を配置するだけで `apm install` は走らない。
+`nix/skills.nix` で宣言し、home-manager が `~/.claude/skills/<name>` へ配置する。Cursor も `~/.claude/skills` を読むため、Claude Code と Cursor の両方がこの 1 か所で賄える。`~/.cursor/skills` まで同じ場所へ向けるとスキルが二重に読み込まれる。
 
-`--target` は `claude` のみ。`~/.claude/skills` はリポジトリの `.claude/skills` への symlink で、Cursor も互換ディレクトリとして `~/.claude/skills` を読むため、Claude Code と Cursor の両方がこの 1 か所で賄える。`~/.cursor/skills` まで同じ場所へ向けるとスキルが二重に読み込まれる。
+- **公開スキル:** [agents.nix](https://github.com/sudosubin/agents.nix) から `inherit (github.<owner>.<repo>) <skill>;` で取る。owner と repo は小文字。収録されているかは `nix repl` で `:lf github:sudosubin/agents.nix` → `outputs.agent-skills.aarch64-darwin.github.<owner>.<repo>` で確認する
+- **自作スキル:** `H-ymt/skills` に `skills/<skill-name>/SKILL.md` を push し、`nix/skills.nix` の `fromRepo inputs.h-ymt-skills [ ... ]` に名前を足す。`nix flake update h-ymt-skills` で取り込み、`mise run dotfiles:apply` で配置する
+- **宣言外のエントリには触らない:** `synced/`（Claude Code が同期）と `rex/`（`rex skill setup` が配置）は各ツールの管理物
 
 ## PC 移行手順
 
@@ -171,6 +161,4 @@ nb set editor nvim    # 既定は $EDITOR（nano）
 ## 注意事項
 
 - **スキル一覧はセッション開始時に読み込まれる。** 追加後は `/clear` または再起動が必要
-- **`apm.lock.yaml` はコミットする。** 外部スキルのバージョン固定のため
-- **`apm_modules/` と配置先ディレクトリは `.gitignore` 済み**
 - **`mise.toml` の `[dotfiles]` はデフォルトで既存ファイルとの競合を拒否する。** 上書きが必要な場合のみ `--force-dotfiles` を使う

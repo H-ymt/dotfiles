@@ -20,10 +20,22 @@
     # determinateNix.enable = true が nix-darwin 側の nix.* 管理を自動で無効化する
     # （nix.enable = false を別途書く必要はない）。
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+
+    agents-nix.url = "github:sudosubin/agents.nix";
+    agents-nix.inputs.nixpkgs.follows = "nixpkgs";
+    h-ymt-skills = {
+      url = "github:H-ymt/skills";
+      flake = false;
+    };
+    # private リポジトリ。取得には gh のトークンが要る（mise run dotfiles:apply が渡す）。
+    glanz-skills = {
+      url = "github:GLANZ-CREATIVE/skills";
+      flake = false;
+    };
   };
 
   outputs =
-    { self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, determinate }:
+    inputs@{ self, nixpkgs, nixpkgs-unstable, nix-darwin, home-manager, determinate, ... }:
     let
       # ホスト名 (YamatonoMacBook-Air) ではなく機種非依存の識別子を使う。
       # darwin-rebuild switch --flake .#mba で明示的に指定して切り替える。
@@ -39,7 +51,7 @@
           ./nix/darwin.nix
           {
             _module.args = {
-              inherit username;
+              inherit username inputs;
               pkgsUnstable = nixpkgs-unstable.legacyPackages.${system};
             };
             nixpkgs.hostPlatform = system;

@@ -59,7 +59,6 @@ minimum_release_age = "4h"
 #   更新は agent 自身の自動更新か `agent update`。
 
 # [bootstrap.hooks.*] は Phase 5 で nix/home.nix の home.activation へ移した。
-# gh extension / apm install / bat cache は darwin-rebuild switch のたびに走る。
 # mise 側にフックを残すと同じ処理が二重に走るため、同じコミットで削除する。issue #1 参照。
 
 [dotfiles]
@@ -121,3 +120,17 @@ yarn = "4.12.0"
 
 # npm backend (npm:@anthropic-ai/claude-code) と併用すると PATH が衝突するため core のみ
 claude-code = "latest"
+
+[tasks."dotfiles:apply"]
+description = "nix-darwin / home-manager の設定を適用する"
+dir = "{{env.HOME}}/ghq/github.com/H-ymt/dotfiles"
+# トークンは引数ではなく NIX_CONFIG で渡す（引数だと ps に値が出る）
+run = 'NIX_CONFIG="access-tokens = github.com=$(gh auth token)" sudo --preserve-env=NIX_CONFIG darwin-rebuild switch --flake .#mba'
+
+[tasks."dotfiles:update"]
+description = "flake.lock の入力を更新して適用する"
+dir = "{{env.HOME}}/ghq/github.com/H-ymt/dotfiles"
+run = [
+  'NIX_CONFIG="access-tokens = github.com=$(gh auth token)" nix flake update',
+  { task = "dotfiles:apply" },
+]
