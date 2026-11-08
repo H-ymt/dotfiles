@@ -23,6 +23,12 @@
 
     agents-nix.url = "github:sudosubin/agents.nix";
     agents-nix.inputs.nixpkgs.follows = "nixpkgs";
+    # 上流に Backlog 対応の PR を出している間だけ fork を使う。
+    # マージ後は vercel-labs/issue-graph に戻す（skills.nix と mise.toml も同時に）。
+    issue-graph = {
+      url = "github:H-ymt/issue-graph/feat/backlog-provider";
+      flake = false;
+    };
     h-ymt-skills = {
       url = "github:H-ymt/skills";
       flake = false;

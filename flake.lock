@@ -191,6 +191,23 @@
         "url": "https://flakehub.com/f/nix-community/home-manager/0"
       }
     },
+    "issue-graph": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794132395,
+        "narHash": "sha256-UWYkyluD74iNC4xVNggZkROnSSVl/T42VUZ2rQbbuTc=",
+        "owner": "H-ymt",
+        "repo": "issue-graph",
+        "rev": "3fec88e3bfc5f7923039fc08bfe966c6762f0a66",
+        "type": "github"
+      },
+      "original": {
+        "owner": "H-ymt",
+        "ref": "feat/backlog-provider",
+        "repo": "issue-graph",
+        "type": "github"
+      }
+    },
     "nix": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -326,6 +343,7 @@
         "glanz-skills": "glanz-skills",
         "h-ymt-skills": "h-ymt-skills",
         "home-manager": "home-manager",
+        "issue-graph": "issue-graph",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable"

@@ -78,6 +78,8 @@ npm パッケージは `mise.toml` の `[tools]` で管理する。`[bootstrap.p
    ```
 2. `mise install npm:<package-name>` で即時インストール
 
+**例外:** 上流に未マージの fork を試す間は `[tools]` に置けない（mise の npm backend は `github:` 指定を扱えない）。`[tasks."dotfiles:issue-graph"]` で clone をビルドして `npm install -g .` する。上流へマージされたら `"npm:issue-graph"` に戻し、`flake.nix` の input と `nix/skills.nix` も vercel-labs へ戻す。グローバルインストールは mise の Node 配下に入るため、Node を入れ替えたら `mise run dotfiles:issue-graph` を再実行する。
+
 ## Homebrew パッケージの追加
 
 `mise.toml` の `[bootstrap.packages]` に追加する。tap が必要なら `[bootstrap.brew.taps]` にも追加。

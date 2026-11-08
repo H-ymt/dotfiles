@@ -121,6 +121,20 @@ yarn = "4.12.0"
 # npm backend (npm:@anthropic-ai/claude-code) と併用すると PATH が衝突するため core のみ
 claude-code = "latest"
 
+# 上流未マージの fork を試す間だけ使う。mise の npm backend は git 指定を扱えないため、
+# clone から build して mise の Node へグローバルインストールする。
+[tasks."dotfiles:issue-graph"]
+description = "fork 版 issue-graph をビルドしてインストールする"
+dir = "{{env.HOME}}/ghq/github.com/H-ymt/issue-graph"
+run = [
+  "git fetch fork feat/backlog-provider",
+  "git switch feat/backlog-provider",
+  "git merge --ff-only fork/feat/backlog-provider",
+  "pnpm install --frozen-lockfile",
+  "pnpm build",
+  "npm install -g . --ignore-scripts",
+]
+
 [tasks."dotfiles:apply"]
 description = "nix-darwin / home-manager の設定を適用する"
 dir = "{{env.HOME}}/ghq/github.com/H-ymt/dotfiles"
