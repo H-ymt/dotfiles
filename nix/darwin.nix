@@ -57,7 +57,6 @@
     casks = [
       # --- エディタ / ターミナル ---
       "cursor"
-      "visual-studio-code"
       "zed"
       "ghostty"
       "wezterm"
@@ -67,10 +66,8 @@
       "codex"
 
       # --- 生産性 / コミュニケーション ---
-      "notion"
       "obsidian"
       "slack"
-      "linear" # 旧 linear-linear は同一 cask の別名。正式 token は linear
       "microsoft-teams" # 手動枠だった（pkg installer 形式）
       "figma"
       "raycast"
