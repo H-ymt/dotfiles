@@ -11,7 +11,8 @@
 ├── flake.lock                    ← Nix 入力（スキルを含む）のバージョン固定
 ├── nix/darwin.nix                ← nix-darwin 設定
 ├── nix/home.nix                  ← home-manager 設定
-└── nix/skills.nix                ← Agent Skills の宣言（~/.claude/skills へ配置）
+├── nix/skills.nix                ← Agent Skills の宣言（~/.claude/skills へ配置）
+└── agents/AGENTS.md.tmpl         ← 全エージェント共通のグローバル指示（mise が ~/.claude/CLAUDE.md・~/AGENTS.md・~/.codex/AGENTS.md へ展開）
 ```
 
 自作スキルは `H-ymt/skills` リポジトリで管理し、flake input として取り込む。
