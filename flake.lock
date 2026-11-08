@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "agents-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794106652,
+        "narHash": "sha256-ioDL6KEwtjpMW2KO9aHt/ZqEQ9zU6IxugKAsw1JZ6AY=",
+        "owner": "sudosubin",
+        "repo": "agents.nix",
+        "rev": "119e157db90a77f14f9396ea2ec08d4485e20a6c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sudosubin",
+        "repo": "agents.nix",
+        "type": "github"
+      }
+    },
     "determinate": {
       "inputs": {
         "determinate-nixd-aarch64-darwin": "determinate-nixd-aarch64-darwin",
@@ -118,6 +138,38 @@
       "original": {
         "type": "tarball",
         "url": "https://flakehub.com/f/cachix/git-hooks.nix/0.1.941"
+      }
+    },
+    "glanz-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794109795,
+        "narHash": "sha256-OLgWin1BFpkoYN0dgYL7EHrqUbXm4xCkiZmq+yVfS9I=",
+        "owner": "GLANZ-CREATIVE",
+        "repo": "skills",
+        "rev": "9881e62ec2f58bf19335ceedb44b69aa28d1b4f6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GLANZ-CREATIVE",
+        "repo": "skills",
+        "type": "github"
+      }
+    },
+    "h-ymt-skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794113892,
+        "narHash": "sha256-aMBjAH8V0m5WDsmRcHqWbm6W8vjVOrCiO+EwxNxPiUU=",
+        "owner": "H-ymt",
+        "repo": "skills",
+        "rev": "3325726f93e29c5d6297802ea307a5cfd4e09c2b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "H-ymt",
+        "repo": "skills",
+        "type": "github"
       }
     },
     "home-manager": {
@@ -269,7 +321,10 @@
     },
     "root": {
       "inputs": {
+        "agents-nix": "agents-nix",
         "determinate": "determinate",
+        "glanz-skills": "glanz-skills",
+        "h-ymt-skills": "h-ymt-skills",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_3",

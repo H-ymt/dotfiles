@@ -4,10 +4,9 @@ macOS setup managed with **Nix** (nix-darwin + home-manager), **Homebrew**, and 
 
 | Layer | Manages | Source |
 |---|---|---|
-| Nix | CLI packages, most dotfiles, GUI casks | `flake.nix`, `nix/` |
+| Nix | CLI packages, most dotfiles, GUI casks, Agent Skills | `flake.nix`, `nix/` |
 | Homebrew | Formulae not in nixpkgs | `nix/darwin.nix`, `mise.toml` |
-| mise | Runtimes, npm tools, some dotfiles | `mise.toml` |
-| APM | Agent Skills | `apm.yml` |
+| mise | Runtimes, npm tools, some dotfiles, tasks | `mise.toml` |
 
 ## Setup
 
@@ -27,10 +26,9 @@ mise bootstrap
 ## Update
 
 ```sh
-sudo darwin-rebuild switch --flake .#mba   # apply Nix changes
-nix flake update                           # bump inputs (revert flake.lock to roll back)
-mise bootstrap                             # apply mise changes
-apm update --target claude                 # update Agent Skills
+mise run dotfiles:apply    # apply Nix changes (incl. Agent Skills)
+mise run dotfiles:update   # bump flake inputs and apply (revert flake.lock to roll back)
+mise bootstrap             # apply mise changes
 ```
 
 ## Manual steps

@@ -14,6 +14,8 @@ let
   dotfiles = "/Users/${username}/ghq/github.com/H-ymt/dotfiles";
 in
 {
+  imports = [ ./skills.nix ];
+
   home.username = username;
   home.homeDirectory = "/Users/${username}";
 
@@ -309,15 +311,8 @@ in
 
   # Phase 5: mise の [bootstrap.hooks.*] を home-manager の activation script へ移す。
   #
-  # mise フックは `mise bootstrap` 実行時のみ走ったが、activation script は
-  # `darwin-rebuild switch` のたびに走る。3 つとも冪等かつ失敗許容（|| true）で、
-  # 毎回走っても副作用がないため、変更検知は挟まず素直に毎回実行する。
-  #
   # PATH に注意: activation は home-manager の最小環境で走るため、参照するコマンドは
-  # フルパスか明示的な PATH 追加が要る。gh / bat は Nix プロファイル
-  # （home.packages 由来）にあるが、apm は Nix 管理外の ~/.local/bin/apm（手動配置）。
-  # apm 自体の導入は Phase 5 の対象外なので、無ければ警告して skip する
-  # （新 PC ではブートストラップ時に別途入れる。mise の `|| true` と同じ寛容さ）。
+  # フルパスか明示的な PATH 追加が要る。
   home.activation = {
     # 旧 [bootstrap.hooks.post-packages]: gh extension を導入する。
     # gh extension は Nix / Homebrew / mise のいずれでも宣言できないため、
@@ -334,22 +329,6 @@ in
           echo "$installed" | grep -q "$ext" \
             || ${pkgs.gh}/bin/gh extension install "$ext" 2>/dev/null || true
         done
-      fi
-    '';
-
-    # 旧 [bootstrap.hooks.post-dotfiles] の apm install: Agent Skills を導入する。
-    # apm は Nix 管理外のため存在確認してから実行する。
-    #
-    # apm は PyInstaller 製で内部の GitPython が git 実行ファイルを要求するが、
-    # activation は最小 PATH で走るため git が見つからず ImportError で落ちる。
-    # pkgs.git のフルパスを GIT_PYTHON_GIT_EXECUTABLE と PATH の両方に渡して解決する。
-    installApmSkills = config.lib.dag.entryAfter [ "writeBoundary" ] ''
-      apm_bin="$HOME/.local/bin/apm"
-      if [ -x "$apm_bin" ]; then
-        export GIT_PYTHON_GIT_EXECUTABLE="${pkgs.git}/bin/git"
-        PATH="${pkgs.git}/bin:$PATH" "$apm_bin" install --target claude || true
-      else
-        echo "warning: apm not found at $apm_bin — skipping skill install (Phase 5)" >&2
       fi
     '';
 
