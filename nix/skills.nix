@@ -132,7 +132,7 @@ let
       "figma-bridge"
       "figma-rule"
       "github-pr-review-operation"
-      "h10o-figma-tidy"
+      "h10o-figma-tidy-layers"
       "h10o-figma-to-code"
       "h10o-review"
       "image-optimize"
