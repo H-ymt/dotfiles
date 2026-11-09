@@ -159,11 +159,11 @@
     "h-ymt-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1794113892,
-        "narHash": "sha256-aMBjAH8V0m5WDsmRcHqWbm6W8vjVOrCiO+EwxNxPiUU=",
+        "lastModified": 1794185142,
+        "narHash": "sha256-RUv89839RxDyiUV/5pZrHipDR4nqs5/JRYxfW25ATFc=",
         "owner": "H-ymt",
         "repo": "skills",
-        "rev": "3325726f93e29c5d6297802ea307a5cfd4e09c2b",
+        "rev": "ba9a091d8f9f777614e5613b384f0717a328cd7e",
         "type": "github"
       },
       "original": {
