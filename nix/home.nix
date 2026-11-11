@@ -318,7 +318,14 @@ in
         "https://github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
         "https://gist.github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
       };
+      # GitHub への git 通信は SSH にそろえる。認証するアカウントが鍵で決まり、
+      # gh のアクティブアカウント（gh auth switch）に左右されなくなる。
+      # ghq get owner/repo の既定 HTTPS もここで SSH になる。
+      url."git@github.com:".insteadOf = "https://github.com/";
     };
+    # 仕事用アカウントの URL 書き換え・メールアドレスなど、public リポジトリに
+    # 置けない設定はマシンローカルのこのファイルに書く（無ければ git は無視する）。
+    includes = [ { path = "~/.config/git/local.gitconfig"; } ];
   };
 
   # Phase 5: mise の [bootstrap.hooks.*] を home-manager の activation script へ移す。
