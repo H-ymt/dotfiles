@@ -312,6 +312,12 @@ in
       init.defaultBranch = "main";
       merge.conflictstyle = "zdiff3";
       diff.colorMoved = "default";
+      # gh auth setup-git と同じ設定。gitconfig が store 上で read-only のため宣言側で持つ。
+      # programs.gh.gitCredentialHelper は ~/.config/gh/config.yml も生成して実ファイルと衝突するので使わない。
+      credential = {
+        "https://github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
+        "https://gist.github.com".helper = [ "" "!${pkgs.gh}/bin/gh auth git-credential" ];
+      };
     };
   };
 
