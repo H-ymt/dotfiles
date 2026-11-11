@@ -121,6 +121,9 @@ in
     # 公式の指定どおりディレクトリごと symlink する:
     # https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/
     "karabiner".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/karabiner";
+    # Rex は他ツールの設定を取り込む移行機能で init.lua を書き出すため、store には置けない。
+    # symlink なら Rex の設定再読み込み（ctrl+shift+r）だけで編集が反映される。
+    "rex".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/rex";
   };
 
   # Phase 4: 宣言的に生成できる設定を programs.* へ移す。
