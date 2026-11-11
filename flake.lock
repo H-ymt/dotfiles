@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794106652,
-        "narHash": "sha256-ioDL6KEwtjpMW2KO9aHt/ZqEQ9zU6IxugKAsw1JZ6AY=",
+        "lastModified": 1794367104,
+        "narHash": "sha256-4Foj7QjqcZRX2so+dPtNpj1PPkqnno9f8iBB1xAcYM8=",
         "owner": "sudosubin",
         "repo": "agents.nix",
-        "rev": "119e157db90a77f14f9396ea2ec08d4485e20a6c",
+        "rev": "028d3b1acfcd10c0816961b4de72a2163413dc68",
         "type": "github"
       },
       "original": {
