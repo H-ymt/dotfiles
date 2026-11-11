@@ -49,11 +49,11 @@ nix flake update agents-nix h-ymt-skills glanz-skills && mise run dotfiles:apply
 
 ## Agent Skills
 
-`nix/skills.nix` で宣言し、home-manager が `~/.claude/skills/<name>` へ配置する。Cursor も `~/.claude/skills` を読むため、Claude Code と Cursor の両方がこの 1 か所で賄える。`~/.cursor/skills` まで同じ場所へ向けるとスキルが二重に読み込まれる。
+`nix/skills.nix` で宣言し、home-manager が同じ実体を `~/.claude/skills/<name>` と `~/.codex/skills/<name>` へ配置する。Cursor は `~/.claude/skills` を読むため、Claude Code と Cursor はそちらで賄える。Codex は `~/.codex/skills` だけを読む。`~/.cursor/skills` まで同じ場所へ向けるとスキルが二重に読み込まれる。
 
 - **公開スキル:** [agents.nix](https://github.com/sudosubin/agents.nix) から `inherit (github.<owner>.<repo>) <skill>;` で取る。owner と repo は小文字。収録されているかは `nix repl` で `:lf github:sudosubin/agents.nix` → `outputs.agent-skills.aarch64-darwin.github.<owner>.<repo>` で確認する
 - **自作スキル:** `H-ymt/skills` に `skills/<skill-name>/SKILL.md` を push し、`nix/skills.nix` の `fromRepo inputs.h-ymt-skills [ ... ]` に名前を足す。`nix flake update h-ymt-skills` で取り込み、`mise run dotfiles:apply` で配置する
-- **宣言外のエントリには触らない:** `synced/`（Claude Code が同期）と `rex/`（`rex skill setup` が配置）は各ツールの管理物
+- **宣言外のエントリには触らない:** `~/.claude/skills/synced/`（Claude Code が同期）、`~/.claude/skills/rex/`（`rex skill setup` が配置）、`~/.codex/skills/.system/`（Codex 本体のシステムスキル）は各ツールの管理物
 
 ## PC 移行手順
 
