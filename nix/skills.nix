@@ -1,6 +1,7 @@
-# ここで宣言しない ~/.claude/skills 配下のエントリには触らない。各ツールが自分で管理するものがある:
-# - synced/: Claude Code が同期する
-# - rex/: `rex skill setup` が置く
+# ここで宣言しない配下のエントリには触らない。各ツールが自分で管理するものがある:
+# - ~/.claude/skills/synced/: Claude Code が同期する
+# - ~/.claude/skills/rex/: `rex skill setup` が置く
+# - ~/.codex/skills/.system/: Codex 本体が置くシステムスキル
 {
   lib,
   pkgs,
@@ -144,7 +145,12 @@ let
     // fromRepo inputs.glanz-skills [ "ftp-deploy-workflow" ];
 in
 {
-  home.file = lib.mapAttrs' (
-    name: src: lib.nameValuePair ".claude/skills/${name}" { source = src; }
-  ) skills;
+  # Claude Code と Cursor は ~/.claude/skills、Codex は ~/.codex/skills を読む。
+  # 同じ store パスを両方に置き、~/.cursor/skills には置かない（Cursor が二重に読む）。
+  home.file = lib.concatMapAttrs (dir: skills:
+    lib.mapAttrs' (name: src: lib.nameValuePair "${dir}/${name}" { source = src; }) skills
+  ) {
+    ".claude/skills" = skills;
+    ".codex/skills" = skills;
+  };
 }
