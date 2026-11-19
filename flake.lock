@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794367104,
-        "narHash": "sha256-4Foj7QjqcZRX2so+dPtNpj1PPkqnno9f8iBB1xAcYM8=",
+        "lastModified": 1795075994,
+        "narHash": "sha256-cJ7fQTCzZ5H28R/rYgQyGUt/LS2Bu/T5u/1frISxG/M=",
         "owner": "sudosubin",
         "repo": "agents.nix",
-        "rev": "028d3b1acfcd10c0816961b4de72a2163413dc68",
+        "rev": "5efb98fa372de9b9d3464d6ad79db91e41f31d29",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
     "glanz-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1795056367,
-        "narHash": "sha256-1BedhOx6dMfSXcYy0H+/u5RtVI15INsVmwzDHTse3Jw=",
+        "lastModified": 1795076265,
+        "narHash": "sha256-n6ed5YLZsYK/h/xwrlcfN8bSrLD64uYcYjvrTtGLzv0=",
         "owner": "GLANZ-CREATIVE",
         "repo": "skills",
-        "rev": "191893c620b0b08b904ce0a7a7f156aef8671f20",
+        "rev": "3fb5b83143de12579b39d5ed2ce77005f2268f35",
         "type": "github"
       },
       "original": {
