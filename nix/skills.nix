@@ -142,7 +142,11 @@ let
       "linearis"
       "xserver"
     ]
-    // fromRepo inputs.glanz-skills [ "ftp-deploy-workflow" ];
+    // fromRepo inputs.glanz-skills [
+      "create-figma-components"
+      "create-figma-tokens"
+      "ftp-deploy-workflow"
+    ];
 in
 {
   # Claude Code と Cursor は ~/.claude/skills、Codex は ~/.codex/skills を読む。

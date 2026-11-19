@@ -143,11 +143,11 @@
     "glanz-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1794109795,
-        "narHash": "sha256-OLgWin1BFpkoYN0dgYL7EHrqUbXm4xCkiZmq+yVfS9I=",
+        "lastModified": 1795056367,
+        "narHash": "sha256-1BedhOx6dMfSXcYy0H+/u5RtVI15INsVmwzDHTse3Jw=",
         "owner": "GLANZ-CREATIVE",
         "repo": "skills",
-        "rev": "9881e62ec2f58bf19335ceedb44b69aa28d1b4f6",
+        "rev": "191893c620b0b08b904ce0a7a7f156aef8671f20",
         "type": "github"
       },
       "original": {
