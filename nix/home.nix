@@ -99,10 +99,6 @@ in
       source = ../.config/ghostty;
       recursive = true;
     };
-    "wezterm" = {
-      source = ../.config/wezterm;
-      recursive = true;
-    };
     "bat" = {
       source = ../.config/bat;
       recursive = true;
