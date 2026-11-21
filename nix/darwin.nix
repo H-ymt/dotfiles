@@ -35,9 +35,6 @@
     backupFileExtension = "hm-bak";
   };
 
-  # Phase 2: GUI アプリ（cask）を nix-darwin から宣言的に管理する。
-  # Homebrew バイナリ自体は Nix が所有せず、activation 時に既存の brew で
-  # `brew bundle` を走らせる仕組み。formula は Nix 未収録の 4 件のみ mise.toml に残す。
   homebrew = {
     enable = true;
 
@@ -57,9 +54,8 @@
     casks = [
       # --- エディタ / ターミナル ---
       "cursor"
-      "zed"
+      "antigravity"
       "ghostty"
-      "wezterm"
 
       # --- AI CLI / ツール ---
       "claude"
@@ -70,16 +66,14 @@
       "slack"
       "microsoft-teams" # 手動枠だった（pkg installer 形式）
       "figma"
+      "linear"
       "raycast"
 
       # --- 開発基盤 ---
       "orbstack"
-      "ngrok" # 手動枠だった（postflight_steps を使用）
-      "local"
 
       # --- ユーティリティ ---
       "dockdoor"
-      "keycastr"
       "karabiner-elements"
       "macwinzipper"
       "zipic"

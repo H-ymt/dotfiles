@@ -23,11 +23,6 @@ minimum_release_age = "4h"
 # Nix 版と二重管理しないよう home.packages には入れない
 "brew:ripgrep" = "latest"
 
-# cask（GUI アプリ）は Phase 2 で nix-darwin の homebrew.casks へ移した（nix/darwin.nix）。
-# 従来 mise の brew マネージャーが非対応だった pkg installer / postflight_steps 形式の
-# cask（adobe-creative-cloud / logi-options+ / microsoft-teams / ngrok）も、nix-darwin の
-# brew bundle は通常の brew と同じ挙動なので同じく宣言できるようになった。
-#
 # ax だけは formula（yusukebe/tap/ax）かつ現状 ~/.local/bin に Bun 製バイナリを配置して
 # 運用しているため、ここにも homebrew.casks にも入れず据え置く。tap の API metadata が
 # 未公開で brew bundle でも扱いに難があるため、Nix / mise とは別管理を継続する。
@@ -69,21 +64,13 @@ minimum_release_age = "4h"
 "~/AGENTS.md" = { source = "agents/AGENTS.md.tmpl", mode = "template" }
 "~/.codex/AGENTS.md" = { source = "agents/AGENTS.md.tmpl", mode = "template" }
 
-"~/.config/zed/keymap.json" = { source = ".config/zed/keymap.json", mode = "symlink" }
-"~/.config/zed/settings.json" = { source = ".config/zed/settings.json", mode = "symlink" }
-
 "~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
 
-# nvim / wezterm / starship / yazi / bat / karabiner / ghostty は Phase 3 で
-# nix/home.nix の xdg.configFile へ移した。書き込みが発生する nvim（lazy-lock.json）と
-# karabiner.json（GUI が書き換え）は mkOutOfStoreSymlink、それ以外は Nix store 経由。
-#
 # ここに残るのは Phase 3 / 4 対象外のもの:
 # - sheldon / zsh-abbr: sheldon は zsh-defer による遅延ロードを使っており、programs.zsh.plugins に
 #   defer 相当がないため Phase 4 でも mise に残す。zsh-abbr は sheldon 経由でロードされるので同様。
 #   .zshrc 本体は programs.zsh へ移したが、eval "$(sheldon source)" は initContent に残してある
 # - herdr: config.toml のみ管理（session.json / *.log / *.sock は実行時生成物で管理外）
-# - zed: verbatim 継続
 "~/.config/sheldon/plugins.toml" = { source = ".config/sheldon/plugins.toml", mode = "symlink" }
 
 "~/.config/herdr/config.toml" = { source = ".config/herdr/config.toml", mode = "symlink" }
@@ -109,7 +96,6 @@ yarn = "4.12.0"
 "npm:resend-cli" = "latest"
 "npm:portless" = "latest"
 "npm:oxfmt" = "latest"
-"npm:wp-studio" = "latest"
 "npm:@nulab/bee" = "latest"
 "npm:@googleworkspace/cli" = "latest"
 "npm:agent-browser" = "latest"

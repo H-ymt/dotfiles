@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794367104,
-        "narHash": "sha256-4Foj7QjqcZRX2so+dPtNpj1PPkqnno9f8iBB1xAcYM8=",
+        "lastModified": 1795075994,
+        "narHash": "sha256-cJ7fQTCzZ5H28R/rYgQyGUt/LS2Bu/T5u/1frISxG/M=",
         "owner": "sudosubin",
         "repo": "agents.nix",
-        "rev": "028d3b1acfcd10c0816961b4de72a2163413dc68",
+        "rev": "5efb98fa372de9b9d3464d6ad79db91e41f31d29",
         "type": "github"
       },
       "original": {
@@ -143,11 +143,11 @@
     "glanz-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1794109795,
-        "narHash": "sha256-OLgWin1BFpkoYN0dgYL7EHrqUbXm4xCkiZmq+yVfS9I=",
+        "lastModified": 1795076265,
+        "narHash": "sha256-n6ed5YLZsYK/h/xwrlcfN8bSrLD64uYcYjvrTtGLzv0=",
         "owner": "GLANZ-CREATIVE",
         "repo": "skills",
-        "rev": "9881e62ec2f58bf19335ceedb44b69aa28d1b4f6",
+        "rev": "3fb5b83143de12579b39d5ed2ce77005f2268f35",
         "type": "github"
       },
       "original": {
@@ -159,11 +159,11 @@
     "h-ymt-skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1794185142,
-        "narHash": "sha256-RUv89839RxDyiUV/5pZrHipDR4nqs5/JRYxfW25ATFc=",
+        "lastModified": 1795168103,
+        "narHash": "sha256-1s4zk3kake+Est9VtafsDcdzVBBnS/Ox8PiMrDzf9vY=",
         "owner": "H-ymt",
         "repo": "skills",
-        "rev": "ba9a091d8f9f777614e5613b384f0717a328cd7e",
+        "rev": "fdd9e83e1d084880c307f6acf0dbb7fceb6921e5",
         "type": "github"
       },
       "original": {

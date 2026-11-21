@@ -197,8 +197,6 @@ abbr groh="git reset origin/\$(git_current_branch) --hard"
 # Editor abbreviations
 abbr c.="cursor ."
 abbr cr.="cursor -r ."
-abbr z.="zed ."
-abbr zr.="zed -r ."
 abbr co.="code ."
 abbr cor.="code -r ."
 

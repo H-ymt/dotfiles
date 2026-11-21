@@ -87,7 +87,7 @@ let
         planning-wcag-audit
         reviewing-a11y
         ;
-      inherit (github.kepano.obsidian-skills)
+      inherit (github.obsidianmd.obsidian-skills)
         defuddle
         json-canvas
         obsidian-bases
@@ -102,7 +102,17 @@ let
         grilling
         ;
       inherit (github.googlechrome.modern-web-guidance) modern-web-guidance chrome-extensions;
-      inherit (github.modem-dev.hunk) hunk-review;
+      # agents.nix のピン後に上流が v0.25.0 のタグを付け直し、ハッシュが合わなくなった。
+      # agents.nix の data/agent-skills/github.com/modem-dev/hunk.json が直ったら
+      # `inherit (github.modem-dev.hunk) hunk-review;` に戻す。
+      hunk-review = "${
+        pkgs.fetchFromGitHub {
+          owner = "modem-dev";
+          repo = "hunk";
+          rev = "03f7ea41946da29e6e814165af70247fdca03912"; # v0.25.0
+          hash = "sha256-aa1oxfN/310nNKnurTyKh5RsaFmgEOKf5n2DFm0vtKk=";
+        }
+      }/.agents/skills/hunk-review";
       inherit (github.yusukebe.ax) ax;
       inherit (github.github.gh-stack) gh-stack;
       inherit (github.nanaism.yomiyasu) yomiyasu;
@@ -142,15 +152,19 @@ let
       "linearis"
       "xserver"
     ]
-    // fromRepo inputs.glanz-skills [ "ftp-deploy-workflow" ];
+    // fromRepo inputs.glanz-skills [
+      "create-figma-components"
+      "create-figma-tokens"
+      "ftp-deploy-workflow"
+    ];
 in
 {
-  # Claude Code と Cursor は ~/.claude/skills、Codex は ~/.codex/skills を読む。
-  # 同じ store パスを両方に置き、~/.cursor/skills には置かない（Cursor が二重に読む）。
+  # ~/.cursor/skills には置かない。Cursor は ~/.claude/skills も読むため二重に読み込まれる。
   home.file = lib.concatMapAttrs (dir: skills:
     lib.mapAttrs' (name: src: lib.nameValuePair "${dir}/${name}" { source = src; }) skills
   ) {
     ".claude/skills" = skills;
     ".codex/skills" = skills;
+    ".gemini/config/skills" = skills;
   };
 }
