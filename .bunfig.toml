@@ -1,2 +1,4 @@
 [install]
 minimumReleaseAge = 172800
+linker = "isolated"
+globalStore = true
