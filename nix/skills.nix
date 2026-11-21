@@ -159,12 +159,12 @@ let
     ];
 in
 {
-  # Claude Code と Cursor は ~/.claude/skills、Codex は ~/.codex/skills を読む。
-  # 同じ store パスを両方に置き、~/.cursor/skills には置かない（Cursor が二重に読む）。
+  # ~/.cursor/skills には置かない。Cursor は ~/.claude/skills も読むため二重に読み込まれる。
   home.file = lib.concatMapAttrs (dir: skills:
     lib.mapAttrs' (name: src: lib.nameValuePair "${dir}/${name}" { source = src; }) skills
   ) {
     ".claude/skills" = skills;
     ".codex/skills" = skills;
+    ".gemini/config/skills" = skills;
   };
 }
