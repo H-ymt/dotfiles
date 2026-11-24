@@ -32,6 +32,11 @@
       url = "github:GLANZ-CREATIVE/skills";
       flake = false;
     };
+    # agents.nix 未収録のスキル。閲覧アプリ（nix/tsuzuri.nix）も同じ rev から作る。
+    tsuzuri = {
+      url = "github:MaryCache/tsuzuri";
+      flake = false;
+    };
   };
 
   outputs =
