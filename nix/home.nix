@@ -14,7 +14,7 @@ let
   dotfiles = "/Users/${username}/ghq/github.com/H-ymt/dotfiles";
 in
 {
-  imports = [ ./skills.nix ];
+  imports = [ ./skills.nix ./tsuzuri.nix ];
 
   home.username = username;
   home.homeDirectory = "/Users/${username}";

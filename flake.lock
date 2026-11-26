@@ -328,7 +328,24 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_3",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "tsuzuri": "tsuzuri"
+      }
+    },
+    "tsuzuri": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1795465964,
+        "narHash": "sha256-AHzPOCLA6ZY9wsF+gFpkG15Xm4qYqW2A8x4VWeKqUwo=",
+        "owner": "MaryCache",
+        "repo": "tsuzuri",
+        "rev": "61e346b5d491b6b25b9b4be28f9496fdfc14789a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MaryCache",
+        "repo": "tsuzuri",
+        "type": "github"
       }
     }
   },

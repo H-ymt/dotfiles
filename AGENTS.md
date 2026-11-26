@@ -42,7 +42,7 @@ mise run dotfiles:apply
 mise run dotfiles:update
 
 # スキルだけ更新する
-nix flake update agents-nix h-ymt-skills glanz-skills && mise run dotfiles:apply
+nix flake update agents-nix h-ymt-skills glanz-skills tsuzuri && mise run dotfiles:apply
 ```
 
 `dotfiles:*` タスクは `gh auth token` を `NIX_CONFIG` で Nix に渡す（引数で渡すと `ps` に値が出る）。private な `GLANZ-CREATIVE/skills` の新しい rev の取得と GitHub API のレート制限回避に要るため、`sudo darwin-rebuild` を直接叩くときも `NIX_CONFIG="access-tokens = github.com=$(gh auth token)" sudo --preserve-env=NIX_CONFIG darwin-rebuild switch --flake .#mba` とする。

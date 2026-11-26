@@ -156,7 +156,8 @@ let
       "create-figma-components"
       "create-figma-tokens"
       "ftp-deploy-workflow"
-    ];
+    ]
+    // fromRepo inputs.tsuzuri [ "tsuzuri" ];
 in
 {
   # ~/.cursor/skills には置かない。Cursor は ~/.claude/skills も読むため二重に読み込まれる。
